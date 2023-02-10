@@ -1,4 +1,4 @@
-\documentclass[25pt, a0paper, portrait, margin=0mm, innermargin=15mm,
+\documentclass[25pt, a0paper, portrait, margin=5mm, innermargin=5mm,
      blockverticalspace=15mm, colspace=15mm, subcolspace=0mm]{tikzposter}
 		
 % -- Packages --------------------------------------------------------%
@@ -7,7 +7,7 @@
 \usepackage{tikz,lipsum}
 \usetikzlibrary{positioning}
 \usepackage{float}                           % for minipages at Polarization part
-\usepackage{caption}                         % no "Firgure" in caption
+\usepackage{caption}                         % no "Figure" in caption
 \captionsetup[figure]{labelformat=empty}
 
 % -- Commands --------------------------------------------------------%
@@ -22,12 +22,14 @@
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{\bfseries Mathematical modelling for the next-generation all-solid-state battery: \\ 
 \bfseries Nucleation interface}
-\author{Tuan Vo$^{\text{(1),(2)}}$}
-\institute{ACoM, Applied and Computational Mathematics, RWTH Aachen University
+% \author{Tuan Vo$^{\text{(1),(2)}}$}
+\author{Tuan Vo}
+\institute{
+	ACoM, Applied and Computational Mathematics, RWTH Aachen University
 % (2) IEK-2, Institute of Energy and Climate Research, Forschungszentrum Jülich
 }
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
-\titlegraphic{\includegraphics[width=0.5\textwidth]{./figs/logos/rwth_acom_en_cmyk.eps}}
+\titlegraphic{\includegraphics[width=0.7\textwidth]{./figs/logos/rwth_acom_en_cmyk.eps}}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -37,7 +39,7 @@
 
 % -- Predefined Colors and Themes ---------------------- %
 % Choose THEME:  Default, Basic, Rays, Simple, Envelope, Wave, Board, Autumn, Desert,
-\usetheme{Rays}
+\usetheme{Default}
 \useblockstyle[titleinnersep=5mm]{Default}    % change default parameter for title inner sep
 
 % Choose COLOR STYLE:  Default, Blue, BlueGray, BlueOrange, BlueViolet, DarkBlue, GrayBlue, GrayLightblue, GrayRed, Green, GreenOrange, YellowRed
@@ -49,7 +51,7 @@
 \begin{document}
 
 % Title block
-\maketitle[width=700mm]
+\maketitle[width=750mm]
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 
@@ -72,7 +74,7 @@
 		An ASSB means that the three main components are \textbf{all made of solid material}.
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Modeling goal}{
+	\block{Modelling goal}{
 		Two main goals to model the solid electrolyte part of the all-solid-state battery is as follows:
 		%
 		\begin{enumerate}
@@ -123,8 +125,8 @@
 		%{
 		%\raggedleft
 		% \begin{tikzpicture}
-			% \node (qrcode) {\includegraphics[width=4cm]{./figs/QRmathccesvo}};
-			% \node [left=2cm of qrcode.north west, yshift=-22mm] {\hspace{10mm} Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: tuan.vo@rwth-aachen.de};
+		% \node (qrcode) {\includegraphics[width=4cm]{./figs/QRmathccesvo}};
+		% \node [left=2cm of qrcode.north west, yshift=-22mm] {\hspace{10mm} Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: tuan.vo@rwth-aachen.de};
 		% \end{tikzpicture}
 		%}
 		Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
@@ -151,12 +153,12 @@
 	% 			       & \text{Balance of angular momentum} &  & \Bpi^{\top} = \Bpi                                              \\
 	% 			       & \text{Balance of energy}           &  & \rho\dot{e} = \Bpi : \dot{\Bvarepsilon} + \rho r - {\rm div}\Bq
 	% 		      \end{align*}
-			      
+	
 	% 		\item Entropy inequality
 	% 		      \begin{align*}
 	% 			      \rho\calD := \Bpi :\dot{\Bvarepsilon}  -\rho\eta\dot{\theta}- \rho\dot{\Psi} -\frac{1}{\theta}\Bq\cdot\nabla\theta \geq 0 
 	% 		      \end{align*}
-			      
+	
 	% 		\item Mathematical model:
 	% 		      \begin{align*}
 	% 			       & \text{PDE}                   &  & \pi_{ij,j} + \rho b_{i} = 0                                                                                      \\
@@ -171,11 +173,11 @@
 	% 				      \text{where } \qquad 
 	% 				      \mathbb{C}_{ijkl} & = \lambda \delta_{ij}\delta_{kl} + 2\mu_T\mathbb{I}_{ijkl}     \\
 	% 				                        & + \alpha(\delta_{ij}M_{kl} + M_{ij}\delta_{kl})
-
+	
 	% 				      + 2(\mu_L-\mu_T)\left[\mathbb{I}_{\Bd}\right]_{ijkl} + \beta M_{ij}M_{kl}          \\
 	% 				      \left[\mathbb{I}_{\Bd}\right]_{ijkl}
 	% 				                        & = \frac{1}{2}(d_{i}\delta_{jl}d_{k} + d_{i}\delta_{jk}d_{l}
-
+	
 	% 				      +d_{j}\delta_{ik}d_{l} + d_{j}\delta_{il}d_{k})                                    \\
 	% 				      \mathbb{I}_{ijkl} & = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})
 	% 			      \end{aligned}
@@ -212,15 +214,15 @@
 	% 	\vspace*{-3em}
 	% 	\renewcommand{\refname}{~}
 	% 	\begin{thebibliography}{2}
-			
+	
 	% 		\bibitem{viozat1997implicit}
 	% 		Vo T. \emph{Modeling the swelling phenomena of lithium-ion battery cells based on a numerical chemo-mechanical coupled approach}. 
 	% 		Master thesis, 2018.
-			
+	
 	% 		\bibitem{braun2015SCL}
 	% 		S. Braun, C. Yada and A. Latz. \emph{Thermodynamically consistent model for Space-Charge-Layer formation in a solid electrolyte}. 
 	% 		Journal of Physical Chemistry, 119, 22281-22288, 2015.
-			
+	
 	% 	\end{thebibliography}
 	% }
 \end{columns}
