@@ -25,6 +25,8 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 }}
 
 \usepackage{fontawesome}
+\usepackage{bm}
+\usepackage{bigints}
 
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
@@ -111,6 +113,17 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 				      \item Entropy inequality is guaranteed with sharper conditions, which lead to constitutive equation.
 			      \end{itemize}
 		\end{enumerate}
+		\begin{align*}
+			a_{\text{Griffith}}:= a^{*}
+			= \arg\min_{a\in\mathbb{R}}
+			{
+				\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
+				f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
+				-
+				\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
+				f(a;\gamma) \, d\Gamma
+			}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% \block{Continuum physics kinematic}{
@@ -161,10 +174,10 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 					\node [left= 0mm of qrcode.north west, yshift=-25mm]
 					{
 						% \hspace{0mm} 
-					Tuan Vo 
-					$\cdot$ ACoM 
-					$\cdot$ RWTH Aachen University 
-					$\cdot$ Email: vo@acom.rwth-aachen.de};
+						Tuan Vo 
+						$\cdot$ ACoM 
+						$\cdot$ RWTH Aachen University 
+						$\cdot$ Email: vo@acom.rwth-aachen.de};
 				\end{tikzpicture}
 			}
 		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
