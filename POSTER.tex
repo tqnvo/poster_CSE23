@@ -126,38 +126,48 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 		\end{align*}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %	
-	\block{Polarization phenomenon}{
-		Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, 
-		a uniform electric field created has suppressed on 
-		the SE occupied between these two poles. Consequently, SE yields to a \textbf{preferred direction}
-		under external deformations such as mechanical loading forces.
-		% \begin{minipage}{\linewidth}
-		% 	\centering
-		% 	\begin{minipage}{0.20\linewidth}
-		% 		\begin{figure}[H]
-		% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSEnon}
-		% 			%\caption{Non-polarized SE.}
-		% 		\end{figure}
-		% 	\end{minipage}
-		% 	\hspace{0.2\linewidth}
-		% 	\begin{minipage}{0.25\linewidth}
-		% 		\begin{figure}[H]
-		% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSE}
-		% 			%\caption{Polarized SE.}
-		% 		\end{figure}
-		% 	\end{minipage}
-		% \end{minipage}
-	}
+	% \block{Polarization phenomenon}{
+	% 	Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, 
+	% 	a uniform electric field created has suppressed on 
+	% 	the SE occupied between these two poles. Consequently, SE yields to a \textbf{preferred direction}
+	% 	under external deformations such as mechanical loading forces.
+	% 	% \begin{minipage}{\linewidth}
+	% 	% 	\centering
+	% 	% 	\begin{minipage}{0.20\linewidth}
+	% 	% 		\begin{figure}[H]
+	% 	% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSEnon}
+	% 	% 			%\caption{Non-polarized SE.}
+	% 	% 		\end{figure}
+	% 	% 	\end{minipage}
+	% 	% 	\hspace{0.2\linewidth}
+	% 	% 	\begin{minipage}{0.25\linewidth}
+	% 	% 		\begin{figure}[H]
+	% 	% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSE}
+	% 	% 			%\caption{Polarized SE.}
+	% 	% 		\end{figure}
+	% 	% 	\end{minipage}
+	% 	% \end{minipage}
+	% }
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	\block{Contact}{
-		% {
-		% 		\raggedleft
-		% 		\begin{tikzpicture}
-		% 			\node (qrcode) {\includegraphics[width=3cm]{./floats/QRcode_ACoM/QRcode_ACoM.eps}};
-		% 			\node [left=2cm of qrcode.north west, yshift=-22mm] {\hspace{10mm} Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: tuan.vo@rwth-aachen.de};
-		% 		\end{tikzpicture}
-		% 	}
-			\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
+		{
+				\raggedleft
+				\begin{tikzpicture}
+					\node (qrcode)
+					{
+						\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
+						% \includegraphics[width=3cm]{./floats/QRcode_ACoM/QRcode_ACoM.eps}
+					};
+					\node [left= 0mm of qrcode.north west, yshift=-25mm]
+					{
+						% \hspace{0mm} 
+					Tuan Vo 
+					$\cdot$ ACoM 
+					$\cdot$ RWTH Aachen University 
+					$\cdot$ Email: vo@acom.rwth-aachen.de};
+				\end{tikzpicture}
+			}
+		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
 		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
