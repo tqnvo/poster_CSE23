@@ -1,8 +1,11 @@
-\documentclass[25pt, a0paper, portrait, margin=5mm, innermargin=5mm,
-     blockverticalspace=15mm, colspace=15mm, subcolspace=0mm]{tikzposter}
+% !TeX root = POSTER.tex
+\documentclass[25pt, a0paper,
+portrait,
+% landscape,
+margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace=0mm]{tikzposter}
 		
 % -- Packages --------------------------------------------------------%
-\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{amsfonts,amssymb,amsmath,mathtools}
 \usepackage{defcmlfont}
 \usepackage{tikz,lipsum}
 \usetikzlibrary{positioning}
@@ -10,17 +13,32 @@
 \usepackage{caption}                         % no "Figure" in caption
 \captionsetup[figure]{labelformat=empty}
 
+\usepackage{psfrag}
+
+% Load figures command: \inputfig [htb]{fig_dir}{fig_label}
+\newcommand*{\inputfig}[3][htb]{{
+    \def\fps@figure{#1}
+    \def\DIR{#2}
+    \def\LABEL{#3}
+    \graphicspath{{\DIR/}}
+    \input{\DIR/fig.tex}
+}}
+
+\usepackage{fontawesome}
+
 % -- Commands --------------------------------------------------------%
-\newcommand{\wall}{\text{w}}
-\newcommand{\interf}{\text{i}}
-\newcommand{\phase}{k}	
-\newcommand{\liquid}{\ell}
-\newcommand{\steam}{g}
-\newcommand{\out}{\text{out}}
-\newcommand{\tr}{{\mathsf T}}
+% \newcommand{\wall}{\text{w}}
+% \newcommand{\interf}{\text{i}}
+% \newcommand{\phase}{k}	
+% \newcommand{\liquid}{\ell}
+% \newcommand{\steam}{g}
+% \newcommand{\out}{\text{out}}
+% \newcommand{\tr}{{\mathsf T}}
+\newcommand{\WAsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\sigma}}
+\newcommand{\WABsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\boldsymbol{\sigma}}}
 
 % -- Title, Author, Institute --------------------------------------------------------%
-\title{\bfseries Mathematical modelling for the next-generation all-solid-state battery: \\ 
+\title{\bfseries Mathematical modelling for the next-generation all-solid-state battery: \\
 \bfseries Nucleation interface}
 % \author{Tuan Vo$^{\text{(1),(2)}}$}
 \author{Tuan Vo}
@@ -29,7 +47,7 @@
 % (2) IEK-2, Institute of Energy and Climate Research, Forschungszentrum Jülich
 }
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
-\titlegraphic{\includegraphics[width=0.7\textwidth]{./figs/logos/rwth_acom_en_cmyk.eps}}
+\titlegraphic{\includegraphics[width=0.4\textwidth]{./floats/logos/rwth_acom_en_cmyk.eps}}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -40,6 +58,7 @@
 % -- Predefined Colors and Themes ---------------------- %
 % Choose THEME:  Default, Basic, Rays, Simple, Envelope, Wave, Board, Autumn, Desert,
 \usetheme{Default}
+
 \useblockstyle[titleinnersep=5mm]{Default}    % change default parameter for title inner sep
 
 % Choose COLOR STYLE:  Default, Blue, BlueGray, BlueOrange, BlueViolet, DarkBlue, GrayBlue, GrayLightblue, GrayRed, Green, GreenOrange, YellowRed
@@ -59,19 +78,25 @@
 	\column{0.515}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery}{
-		Rechargeable Lithium-ion battery (LIB) stays at the heart of every energy storage system and electric vehicle. 
-		Undoubtedly, LIB benefits human life efficiently as well as friendly-environment. 
-		Besides, a more advanced LIB, so-called \textbf{all-solid-state battery} (ASSB), 
-		is introduced recently  as ASSB is expected with non-inflammation and non-explosion as seen in common LIBs. 
-		Yet, defect due to polarization is one natural phenomenon of \textbf{solid electrolyte} (SE) to be tackled.\\[0,5em]
-		This poster is aimed to model the polarized SE with the use of \textbf{structural tensor}.
-		% \begin{center}
-		% 	\fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
-		% 	\newcaption{0.8\colwidth}{A sample of a typical all-solid-state battery and its non-scale hierarchical insight into structural layers.}
-		% \end{center}
-		A typical LIB includes three main components: cathode, anode and electrolyte. 
-		Different types of LIB have a variation of constitutive material composed of battery. 
-		An ASSB means that the three main components are \textbf{all made of solid material}.
+	Rechargeable Lithium-ion battery (LIB) stays at the heart of every energy storage system and electric vehicle. 
+	Undoubtedly, LIB benefits human life efficiently as well as friendly-environment. 
+	Besides, a more advanced LIB, so-called \textbf{all-solid-state battery} (ASSB), 
+	is introduced recently  as ASSB is expected with non-inflammation and non-explosion as seen in common LIBs. 
+	Yet, defect due to polarization is one natural phenomenon of \textbf{solid electrolyte} (SE) to be tackled.\\
+	[0,5em]
+	This poster is aimed to model the polarized SE with the use of \textbf{structural tensor}.
+	% \begin{center}
+	% \fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
+	% \fbox{\includegraphics[height=18cm]{./floats/creviceAiryWestergaard_compare/creviceAiryWestergaard_compare.eps}}
+	% 	\newcaption{0.8\colwidth}{A sample of a typical all-solid-state battery and its non-scale hierarchical insight into structural layers.}
+	% \end{center}
+	A typical LIB includes three main components: cathode, anode and electrolyte. 
+	Different types of LIB have a variation of constitutive material composed of battery. 
+	An ASSB means that the three main components are \textbf{all made of solid material}.
+	\begin{center}
+		% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+		\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
+	\end{center}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Modelling goal}{
@@ -89,7 +114,8 @@
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Continuum physics kinematic}{
-		Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement $\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
+		Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement 
+		$\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
 		\begin{align*}
 			\BE = \frac{1}{2}(\BF^{\top}\BF -\BI) =\frac{1}{2}\left(
 			\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}
@@ -101,8 +127,10 @@
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	\block{Polarization phenomenon}{
-		Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, a uniform electric field created has suppressed on 
-		the SE occupied between these two poles. Consequently, SE yields to a \textbf{preferred direction} under external deformations such as mechanical loading forces.
+		Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, 
+		a uniform electric field created has suppressed on 
+		the SE occupied between these two poles. Consequently, SE yields to a \textbf{preferred direction}
+		under external deformations such as mechanical loading forces.
 		% \begin{minipage}{\linewidth}
 		% 	\centering
 		% 	\begin{minipage}{0.20\linewidth}
