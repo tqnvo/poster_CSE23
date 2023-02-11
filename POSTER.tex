@@ -99,7 +99,7 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 	\end{center}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Modelling goal}{
+	\block{Modelling goal: Interface analysis + Numerical modelling}{
 		Two main goals to model the solid electrolyte part of the all-solid-state battery is as follows:
 		%
 		\begin{enumerate}
@@ -113,18 +113,18 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 		\end{enumerate}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Continuum physics kinematic}{
-		Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement 
-		$\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
-		\begin{align*}
-			\BE = \frac{1}{2}(\BF^{\top}\BF -\BI) =\frac{1}{2}\left(
-			\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}
-			+\underbrace{\left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\left( \frac{\partial\Bu}{\partial\Bxi} \right)}_{\text{Neglected}}
-			\right) \ \rightarrow \
-			\Bvarepsilon := \frac{1}{2}\left(
-			\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\right)
-		\end{align*}
-	}
+	% \block{Continuum physics kinematic}{
+	% 	Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement 
+	% 	$\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
+	% 	\begin{align*}
+	% 		\BE = \frac{1}{2}(\BF^{\top}\BF -\BI) =\frac{1}{2}\left(
+	% 		\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}
+	% 		+\underbrace{\left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\left( \frac{\partial\Bu}{\partial\Bxi} \right)}_{\text{Neglected}}
+	% 		\right) \ \rightarrow \
+	% 		\Bvarepsilon := \frac{1}{2}\left(
+	% 		\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\right)
+	% 	\end{align*}
+	% }
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	% \block{Polarization phenomenon}{
 	% 	Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, 
