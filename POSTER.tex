@@ -194,48 +194,49 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% ---------------------------------------------------------------------------------------------------------------- %
-	% \column{0.485}
-	% \block{Mathematical model}{
-	% 	\textbf{Constitutive equation} is first derived from considering local balance laws and enforcing sharper conditions to entropy inequality.
-	% 	\begin{itemize}
-	% 		\item Local balance laws governing the infinitesimal elasticity embedded structural tensor:
-	% 		      \begin{align*}
-	% 			       & \text{Balance of mass}             &  & \dot{\rho} + \rho{\ \rm div}\Bv = 0                             \\
-	% 			       & \text{Balance of linear momentum}  &  & \rho\dot{\Bv} = {\rm div}\Bpi + \rho\Bb                         \\
-	% 			       & \text{Balance of angular momentum} &  & \Bpi^{\top} = \Bpi                                              \\
-	% 			       & \text{Balance of energy}           &  & \rho\dot{e} = \Bpi : \dot{\Bvarepsilon} + \rho r - {\rm div}\Bq
-	% 		      \end{align*}
+	\column{0.485}
+	\block{Mathematical model}{
+		\textbf{Constitutive equation} is first derived from considering local balance laws and 
+		enforcing sharper conditions to entropy inequality.
+		% \begin{itemize}
+		% 	\item Local balance laws governing the infinitesimal elasticity embedded structural tensor:
+		% 	      \begin{align*}
+		% 		       & \text{Balance of mass}             &  & \dot{\rho} + \rho{\ \rm div}\Bv = 0                             \\
+		% 		       & \text{Balance of linear momentum}  &  & \rho\dot{\Bv} = {\rm div}\Bpi + \rho\Bb                         \\
+		% 		       & \text{Balance of angular momentum} &  & \Bpi^{\top} = \Bpi                                              \\
+		% 		       & \text{Balance of energy}           &  & \rho\dot{e} = \Bpi : \dot{\Bvarepsilon} + \rho r - {\rm div}\Bq
+		% 	      \end{align*}
 	
-	% 		\item Entropy inequality
-	% 		      \begin{align*}
-	% 			      \rho\calD := \Bpi :\dot{\Bvarepsilon}  -\rho\eta\dot{\theta}- \rho\dot{\Psi} -\frac{1}{\theta}\Bq\cdot\nabla\theta \geq 0 
-	% 		      \end{align*}
+		% 	\item Entropy inequality
+		% 	      \begin{align*}
+		% 		      \rho\calD := \Bpi :\dot{\Bvarepsilon}  -\rho\eta\dot{\theta}- \rho\dot{\Psi} -\frac{1}{\theta}\Bq\cdot\nabla\theta \geq 0 
+		% 	      \end{align*}
 	
-	% 		\item Mathematical model:
-	% 		      \begin{align*}
-	% 			       & \text{PDE}                   &  & \pi_{ij,j} + \rho b_{i} = 0                                                                                      \\
-	% 			       & \text{Kinematic relation}    &  & \varepsilon_{kl} = \frac{1}{2}\left(\frac{\partial u_k}{\partial x_l} + \frac{\partial u_l}{\partial x_k}\right) \\
-	% 			       & \text{Constitutive relation} &  & \pi_{ij} = \mathbb{C}_{ijkl}\ \varepsilon_{kl}                                                                   \\
-	% 			       & \text{Dirichlet BC}          &  & u_i = \bar{u}_i \text{ on } \partial\Omega_{u_i}                                                                 \\
-	% 			       & \text{Neumann BC}            &  & \pi_{ij}n_j = t_i \text{ on } \partial\Omega_{t_i}
-	% 		      \end{align*}
-	% 		      %
-	% 		      \begin{align*}
-	% 			      \begin{aligned}
-	% 				      \text{where } \qquad 
-	% 				      \mathbb{C}_{ijkl} & = \lambda \delta_{ij}\delta_{kl} + 2\mu_T\mathbb{I}_{ijkl}     \\
-	% 				                        & + \alpha(\delta_{ij}M_{kl} + M_{ij}\delta_{kl})
+		% 	\item Mathematical model:
+		% 	      \begin{align*}
+		% 		       & \text{PDE}                   &  & \pi_{ij,j} + \rho b_{i} = 0                                                                                      \\
+		% 		       & \text{Kinematic relation}    &  & \varepsilon_{kl} = \frac{1}{2}\left(\frac{\partial u_k}{\partial x_l} + \frac{\partial u_l}{\partial x_k}\right) \\
+		% 		       & \text{Constitutive relation} &  & \pi_{ij} = \mathbb{C}_{ijkl}\ \varepsilon_{kl}                                                                   \\
+		% 		       & \text{Dirichlet BC}          &  & u_i = \bar{u}_i \text{ on } \partial\Omega_{u_i}                                                                 \\
+		% 		       & \text{Neumann BC}            &  & \pi_{ij}n_j = t_i \text{ on } \partial\Omega_{t_i}
+		% 	      \end{align*}
+		% 	      %
+		% 	      \begin{align*}
+		% 		      \begin{aligned}
+		% 			      \text{where } \qquad 
+		% 			      \mathbb{C}_{ijkl} & = \lambda \delta_{ij}\delta_{kl} + 2\mu_T\mathbb{I}_{ijkl}     \\
+		% 			                        & + \alpha(\delta_{ij}M_{kl} + M_{ij}\delta_{kl})
 	
-	% 				      + 2(\mu_L-\mu_T)\left[\mathbb{I}_{\Bd}\right]_{ijkl} + \beta M_{ij}M_{kl}          \\
-	% 				      \left[\mathbb{I}_{\Bd}\right]_{ijkl}
-	% 				                        & = \frac{1}{2}(d_{i}\delta_{jl}d_{k} + d_{i}\delta_{jk}d_{l}
+		% 			      + 2(\mu_L-\mu_T)\left[\mathbb{I}_{\Bd}\right]_{ijkl} + \beta M_{ij}M_{kl}          \\
+		% 			      \left[\mathbb{I}_{\Bd}\right]_{ijkl}
+		% 			                        & = \frac{1}{2}(d_{i}\delta_{jl}d_{k} + d_{i}\delta_{jk}d_{l}
 	
-	% 				      +d_{j}\delta_{ik}d_{l} + d_{j}\delta_{il}d_{k})                                    \\
-	% 				      \mathbb{I}_{ijkl} & = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})
-	% 			      \end{aligned}
-	% 		      \end{align*}
-	% 	\end{itemize}
-	% }
+		% 			      +d_{j}\delta_{ik}d_{l} + d_{j}\delta_{il}d_{k})                                    \\
+		% 			      \mathbb{I}_{ijkl} & = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})
+		% 		      \end{aligned}
+		% 	      \end{align*}
+		% \end{itemize}
+	}
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	% \block{Structural tensor}{
 	% 	SE microstructure with structural tensor $\BM = \Bd \otimes \Bd$ is defined by a symmetry group $\mathbb{G}$:
