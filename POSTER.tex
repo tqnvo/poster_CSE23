@@ -167,18 +167,11 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 		{
 				\raggedleft
 				\begin{tikzpicture}
-					\node (qrcode)
-					{
-						\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
-						% \includegraphics[width=3cm]{./floats/QRcode_ACoM/QRcode_ACoM.eps}
-					};
-					\node [left= 0mm of qrcode.north west, yshift=-25mm]
-					{
-						% \hspace{0mm} 
-						Tuan Vo 
-						$\cdot$ ACoM 
-						$\cdot$ RWTH Aachen University 
-						$\cdot$ Email: vo@acom.rwth-aachen.de};
+					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
+					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
+					\node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
+					\node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
+					\node[left= 0mm of qrcode.north west, yshift=-70mm] {vo@acom.rwth-aachen.de};
 				\end{tikzpicture}
 			}
 		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
