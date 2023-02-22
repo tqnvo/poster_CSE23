@@ -42,6 +42,22 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 \newcommand{\WAsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\sigma}}
 \newcommand{\WABsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\boldsymbol{\sigma}}}
 
+% Mathematic sets
+\newcommand{\mbR}{\mathbb{R}}
+\newcommand{\mbC}{\mathbb{C}}
+
+% mathcals
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{\bfseries Next-generation all-solid-state battery}
 \author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
@@ -52,7 +68,7 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2),
 Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
-\titlegraphic{\includegraphics[width=0.88\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
+\titlegraphic{\includegraphics[width=0.2\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -79,19 +95,27 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % Title block
 \maketitle[width=770mm]
 % ---------------------------------------------------------------------------------------------------------------- %
-\block{\bfseries Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{	
-Goal:
-	\begin{align}
-		a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-	\end{align}
-	where
+\block{\bfseries Improvement: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{
+	\begin{columns}
+		\column{0.5}
+		Goal:
+		\begin{align}
+			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align}
+		where
+		\column{0.5}
+		% \begin{center}
+		% 	% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% \end{center}
+	\end{columns}
 }
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 	% FIRST column
 	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Why: Next-generation All-solid-state battery (ASSB)}{
+	\block{Next-generation All-solid-state battery (ng-ASSB)}{
 		\textbf{Rechargeable Lithium-ion battery} (LIB)
 		stays at the heart of electric vehicles, portable electric devices,
 		and energy storage systems [1]. 
@@ -99,11 +123,8 @@ Goal:
 		as well as helps to cope with global environment issues thanks to its zero emission.
 		However, conventional LIB is sensible to temperature and pressure, 
 		easily prone to flammable and explosive. 
-		This is mainly due to \underline{liquid-based electrolyte} found in such conventional LIBs.
-		\begin{center}
-			% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		\end{center}
+		This is mainly due to \underline{liquid-based electrolyte} found in such conventional LIBs.\\
+		
 		\textbf{All-solid-state battery} (ASSB) is, therefore, 
 		one of promising candidates to overcome bottlenecks of conventional LIBs. 
 		It is because the \underline{solid-state electrolyte} (SSE) in ASSB,
@@ -228,10 +249,10 @@ Goal:
 		This evidence points directly to the fact that the soft metallic lithium negative electrode 
 		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
 		under cycles of electric charge and discharge [4].
-		\begin{center}
-			\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
-			% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		\end{center}
+		% \begin{center}
+		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
+		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% \end{center}
 		Besides, polycrystalline garnet-typed solid-state electrolyte such as LLZO 
 		exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
 		Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials. 		
@@ -279,6 +300,13 @@ Goal:
 		% 	      \end{align*}
 		% \end{itemize}
 	}
+	% ---------------------------------------------------------------------------------------------------------------- %	
+	\block{abc}{
+		\begin{center}
+			% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		\end{center}
+	}
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	% \block{Structural tensor}{
 	% 	SE microstructure with structural tensor $\BM = \Bd \otimes \Bd$ is defined by a symmetry group $\mathbb{G}$:
@@ -307,6 +335,9 @@ Goal:
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{abc}{
+	\begin{center}
+		\inputfig{floats/routine_woTV}{routine_woTV}
+	\end{center}
 }
 
 \begin{columns}
