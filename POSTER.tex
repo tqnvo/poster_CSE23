@@ -43,7 +43,7 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{\bfseries Mathematical modelling for the next-generation all-solid-state battery: \\
 \bfseries Nucleation criterion at the $\text{(SE|SSE)}^{\!(*)}$-interface}
-\author{Tuan Vo$^{\text{a,b}}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$}
+\author{Tuan Vo$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$}
 \institute{\large
 $\prescript{a}{}{}$Department of Mathematics, Applied and Computational Mathematics (ACoM), RWTH Aachen University, Schinkelstraße 02, 52062 Aachen, Germany\\
 $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
@@ -82,12 +82,42 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery (ASSB)}{
-		Rechargeable Lithium-ion battery (LIB) stays at the heart of every energy storage system and electric vehicle. 
-		Undoubtedly, LIB benefits human life efficiently as well as friendly-environment. 
-		Besides, a more advanced LIB, so-called \textbf{all-solid-state battery} (ASSB), 
-		is introduced recently  as ASSB is expected with non-inflammation and non-explosion as seen in common LIBs. 
-		Yet, defect due to polarization is one natural phenomenon of \textbf{solid electrolyte} (SE) to be tackled.
-		\begin{align*}
+		\textbf{Rechargeable Lithium-ion battery} (LIB)
+		stays at the heart of electric vehicles, portable electric devices,
+		and energy storage systems [1]. 
+		Nowadays, LIB helps human life become more efficient 
+		as well as helps to cope with global environment issues thanks to its zero emission.
+		However, conventional LIB is sensible to temperature and pressure, 
+		easily prone to flammable and explosive. 
+		This is mainly due to \underline{liquid-based electrolyte} found in such conventional LIBs.
+		\begin{center}
+			% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		\end{center}
+		\textbf{All-solid-state battery} (ASSB) is, therefore, 
+		one of promising candidates to overcome bottlenecks of conventional LIBs. 
+		It is because the \underline{solid-state electrolyte} (SSE) in ASSB,
+		e.g. SSE made of the highly ionic-conductive polycrystalline LLZO, 
+		is highly stable towards temperature and pressure. 
+		Nevertheless, metallic Lithium dendrite 
+		triggered at (SE|SSE)-interface is the main drawback 
+		as these dendritic threads extrapolate into grain boundary network of SSE, 
+		causing degradation of ionic conductivity 
+		and the likelihood of short-circuit.\\
+		
+		\textbf{The next-generation all-solid-state battery}
+		should, consequentially, be able to cope with 
+		micro-dendritic threads at the (SE|SSE)-interface, 
+		and hence, 
+		to foresee nucleation points caused by propagations of these dendrites, 
+		when possible. \\
+		
+		\textbf{This poster} is aimed to model the nucleation
+		by taking into consideration
+		\underline{polarization}, \underline{structural tensor}, 
+		\underline{locally non-uniform electric field}, and 
+		\underline{Griffith analysis}. 
+		\begin{align}
 			a_{\text{Griffith}}:= a^{*}
 			= \arg\min_{a\in\mathbb{R}}
 			{
@@ -97,20 +127,17 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 				\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
 				f(a;\gamma) \, d\Gamma
 			}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		This poster is aimed to model the polarized SE with the use of \textbf{structural tensor}.
+		\end{align}
+		where
 		% \begin{center}
 		% \fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
 		% \fbox{\includegraphics[height=18cm]{./floats/creviceAiryWestergaard_compare/creviceAiryWestergaard_compare.eps}}
 		% 	\newcaption{0.8\colwidth}{A sample of a typical all-solid-state battery and its non-scale hierarchical insight into structural layers.}
 		% \end{center}
-		A typical LIB includes three main components: cathode, anode and electrolyte. 
-		Different types of LIB have a variation of constitutive material composed of battery. 
-		An ASSB means that the three main components are \textbf{all made of solid material}.
-		\begin{center}
-			% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		\end{center}
+		
+		% A typical LIB includes three main components: cathode, anode and electrolyte. 
+		% Different types of LIB have a variation of constitutive material composed of battery. 
+		% An ASSB means that the three main components are \textbf{all made of solid material}.
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Modelling goal: Interface analysis + Numerical modelling}{
