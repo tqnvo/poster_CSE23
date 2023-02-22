@@ -29,6 +29,8 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 \usepackage{bigints}
 \usepackage{relsize}
 
+\usepackage{accents}
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -41,15 +43,17 @@ margin=5mm, innermargin=5mm, blockverticalspace=15mm, colspace=15mm, subcolspace
 \newcommand{\WABsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\boldsymbol{\sigma}}}
 
 % -- Title, Author, Institute --------------------------------------------------------%
-\title{\bfseries Mathematical modelling for the next-generation all-solid-state battery: \\
-\bfseries Nucleation criterion at the $\text{(SE|SSE)}^{\!(*)}$-interface}
-\author{Tuan Vo$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$}
+\title{\bfseries Next-generation all-solid-state battery:
+\bfseries Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}
+\author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 \institute{\large
-$\prescript{a}{}{}$Department of Mathematics, Applied and Computational Mathematics (ACoM), RWTH Aachen University, Schinkelstraße 02, 52062 Aachen, Germany\\
-$\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
+$\prescript{a}{}{}$Department of Mathematics, Applied and Computational Mathematics (ACoM), 
+RWTH Aachen University, Schinkelstraße 02, 52062 Aachen, Germany\\
+$\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), 
+Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
-\titlegraphic{\includegraphics[width=0.88\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj.eps}}
+\titlegraphic{\includegraphics[width=0.88\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -77,7 +81,6 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 \maketitle[width=770mm]
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
-
 	% FIRST column
 	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
@@ -105,7 +108,7 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 		causing degradation of ionic conductivity 
 		and the likelihood of short-circuit.\\
 		
-		\textbf{The next-generation all-solid-state battery}
+		\textbf{Next-generation all-solid-state battery}
 		should, consequentially, be able to cope with 
 		micro-dendritic threads at the (SE|SSE)-interface, 
 		and hence, 
@@ -118,15 +121,21 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 		\underline{locally non-uniform electric field}, and 
 		\underline{Griffith analysis}. 
 		\begin{align}
-			a_{\text{Griffith}}:= a^{*}
-			= \arg\min_{a\in\mathbb{R}}
-			{
-				\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
-				f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
-				-
-				\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
-				f(a;\gamma) \, d\Gamma
-			}\Bigg|_{\bm{u}^{(s)}}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad 
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		\end{align}
 		where
 		% \begin{center}
@@ -140,29 +149,32 @@ $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), Forschungsz
 		% An ASSB means that the three main components are \textbf{all made of solid material}.
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Modelling goal: Interface analysis + Numerics}{
-		Two main goals to model the solid electrolyte part of the all-solid-state battery is as follows:
-		%
-		\begin{enumerate}
-			\item To capture the \textbf{preferred direction} behaviour of the solid electrolyte due to electric potential.
-			\item To satisfy \textbf{thermodynamic consistency}%\cite{braun2015SCL}
-			      :
-			      \begin{itemize}
-				      \item Conservation of mass, linear $\&$ angular momentum and energy for the solid electrolyte.
-				      \item Entropy inequality is guaranteed with sharper conditions, which lead to constitutive equation.
-			      \end{itemize}
-		\end{enumerate}
-		\begin{align*}
-			a_{\text{Griffith}}:= a^{*}
-			= \arg\min_{a\in\mathbb{R}}
-			{
-				\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
-				f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
-				-
-				\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
-				f(a;\gamma) \, d\Gamma
-			}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
+	% \block{Modelling goal: Interface analysis + Numerics}{
+	% 	Two main goals to model the solid electrolyte part of the all-solid-state battery is as follows:
+	% 	%
+	% 	\begin{enumerate}
+	% 		\item To capture the \textbf{preferred direction} behaviour of the solid electrolyte due to electric potential.
+	% 		\item To satisfy \textbf{thermodynamic consistency}%\cite{braun2015SCL}
+	% 		      :
+	% 		      \begin{itemize}
+	% 			      \item Conservation of mass, linear $\&$ angular momentum and energy for the solid electrolyte.
+	% 			      \item Entropy inequality is guaranteed with sharper conditions, which lead to constitutive equation.
+	% 		      \end{itemize}
+	% 	\end{enumerate}
+	% 	\begin{align*}
+	% 		a_{\text{Griffith}}:= a^{*}
+	% 		= \arg\min_{a\in\mathbb{R}}
+	% 		{
+	% 			\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
+	% 			f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
+	% 			-
+	% 			\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
+	% 			f(a;\gamma) \, d\Gamma
+	% 		}\Bigg|_{\bm{u}^{(s)}}
+	% 	\end{align*}
+	% }
+	% ---------------------------------------------------------------------------------------------------------------- %
+	\block{abc}{
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% \block{Continuum physics kinematic}{
