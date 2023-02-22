@@ -70,21 +70,21 @@ subcolspace=0mm]{tikzposter}
 
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{
-\begin{minipage}{0.55\textwidth}
+\begin{minipage}{0.45\textwidth}
 		{\bfseries Next-generation all-solid-state battery}
 	% \author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 	% {\normalsize \underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 \end{minipage}
 \hfill
-\begin{minipage}{0.35\textwidth}
-	\begin{flushleft}
-		\includegraphics[width=1.02\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}
-	\end{flushleft}
+\begin{minipage}{0.42\textwidth}
+	% \begin{flushleft}
+		\includegraphics[width=0.99\textwidth]{./floats/logos/rwth_acom_en_cmyk_fzj_gap.eps}
+	% \end{flushleft}
 \end{minipage}
 }
-% \author{
-% 	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
-% \normalsize vo@acom.rwth-aachen.de}
+\author{
+	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
+\normalsize vo@acom.rwth-aachen.de}
 \author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 \institute{\large
 $\prescript{a}{}{}$Department of Mathematics, Applied and Computational Mathematics (ACoM), 
@@ -92,6 +92,7 @@ RWTH Aachen University, Schinkelstraße 02, 52062 Aachen, Germany\\
 $\prescript{b}{}{}$Institute of Energy and Climate Research (IEK-2), 
 Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
+
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
 % \titlegraphic{\includegraphics[width=0.3\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
 
@@ -401,21 +402,21 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 
 \begin{columns}
 	\column{0.5}
-	% % ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{Contact}{
-	% 	{
-	% 			\raggedleft
-	% 			\begin{tikzpicture}
-	% 				\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
-	% 				\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
-	% 				% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
-	% 				% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
-	% 				\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
-	% 			\end{tikzpicture}
-	% 		}
-	% 	% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
-	% 	% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
-	% }
+	% ---------------------------------------------------------------------------------------------------------------- %	
+	\block{Contact}{
+		{
+				\raggedleft
+				\begin{tikzpicture}
+					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
+					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
+					% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
+					% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
+					\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
+				\end{tikzpicture}
+			}
+		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
+		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
+	}
 	\column{0.5}
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	\block{References}{
