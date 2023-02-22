@@ -37,6 +37,10 @@ subcolspace=0mm]{tikzposter}
 
 \usepackage{lipsum} 
 
+\usepackage{babel}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -121,7 +125,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\begin{minipage}{0.55\textwidth}
 		\textbf{Rechargeable Lithium-ion battery} (LIB)
 		stays at the heart of electric vehicles, portable electric devices,
-		and energy storage systems [1]. 
+		and energy storage systems \cite{vo2018}. 
 		Nowadays, LIBs help human life become more efficient 
 		as well as to cope with global environment issues thanks to its zero emission.
 		However, conventional LIB (cLIB) is sensible to temperature and pressure, 
@@ -372,16 +376,16 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 \block{Nucleation interface}{
 	\begin{minipage}{0.45\textwidth}
 		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
-		taking place at space charge layer (SCL) [2]
+		taking place at space charge layer (SCL) \cite{braun2015}
 		found in all-solid-state lithium-ion batteries (ASSLiBs) 
-		critically exhibits mechanical and electrochemical instability [3]. 
+		critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
 		This evidence points directly to the fact that the soft metallic lithium negative electrode 
 		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
-		under cycles of electric charge and discharge [4].
+		under cycles of electric charge and discharge \cite{kim2022}.
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.45\textwidth}
-		das 
+		das
 	\end{minipage}
 	\begin{center}
 		\inputfig{floats/routine_woTV}{routine_woTV}
@@ -418,29 +422,29 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\vspace*{-3em}
 		\renewcommand{\refname}{~}
 		\begin{thebibliography}{2}
-			
-			\bibitem{viozat1997implicit}
+			\bibitem{vo2018}
 			\textbf{T.Vo}, \emph{Modeling the swelling phenomena of li-ion battery
 				cells based on a numerical chemo-mechanical coupled approach}. 
 			Master thesis, Robert Bosch Battery Systems GmbH, 2018.
 			
-			\bibitem{braun2015SCL}
-			\textbf{S. Braun}, C. Yada and A. Latz,
+			\bibitem{braun2015}
+			\textbf{S.Braun}, C.Yada and A.Latz,
 			\emph{Thermodynamically consistent model for
 				Space-Charge-Layer formation in a solid electrolyte}. 
 			Journal of Physical Chem., 119, 22281-22288, 2015.
 			
 			\bibitem{hueter2017}
-			\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek,
+			\textbf{C.Hüter}, S.Fu, M.Finsterbusch, E.Figgemeier, L.Wells, and R.Spatschek,
 			\emph{Electrode-electrolyte interface stability in solid state electrolyte system:
 				influence of coating thickness under varying residual stresses}. 
 			AIMS materials Science, 4(4):867-877, 2017.
 			
 			\bibitem{kim2022}
-			\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-			H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, and K. Kang,
-			\emph{High-energy and durable lithium metal batteries using garnet-type
-				solid electrolytes with tailored lithium-metal compatibility}.
+			\textbf{S.Kim}, 
+			J.S.Kim, L.Miara, Y.Wang, S.K.Jung, S.Y.Park, Z.Song, 
+			H.King, M.Badding, J.M.Chang, V.Roev, G.Yoon, R.Kim, J.H.Kim, K.Yoon, D.Im, and K.Kang,
+			\emph{High-energy and durable li metal batt. using garnet-type
+				solid electrolytes with tailored li-metal compatibility}.
 			Nature Communications, 13(1):1883, 2022.
 			% $(*)$ (Solid electrode | Solid-state electrolyte)
 		\end{thebibliography}
