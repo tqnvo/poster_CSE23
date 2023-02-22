@@ -66,17 +66,17 @@ subcolspace=0mm]{tikzposter}
 
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{
-\begin{minipage}{0.55\textwidth}
+% \begin{minipage}{0.55\textwidth}
 	{\bfseries Next-generation all-solid-state battery}
 	\author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 	% {\normalsize \underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
-\end{minipage}
-\hfill
-\begin{minipage}{0.35\textwidth}
-	\begin{flushleft}
-		\includegraphics[width=0.99\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}
-	\end{flushleft}
-\end{minipage}
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.35\textwidth}
+% 	% \begin{flushleft}
+% 	% 	\includegraphics[width=0.99\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}
+% 	% \end{flushleft}
+% \end{minipage}
 }
 % \author{
 % 	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
@@ -153,8 +153,10 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		should, consequentially, be able to cope with 
 		micro-dendritic threads at the (SE|SSE)-interface, 
 		and hence, 
-		to foresee nucleation points caused by propagations of these dendrites, 
-		when possible.	
+		to foresee nucleation points caused by propagations 
+		% of 
+		% these dendrites, 
+		% when possible.	
 	\end{minipage}%
 	\hfill
 	\begin{minipage}{0.35\textwidth}
@@ -212,6 +214,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery (ng-ASSB)}{
+		\lipsum[1-2]
 		% \begin{center}
 		% \fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
 		% \fbox{\includegraphics[height=18cm]{./floats/creviceAiryWestergaard_compare/creviceAiryWestergaard_compare.eps}}
@@ -288,7 +291,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.5}
 	\block{Comparison: Analytical vs. Numerical solution}{
-		\lipsum[1]
+		\lipsum[1-2]
 		% \begin{center}
 		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
 		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
@@ -367,13 +370,19 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{Nucleation interface}{
-	\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
-	taking place at space charge layer (SCL) [2]
-	found in all-solid-state lithium-ion batteries (ASSLiBs) 
-	critically exhibits mechanical and electrochemical instability [3]. 
-	This evidence points directly to the fact that the soft metallic lithium negative electrode 
-	is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
-	under cycles of electric charge and discharge [4].
+	\begin{minipage}{0.45\textwidth}
+		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
+		taking place at space charge layer (SCL) [2]
+		found in all-solid-state lithium-ion batteries (ASSLiBs) 
+		critically exhibits mechanical and electrochemical instability [3]. 
+		This evidence points directly to the fact that the soft metallic lithium negative electrode 
+		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
+		under cycles of electric charge and discharge [4].
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		das 
+	\end{minipage}
 	\begin{center}
 		\inputfig{floats/routine_woTV}{routine_woTV}
 	\end{center}
@@ -411,27 +420,28 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\begin{thebibliography}{2}
 			
 			\bibitem{viozat1997implicit}
-			\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
+			\textbf{T.Vo}, \emph{Modeling the swelling phenomena of li-ion battery
 				cells based on a numerical chemo-mechanical coupled approach}. 
-			Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
+			Master thesis, Robert Bosch Battery Systems GmbH, 2018.
 			
 			\bibitem{braun2015SCL}
-			\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
+			\textbf{S. Braun}, C. Yada and A. Latz,
+			\emph{Thermodynamically consistent model for
 				Space-Charge-Layer formation in a solid electrolyte}. 
 			Journal of Physical Chem., 119, 22281-22288, 2015.
 			
 			\bibitem{hueter2017}
-			\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
-			Electrode-electrolyte interface stability in solid state electrolyte system: 
-			influence of coating thickness under varying residual stresses. 
+			\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek,
+			\emph{Electrode-electrolyte interface stability in solid state electrolyte system:
+				influence of coating thickness under varying residual stresses}. 
 			AIMS materials Science, 4(4):867-877, 2017.
 			
 			\bibitem{kim2022}
 			\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-			H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
-			and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
-			solid electrolytes with tailored lithium-metal compatibility,” 
-			Nature Communications, 13(1):1883, Apr 2022.
+			H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, and K. Kang,
+			\emph{High-energy and durable lithium metal batteries using garnet-type
+				solid electrolytes with tailored lithium-metal compatibility}.
+			Nature Communications, 13(1):1883, 2022.
 			% $(*)$ (Solid electrode | Solid-state electrolyte)
 		\end{thebibliography}
 	}
