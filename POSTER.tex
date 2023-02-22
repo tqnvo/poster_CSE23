@@ -4,8 +4,8 @@ portrait,
 % landscape,
 margin=2mm, 
 innermargin=2mm, 
-blockverticalspace=7mm, 
-colspace=5mm, 
+blockverticalspace=7mm, %distance between upper and lower block
+colspace=2mm, %distance between left and right block 
 subcolspace=0mm]{tikzposter}
 		
 % -- Packages --------------------------------------------------------%
@@ -401,41 +401,44 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
 
 \begin{columns}
-	\column{0.3}
+	\column{0.15}
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	\block{Contact}{
-		{
-				\raggedleft
-				\begin{tikzpicture}
-					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
-					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
-					% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
-					% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
-					\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
-				\end{tikzpicture}
-			}
+		% {
+		% 		\raggedleft
+		% 		\begin{tikzpicture}
+		% 			\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
+		% 			\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
+		% 			% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
+		% 			% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
+		% 			\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
+		% 		\end{tikzpicture}
+		% 	}
+		\begin{center}
+			\inputfig{floats/QRcode_ACoM_Email}{QRcode_ACoM_Email}
+		\end{center}
 		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
 		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
 	}
-	\column{0.7}
+	\column{0.85}
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	\block{References}{
 		\vspace*{-3em}
 		\renewcommand{\refname}{~}
 		\begin{thebibliography}{2}
 			\bibitem{vo2018}
-			\textbf{T. Vo}, \emph{Modeling the swelling phenomena of li-ion battery
-				cells based on a numerical chemo-mechanical coupled approach}.\\
-			Master thesis, Robert Bosch Battery Systems GmbH, 2018.
+			\textbf{T.Vo}, \emph{Modeling the swelling phenomena of li-ion batt.
+				cells based on a numerical chemo-mech. coupled approach}.
+			MA, Robert Bosch Battery Systems GmbH, 2018.
 			
 			\bibitem{braun2015}
-			\textbf{S. Braun}, C.Yada and A.Latz,
+			\textbf{S.Braun},\! C.Yada and A.Latz,\!\!\!
 			\emph{Thermodynamically consistent model for
-				Space-Charge-Layer formation in a solid electrolyte}.\\
-			Journal of Physical Chem., 119, 22281-22288, 2015.
+				Space-Charge-Layer formation in a solid electrolyte}.
+			Jr. Phys. Chem.,\! 119,\! 22281-22288, 2015.
 			
 			\bibitem{hueter2017}
-			\textbf{C. Hüter}, S.Fu, M.Finsterbusch, E.Figgemeier, L.Wells, and R.Spatschek,
+			\textbf{C.Hüter}, S.Fu, M.Finsterbusch, E.Figgemeier, L.Wells, and R.Spatschek,
 			\emph{Electrode-electrolyte interface stability in solid state electrolyte system:
 				influence of coating thickness under varying residual stresses}. 
 			AIMS materials Science, 4(4):867-877, 2017.
