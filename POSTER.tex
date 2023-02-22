@@ -96,19 +96,46 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 \maketitle[width=770mm]
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{\bfseries Mathematical modelling for the next-generation All-solid-state batteries: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{
-	\begin{columns}
-		\column{0.5}
-		Goal:
-		\begin{align}
-			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align}
-		where
-		\column{0.5}
-		% \begin{center}
-		% 	% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		% \end{center}
-	\end{columns}
+	% \begin{columns}
+	% 	\column{0.5}
+	% 	Goal:
+	% 	\begin{align}
+	% 		a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+	% 	\end{align}
+	% 	where
+	% 	\column{0.5}
+	% 	abc
+	% 	% \begin{center}
+	% 	% 	% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+	% 	% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+	% 	% \end{center}
+	% 	\textbf{This poster} is aimed to model the nucleation
+	% 	by taking into consideration
+	% 	\underline{polarization}, \underline{structural tensor}, 
+	% 	\underline{locally non-uniform electric field}, and 
+	% 	\underline{Griffith analysis}. 
+	% 	\begin{align}
+	% 		 & \rho\,
+	% 		\partial^2_{t^2}
+	% 		\bm{u}^{(s)}
+	% 		+
+	% 		\nabla \cdot
+	% 		\Big(
+	% 		\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+	% 		:\nabla\Bu^{(s)}
+	% 		\Big)
+	% 		+
+	% 		\rho\nabla V_{e}
+	% 		= \textbf{0},                                                                                                                                                                                                                                                               \\
+	% 		%--------------------------------
+	% 		\text{s.t.}\quad 
+	% 		 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+	% 	\end{align}
+	% 	where
+	% \end{columns}
+	\begin{center}
+		\inputfig{floats/dendrite_pdirection_battonly_maths}{dendrite_pdirection_battonly_maths}
+	\end{center}
 }
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
@@ -119,11 +146,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\textbf{Rechargeable Lithium-ion battery} (LIB)
 		stays at the heart of electric vehicles, portable electric devices,
 		and energy storage systems [1]. 
-		Nowadays, LIB helps human life become more efficient 
-		as well as helps to cope with global environment issues thanks to its zero emission.
-		However, conventional LIB is sensible to temperature and pressure, 
+		Nowadays, LIBs help human life become more efficient 
+		as well as to cope with global environment issues thanks to its zero emission.
+		However, conventional LIB (cLIB) is sensible to temperature and pressure, 
 		easily prone to flammable and explosive. 
-		This is mainly due to \underline{liquid-based electrolyte} found in such conventional LIBs.\\
+		This is mainly due to \underline{liquid-based electrolyte} found in cLIBs.
 		
 		\textbf{All-solid-state battery} (ASSB) is, therefore, 
 		one of promising candidates to overcome bottlenecks of conventional LIBs. 
@@ -134,38 +161,14 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		triggered at (SE|SSE)-interface is the main drawback 
 		as these dendritic threads extrapolate into grain boundary network of SSE, 
 		causing degradation of ionic conductivity 
-		and the likelihood of short-circuit.\\
+		and the likelihood of short-circuit.
 		
-		\textbf{Next-generation All-solid-state battery}
+		\textbf{Next-generation All-solid-state battery} (ng-ASSB)
 		should, consequentially, be able to cope with 
 		micro-dendritic threads at the (SE|SSE)-interface, 
 		and hence, 
 		to foresee nucleation points caused by propagations of these dendrites, 
-		when possible. \\
-		
-		\textbf{This poster} is aimed to model the nucleation
-		by taking into consideration
-		\underline{polarization}, \underline{structural tensor}, 
-		\underline{locally non-uniform electric field}, and 
-		\underline{Griffith analysis}. 
-		\begin{align}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad 
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align}
-		where
+		when possible.
 		% \begin{center}
 		% \fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
 		% \fbox{\includegraphics[height=18cm]{./floats/creviceAiryWestergaard_compare/creviceAiryWestergaard_compare.eps}}
@@ -241,26 +244,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.5}
-	\block{Mathematical model: Nucleation interface}{
-		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
-		taking place at space charge layer (SCL) [2]
-		found in all-solid-state lithium-ion batteries (ASSLiBs) 
-		critically exhibits mechanical and electrochemical instability [3]. 
-		This evidence points directly to the fact that the soft metallic lithium negative electrode 
-		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
-		under cycles of electric charge and discharge [4].
+	\block{Comparison: Analytical vs. Numerical solution}{
 		% \begin{center}
 		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
 		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		% \end{center}
-		Besides, polycrystalline garnet-typed solid-state electrolyte such as LLZO 
-		exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
-		Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials. 		
-		
-		Consequentially, dendritic by-products contribute to degradation of ionic conductivity
-		and trace along grain boundaries in SSE. 
-		This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
-		the multi-scale coupled problem subjected to conditions of Griffith criterion.
 		% \begin{itemize}
 		% 	\item Local balance laws governing the infinitesimal elasticity embedded structural tensor:
 		% 	      \begin{align*}
@@ -300,13 +288,13 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% 	      \end{align*}
 		% \end{itemize}
 	}
-	% ---------------------------------------------------------------------------------------------------------------- %	
-	\block{abc}{
-		\begin{center}
-			% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		\end{center}
-	}
+	% % ---------------------------------------------------------------------------------------------------------------- %	
+	% \block{abc}{
+	% 	\begin{center}
+	% 		% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
+	% 		\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+	% 	\end{center}
+	% }
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	% \block{Structural tensor}{
 	% 	SE microstructure with structural tensor $\BM = \Bd \otimes \Bd$ is defined by a symmetry group $\mathbb{G}$:
@@ -334,63 +322,106 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% }
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
-\block{abc}{
+\block{Nucleation interface}{
+	\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
+	taking place at space charge layer (SCL) [2]
+	found in all-solid-state lithium-ion batteries (ASSLiBs) 
+	critically exhibits mechanical and electrochemical instability [3]. 
+	This evidence points directly to the fact that the soft metallic lithium negative electrode 
+	is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
+	under cycles of electric charge and discharge [4].
 	\begin{center}
 		\inputfig{floats/routine_woTV}{routine_woTV}
 	\end{center}
+	Besides, polycrystalline garnet-typed solid-state electrolyte such as LLZO 
+	exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
+	Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials.
+	Consequentially, dendritic by-products contribute to degradation of ionic conductivity
+	and trace along grain boundaries in SSE. 
+	This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
+	the multi-scale coupled problem subjected to conditions of Griffith criterion.
 }
 
 \begin{columns}
 	\column{0.5}
-	% ---------------------------------------------------------------------------------------------------------------- %	
-	\block{Contact}{
-		{
-				\raggedleft
-				\begin{tikzpicture}
-					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
-					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
-					% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
-					% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
-					\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
-				\end{tikzpicture}
-			}
-		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
-		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
-	}
+	% % ---------------------------------------------------------------------------------------------------------------- %	
+	% \block{Contact}{
+	% 	{
+	% 			\raggedleft
+	% 			\begin{tikzpicture}
+	% 				\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
+	% 				\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
+	% 				% \node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
+	% 				% \node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
+	% 				\node[left= 0mm of qrcode.north west, yshift=-30mm] {vo@acom.rwth-aachen.de};
+	% 			\end{tikzpicture}
+	% 		}
+	% 	% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
+	% 	% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
+	% }
 	\column{0.5}
-	% ---------------------------------------------------------------------------------------------------------------- %	
-	\block{References}{
-		\vspace*{-3em}
-		\renewcommand{\refname}{~}
-		\begin{thebibliography}{2}
+	% % ---------------------------------------------------------------------------------------------------------------- %	
+	% \block{References}{
+	% 	\vspace*{-3em}
+	% 	\renewcommand{\refname}{~}
+	% 	\begin{thebibliography}{2}
 			
-			\bibitem{viozat1997implicit}
-			\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
-				cells based on a numerical chemo-mechanical coupled approach}. 
-			Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
+	% 		\bibitem{viozat1997implicit}
+	% 		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
+	% 			cells based on a numerical chemo-mechanical coupled approach}. 
+	% 		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
 			
-			\bibitem{braun2015SCL}
-			\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
-				Space-Charge-Layer formation in a solid electrolyte}. 
-			Journal of Physical Chem., 119, 22281-22288, 2015.
+	% 		\bibitem{braun2015SCL}
+	% 		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
+	% 			Space-Charge-Layer formation in a solid electrolyte}. 
+	% 		Journal of Physical Chem., 119, 22281-22288, 2015.
 			
-			\bibitem{hueter2017}
-			\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
-			Electrode-electrolyte interface stability in solid state electrolyte system: 
-			influence of coating thickness under varying residual stresses. 
-			AIMS materials Science, 4(4):867-877, 2017.
+	% 		\bibitem{hueter2017}
+	% 		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
+	% 		Electrode-electrolyte interface stability in solid state electrolyte system: 
+	% 		influence of coating thickness under varying residual stresses. 
+	% 		AIMS materials Science, 4(4):867-877, 2017.
 			
-			\bibitem{kim2022}
-			\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-			H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
-			and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
-			solid electrolytes with tailored lithium-metal compatibility,” 
-			Nature Communications, 13(1):1883, Apr 2022.
-			
-			$(*)$ (Solid electrode | Solid-state electrolyte)
-		\end{thebibliography}
-	}
+	% 		\bibitem{kim2022}
+	% 		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
+	% 		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
+	% 		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
+	% 		solid electrolytes with tailored lithium-metal compatibility,” 
+	% 		Nature Communications, 13(1):1883, Apr 2022.
+	% 		% $(*)$ (Solid electrode | Solid-state electrolyte)
+	% 	\end{thebibliography}
+	% }
 \end{columns}
-
+% ---------------------------------------------------------------------------------------------------------------- %	
+\block{References}{
+	\vspace*{-3em}
+	\renewcommand{\refname}{~}
+	\begin{thebibliography}{2}
+		
+		\bibitem{viozat1997implicit}
+		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
+			cells based on a numerical chemo-mechanical coupled approach}. 
+		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
+		
+		\bibitem{braun2015SCL}
+		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
+			Space-Charge-Layer formation in a solid electrolyte}. 
+		Journal of Physical Chem., 119, 22281-22288, 2015.
+		
+		\bibitem{hueter2017}
+		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
+		Electrode-electrolyte interface stability in solid state electrolyte system: 
+		influence of coating thickness under varying residual stresses. 
+		AIMS materials Science, 4(4):867-877, 2017.
+		
+		\bibitem{kim2022}
+		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
+		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
+		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
+		solid electrolytes with tailored lithium-metal compatibility,” 
+		Nature Communications, 13(1):1883, Apr 2022.
+		% $(*)$ (Solid electrode | Solid-state electrolyte)
+	\end{thebibliography}
+}
 \end{document}
 % ---------------------------------------------------------------------------------------------------------------- %
