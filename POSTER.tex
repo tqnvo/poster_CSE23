@@ -232,7 +232,25 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
 		Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials.
 		Consequentially, dendritic by-products contribute to degradation of ionic conductivity
-		and trace along grain boundaries in SSE. 
+		and trace along grain boundaries in SSE.
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\,
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		where
 		This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
 		the multi-scale coupled problem subjected to conditions of Griffith criterion.
 		% \begin{center}
@@ -309,8 +327,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.3}
-	\block{Analytical}{
+	\column{0.6}
+	\block{Electrical field + Polarization + Structural tensor}{
 		abc
 		% \begin{center}
 		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
@@ -355,10 +373,10 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% 	      \end{align*}
 		% \end{itemize}
 	}
-	\column{0.3}
-	\block{Numerical solution}{
-		abc
-	}
+	% \column{0.3}
+	% \block{Numerical solution}{
+	% 	abc
+	% }
 	% % ---------------------------------------------------------------------------------------------------------------- %	
 	% \block{abc}{
 	% 	\begin{center}
@@ -393,7 +411,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% }
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
-\block{Nucleation interface}{
+\block{Nucleation interface: Taking place at the critical dendritic interface}{
 	\begin{minipage}{0.45\textwidth}
 		abc
 	\end{minipage}
