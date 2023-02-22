@@ -20,19 +20,11 @@
 %% and version 2.1 or later is part of all distributions of
 %% LaTeX version 2014/10/15 or later.
 %% 
-
-
-
-
-
-
-
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tikzposter}[2014/10/15 v2.1 LaTeX document class for Posters]
 
- % --------------------------------------- %
- % Loading Packages
+% --------------------------------------- %
+% Loading Packages
 \RequirePackage{xkeyval}
 \RequirePackage{calc}
 \RequirePackage{ifthen}
@@ -44,14 +36,14 @@
 \usetikzlibrary{decorations.pathmorphing}
 \usepgflibrary{arrows}
 
- % --------------------------------------- %
- % Paper parameter
+% --------------------------------------- %
+% Paper parameter
 \newif\ifTP@hugefontsize
 \newdimen\TP@innermargin
 \newdimen\TP@visibletextwidth
 \newdimen\TP@visibletextheight
 
- % Title parameter
+% Title parameter
 \newdimen\TP@titlewidth
 \newdimen\titlewidth
 \newdimen\TP@titlelinewidth
@@ -74,25 +66,25 @@
 \gdef\TP@titlegraphicAlignment{}
 \newif\ifTP@titlegraphicTop
 
- % Maketitle parameter
+% Maketitle parameter
 \def\@title{~}
 \def\title#1{%
-\expandarg\StrCut{#1}{\empty\\}\titleone\titletwo%
-\expandarg\StrCut{\titletwo}{\empty\\}\titletwo\titlethree%
-\gdef\@title{%
-\scalebox{\TP@titletextscale}\titleone%
-\expandafter\ifstrempty\expandafter{\titletwo}{}{\par\scalebox{\TP@titletextscale}\titletwo}%
-\expandafter\ifstrempty\expandafter{\titlethree}{}{\par\scalebox{\TP@titletextscale}\titlethree}%
-}%
+   \expandarg\StrCut{#1}{\empty\\}\titleone\titletwo%
+   \expandarg\StrCut{\titletwo}{\empty\\}\titletwo\titlethree%
+   \gdef\@title{%
+      \scalebox{\TP@titletextscale}\titleone%
+      \expandafter\ifstrempty\expandafter{\titletwo}{}{\par\scalebox{\TP@titletextscale}\titletwo}%
+      \expandafter\ifstrempty\expandafter{\titlethree}{}{\par\scalebox{\TP@titletextscale}\titlethree}%
+   }%
 }
 \def\@author{~}
 \def\@institute{~}
 \def\@titlegraphic{~}
 
- % Affection parameter
+% Affection parameter
 \newif\ifTP@showlatexaffection
 
- % Column parameter
+% Column parameter
 \newif\ifTP@columnEnvironment
 \TP@columnEnvironmentfalse
 \newif\ifTP@subcolumnEnvironment
@@ -103,14 +95,14 @@
 \newdimen\TP@colcenter
 \newdimen\colwidth
 
- % Subcolumn parameter
+% Subcolumn parameter
 \newdimen\TP@subcolspace
 \newdimen\TP@subcoltop
 \newdimen\TP@subcolbottom
 \newdimen\TP@subcolcenter
 \newdimen\subcolwidth
 
- % Block parameter
+% Block parameter
 \newdimen\TP@blockverticalspace
 \newdimen\TP@blockcenter
 \newdimen\TP@blocktitleinnersep
@@ -137,7 +129,7 @@
 \def\TP@blocktitlefont{}
 \def\TP@blockbodyfont{}
 
- % Innerblock parameter
+% Innerblock parameter
 \newdimen\TP@innerblockcenter
 \newdimen\TP@innerblocktitleinnersep
 \newdimen\innerblocktitleinnersep
@@ -159,7 +151,7 @@
 \def\innerblockroundedcorners{}
 \newdimen\innerblocklinewidth
 
- % Coloredbox parameter
+% Coloredbox parameter
 \newbox\TP@coloredbox
 \newdimen\TP@coloredboxwidth
 \def\TP@coloredboxroundedcorners{}
@@ -167,7 +159,7 @@
 \newdimen\TP@coloredboxinnersep
 \newdimen\TP@coloredboxheight
 
- % Note parameter
+% Note parameter
 \newdimen\TP@noteinnersep
 \newdimen\noteinnersep
 \newdimen\TP@notetargetoffsetx
@@ -182,8 +174,8 @@
 \def\noteroundedcorners{}
 \newdimen\notelinewidth
 
- % --------------------------------------- %
- % Declaring options
+% --------------------------------------- %
+% Declaring options
 \DeclareOptionX{12pt}{\TP@hugefontsizefalse \PassOptionsToClass{\CurrentOption}{extarticle}}
 \DeclareOptionX{14pt}{\TP@hugefontsizefalse \PassOptionsToClass{\CurrentOption}{extarticle}}
 \DeclareOptionX{17pt}{\TP@hugefontsizefalse \PassOptionsToClass{\CurrentOption}{extarticle}}
@@ -206,33 +198,33 @@
 \DeclareOptionX{blockverticalspace}{\TP@blockverticalspace=#1}
 \DeclareOptionX*{{\PackageWarning{tikzposter}{Unknown Option \CurrentOption.}}}
 
- % Executing options
+% Executing options
 \ExecuteOptionsX{
-25pt,
-a0paper,
-portrait,
-margin=0mm,
-innermargin=15mm,
-colspace=15mm,
-subcolspace=8mm,
-blockverticalspace=15mm
+   25pt,
+   a0paper,
+   portrait,
+   margin=0mm,
+   innermargin=15mm,
+   colspace=15mm,
+   subcolspace=8mm,
+   blockverticalspace=15mm
 }
 \ProcessOptionsX \relax
 \LoadClass{extarticle}
 \RequirePackage{caption}
 \RequirePackage{geometry}
 \ifTP@hugefontsize
-\input{a0size.sty}
-\renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
-\renewcommand{\scriptsize}{\fontsize{14.4}{18}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{17.28}{22}\selectfont}
-\renewcommand{\small}{\fontsize{20.74}{25}\selectfont}
-\renewcommand{\normalsize}{\fontsize{24.88}{30}\selectfont}
-\renewcommand{\large}{\fontsize{29.86}{37}\selectfont}
-\renewcommand{\Large}{\fontsize{35.83}{45}\selectfont}
-\renewcommand{\LARGE}{\fontsize{43}{54}\selectfont}
-\renewcommand{\huge}{\fontsize{51.6}{64}\selectfont}
-\renewcommand{\Huge}{\fontsize{61.92}{77}\selectfont}
+   \input{a0size.sty}
+   \renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
+   \renewcommand{\scriptsize}{\fontsize{14.4}{18}\selectfont}
+   \renewcommand{\footnotesize}{\fontsize{17.28}{22}\selectfont}
+   \renewcommand{\small}{\fontsize{20.74}{25}\selectfont}
+   \renewcommand{\normalsize}{\fontsize{24.88}{30}\selectfont}
+   \renewcommand{\large}{\fontsize{29.86}{37}\selectfont}
+   \renewcommand{\Large}{\fontsize{35.83}{45}\selectfont}
+   \renewcommand{\LARGE}{\fontsize{43}{54}\selectfont}
+   \renewcommand{\huge}{\fontsize{51.6}{64}\selectfont}
+   \renewcommand{\Huge}{\fontsize{61.92}{77}\selectfont}
 \fi
 \normalsize
 \pagestyle{empty}
@@ -242,24 +234,25 @@ blockverticalspace=15mm
 \pgfdeclarelayer{notelayer}
 \pgfsetlayers{backgroundlayer,main,notelayer}
 
- % --------------------------------------- %
- % Background styles
+% --------------------------------------- %
+% Background styles
 \gdef\definebackgroundstyle#1#2{\expandafter\gdef\csname TP@backgroundstyle#1\endcsname{#2}}
 \gdef\backgroundgraphic#1{\gdef\TP@backgroundgraphic{#1}}\backgroundgraphic{}
 
 \gdef\usebackgroundstyle#1{
-\ifcsname TP@backgroundstyle#1\endcsname
- \gdef\TP@backgroundstyle{\csname TP@backgroundstyle#1\endcsname} % save macro
-\else
-\PackageWarning{tikzposter}{Unknown backgroundstyle `#1'.}
-\fi
+   \ifcsname TP@backgroundstyle#1\endcsname
+      \gdef\TP@backgroundstyle{\csname TP@backgroundstyle#1\endcsname} % save macro
+   \else
+      \PackageWarning{tikzposter}{Unknown backgroundstyle `#1'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Title styles
+% --------------------------------------- %
+% Title styles
 \gdef\definetitlestyle#1#2#3{
-\expandafter\gdef\csname TP@titlestyle#1Defaultvalues\endcsname{\gpresetkeys{title}{#2}{}}
-\expandafter\gdef\csname TP@titlestyle#1\endcsname{#3}
+   \expandafter\gdef\csname TP@titlestyle#1Defaultvalues\endcsname{\gpresetkeys{title}{#2}{}}
+   \expandafter\gdef\csname TP@titlestyle#1\endcsname{#3}
 }
 
 \define@key{title}{width}{\TP@titlewidth=#1 \titlewidth=#1}
@@ -277,80 +270,81 @@ blockverticalspace=15mm
 \define@boolkey{title}{titlegraphicbottom}[true]{\ifKV@title@titlegraphicbottom \TP@titlegraphicTopfalse \fi}
 
 \newcommand\usetitlestyle[2][]{
-\ifcsname TP@titlestyle#2\endcsname
- \csname TP@titlestyle#2Defaultvalues\endcsname\gpresetkeys{title}{#1}{} % call macro
- \gdef\TP@titlestyle{\csname TP@titlestyle#2\endcsname} % save macro
-\else
-\PackageWarning{tikzposter}{Unknown titlestyle `#2'.}
-\fi
+   \ifcsname TP@titlestyle#2\endcsname
+      \csname TP@titlestyle#2Defaultvalues\endcsname\gpresetkeys{title}{#1}{} % call macro
+      \gdef\TP@titlestyle{\csname TP@titlestyle#2\endcsname} % save macro
+   \else
+      \PackageWarning{tikzposter}{Unknown titlestyle `#2'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Title
+% --------------------------------------- %
+% Title
 \gdef\TP@maketitle{
-\centering
-\vbox{
-\ifTP@titlegraphicTop
-\TP@titlegraphicAlignment\@titlegraphic
-\\[\TP@titlegraphictotitledistance]
-\fi
-\centering
-\color{titlefgcolor}
-{\bfseries \Huge \sc {\@title} \par}
-\vspace*{1em}
-{\huge \@author \par}
-\vspace*{1em}
-\LARGE \@institute
-\ifTP@titlegraphicTop\else
-\vspace*{\TP@titlegraphictotitledistance}
-\TP@titlegraphicAlignment\@titlegraphic
-\fi
-}
+   \centering
+   \vbox{
+      \ifTP@titlegraphicTop
+         \TP@titlegraphicAlignment\@titlegraphic
+         \\[\TP@titlegraphictotitledistance]
+      \fi
+      \centering
+      \color{titlefgcolor}
+      {\bfseries \Huge \sc {\@title} \par}
+      \vspace*{1em}
+      {\huge \@author \par}
+      \vspace*{1em}
+      \LARGE \@institute
+      \ifTP@titlegraphicTop\else
+         \vspace*{\TP@titlegraphictotitledistance}
+         \TP@titlegraphicAlignment\@titlegraphic
+      \fi
+   }
 }
 
 \gdef\institute#1{\gdef\@institute{#1}}
 \gdef\titlegraphic#1{\gdef\@titlegraphic{#1}}
 
 \newenvironment{settitle}{
-\makeatletter
-\renewcommand{\TP@maketitle}
+   \makeatletter
+   \renewcommand{\TP@maketitle}
 }{
-\makeatother
+   \makeatother
 }
 
 \renewcommand\maketitle[1][]{  % #1 keys
-\normalsize
-
-\setkeys{title}{#1}
-
-\node[transparent,inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
-(TP@title) at ($(0, 0.5\textheight-\TP@titletotopverticalspace)$) {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
-\draw let \p1 = ($(TP@title.north)-(TP@title.south)$) in node {
-\setlength{\TP@titleheight}{\y1}
-\setlength{\titleheight}{\y1}
-\global\TP@titleheight=\TP@titleheight
-\global\titleheight=\titleheight
-};
-
-\setlength{\titleposleft}{-0.5\titlewidth}
-\setlength{\titleposright}{\titleposleft+\titlewidth}
-\setlength{\titlepostop}{0.5\textheight-\TP@titletotopverticalspace}
-\setlength{\titleposbottom}{\titlepostop-\titleheight}
-
-\TP@titlestyle
-
-\node[inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
-at (0,0.5\textheight-\TP@titletotopverticalspace) {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
-
-\normalsize
-\setlength{\TP@blocktop}{\titleposbottom-\TP@titletoblockverticalspace}
+   \normalsize
+   
+   \setkeys{title}{#1}
+   
+   \node[transparent,inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
+   (TP@title) at ($(0, 0.5\textheight-\TP@titletotopverticalspace)$) {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
+   \draw let \p1 = ($(TP@title.north)-(TP@title.south)$) in node {
+         \setlength{\TP@titleheight}{\y1}
+         \setlength{\titleheight}{\y1}
+         \global\TP@titleheight=\TP@titleheight
+         \global\titleheight=\titleheight
+      };
+   
+   \setlength{\titleposleft}{-0.5\titlewidth}
+   \setlength{\titleposright}{\titleposleft+\titlewidth}
+   \setlength{\titlepostop}{0.5\textheight-\TP@titletotopverticalspace}
+   \setlength{\titleposbottom}{\titlepostop-\titleheight}
+   
+   \TP@titlestyle
+   
+   \node[inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
+   at (0,0.5\textheight-\TP@titletotopverticalspace) {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
+   
+   \normalsize
+   \setlength{\TP@blocktop}{\titleposbottom-\TP@titletoblockverticalspace}
 }
 
- % --------------------------------------- %
- % Block styles
+% --------------------------------------- %
+% Block styles
 \gdef\defineblockstyle#1#2#3{
-\expandafter\gdef\csname TP@blockstyle#1Defaultvalues\endcsname{\gpresetkeys{block}{#2}{}}
-\expandafter\gdef\csname TP@blockstyle#1\endcsname{#3}
+   \expandafter\gdef\csname TP@blockstyle#1Defaultvalues\endcsname{\gpresetkeys{block}{#2}{}}
+   \expandafter\gdef\csname TP@blockstyle#1\endcsname{#3}
 }
 
 \define@key{block}{titlewidthscale}{\setlength{\TP@blocktitlewidth}{#1\TP@blocktitlewidth}}
@@ -371,105 +365,106 @@ at (0,0.5\textheight-\TP@titletotopverticalspace) {\parbox{\TP@titlewidth-2\TP@t
 \define@key{block}{bodyfont}{\gdef\TP@blockbodyfont{#1}}
 
 \newcommand\useblockstyle[2][]{
-\ifcsname TP@blockstyle#2\endcsname
-\csname TP@blockstyle#2Defaultvalues\endcsname\gpresetkeys{block}{#1}{} % call macro
-\gdef\TP@blockstyle{\csname TP@blockstyle#2\endcsname} % save macro
-\else
-\PackageWarning{tikzposter}{Unknown blockstyle `#2'.}
-\fi
+   \ifcsname TP@blockstyle#2\endcsname
+      \csname TP@blockstyle#2Defaultvalues\endcsname\gpresetkeys{block}{#1}{} % call macro
+      \gdef\TP@blockstyle{\csname TP@blockstyle#2\endcsname} % save macro
+   \else
+      \PackageWarning{tikzposter}{Unknown blockstyle `#2'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Block
+% --------------------------------------- %
+% Block
 \newcommand\block[3][]{  % #1 keys   #2 title   #3 text
-\normalsize
-\ifTP@subcolumnEnvironment
-\TP@blocktitlewidth=\subcolwidth
-\TP@blockbodywidth=\subcolwidth
-\TP@blockcenter=\TP@subcolcenter
-\else
-\ifTP@columnEnvironment
-\TP@blocktitlewidth=\colwidth
-\TP@blockbodywidth=\colwidth
-\TP@blockcenter=\TP@colcenter
-\else
-\setlength\TP@blocktitlewidth{\TP@visibletextwidth}
-\setlength\TP@blockbodywidth{\TP@visibletextwidth}
-\TP@blockcenter=0pt
-\fi
-\fi
-
-\setkeys{block}{#1}
-
-\setlength\blockwidth{\TP@blocktitlewidth-\blocklinewidth-2\TP@blockbodyinnersep}
-
-\ifTP@subcolumnEnvironment \else \ifTP@columnEnvironment \else
-\setlength\TP@blocktitlewidth{\TP@blocktitlewidth-\blocklinewidth}
-\setlength\TP@blockbodywidth{\TP@blockbodywidth-\blocklinewidth}
-\TP@blockcenter=0pt
-\fi \fi
-
-\ifstrempty{#2}{
-\BlockHasTitlefalse
-\setlength{\TP@blocktitleheight}{0pt}
-}{
-\BlockHasTitletrue
-\setbox\TP@blocktitlebox=\hbox{%
-\pgfinterruptpicture%
-\parbox{\TP@blocktitlewidth-2\TP@blocktitleinnersep}{%
-\strut\bfseries\LARGE\color{blocktitlefgcolor}\TP@blocktitleAlignment\TP@blocktitlefont#2\par\normalsize}%
-\endpgfinterruptpicture%
-}%
-\setlength{\TP@blocktitleheight}{\ht\TP@blocktitlebox + \dp\TP@blocktitlebox +2\TP@blocktitleinnersep}
+   \normalsize
+   \ifTP@subcolumnEnvironment
+      \TP@blocktitlewidth=\subcolwidth
+      \TP@blockbodywidth=\subcolwidth
+      \TP@blockcenter=\TP@subcolcenter
+   \else
+      \ifTP@columnEnvironment
+         \TP@blocktitlewidth=\colwidth
+         \TP@blockbodywidth=\colwidth
+         \TP@blockcenter=\TP@colcenter
+      \else
+         \setlength\TP@blocktitlewidth{\TP@visibletextwidth}
+         \setlength\TP@blockbodywidth{\TP@visibletextwidth}
+         \TP@blockcenter=0pt
+      \fi
+   \fi
+   
+   \setkeys{block}{#1}
+   
+   \setlength\blockwidth{\TP@blocktitlewidth-\blocklinewidth-2\TP@blockbodyinnersep}
+   
+   \ifTP@subcolumnEnvironment \else \ifTP@columnEnvironment \else
+         \setlength\TP@blocktitlewidth{\TP@blocktitlewidth-\blocklinewidth}
+         \setlength\TP@blockbodywidth{\TP@blockbodywidth-\blocklinewidth}
+         \TP@blockcenter=0pt
+      \fi \fi
+   
+   \ifstrempty{#2}{
+      \BlockHasTitlefalse
+      \setlength{\TP@blocktitleheight}{0pt}
+   }{
+      \BlockHasTitletrue
+      \setbox\TP@blocktitlebox=\hbox{%
+         \pgfinterruptpicture%
+         \parbox{\TP@blocktitlewidth-2\TP@blocktitleinnersep}{%
+            \strut\bfseries\LARGE\color{blocktitlefgcolor}\TP@blocktitleAlignment\TP@blocktitlefont#2\par\normalsize}%
+         \endpgfinterruptpicture%
+      }%
+      \setlength{\TP@blocktitleheight}{\ht\TP@blocktitlebox + \dp\TP@blocktitlebox +2\TP@blocktitleinnersep}
+   }
+   
+   \setbox\TP@blockbodybox=\hbox{
+      \pgfinterruptpicture%
+      \parbox{\TP@blockbodywidth-2\TP@blockbodyinnersep-\TP@blockbodyoffsetx}{%
+         \vspace*{\TP@blockbodyverticalshift}\large\color{blockbodyfgcolor}\TP@blockbodyfont#3\par\normalsize}%
+      \endpgfinterruptpicture%
+   }%
+   \setlength{\TP@blockbodyheight}{\ht\TP@blockbodybox + \dp\TP@blockbodybox +2\TP@blockbodyinnersep}
+   
+   \node[minimum width=\TP@blocktitlewidth, minimum height=\TP@blocktitleheight, anchor=center] (blocktitle)%
+   at (\TP@blockcenter+\TP@blocktitleoffsetx, {\TP@blocktop-0.5\TP@blocktitleheight+\TP@blocktitleoffsety}){};
+   \ifBlockHasTitle
+      \node[minimum width=\TP@blockbodywidth, minimum height=\TP@blockbodyheight, anchor=center] (blockbody)%
+      at (\TP@blockcenter+\TP@blockbodyoffsetx, {\TP@blocktop-\TP@blocktitleheight-0.5\TP@blockbodyheight+\TP@blockbodyoffsety}){};
+   \else
+      \node[minimum width=\TP@blockbodywidth, minimum height=\TP@blockbodyheight, anchor=center] (blockbody)%
+      at (\TP@blockcenter+\TP@blockbodyoffsetx, {\TP@blocktop-\TP@blocktitleheight-0.5\TP@blockbodyheight}){};
+   \fi
+   
+   \TP@blockstyle
+   
+   \ifBlockHasTitle
+      \node[text width=\TP@blocktitlewidth-2\TP@blocktitleinnersep, inner sep=\TP@blocktitleinnersep, anchor=center]%
+      at (blocktitle){\box\TP@blocktitlebox};
+   \fi
+   \node[text width=\TP@blockbodywidth-2\TP@blockbodyinnersep, inner sep=\TP@blockbodyinnersep, anchor=center]%
+   at (blockbody){\box\TP@blockbodybox};
+   
+   \draw let \p1 = (blockbody.south) in node {
+         \setlength{\TP@blocktop}{\y1-\TP@blockverticalspace}
+         \global\TP@blocktop=\TP@blocktop
+      };
+   \ifTP@subcolumnEnvironment
+      \setlength{\TP@subcolbottom}{\minof{\TP@subcolbottom}{\TP@blocktop}}
+      \global\TP@subcolbottom=\TP@subcolbottom
+   \else
+      \ifTP@columnEnvironment
+         \setlength{\TP@colbottom}{\minof{\TP@colbottom}{\TP@blocktop}}
+         \global\TP@colbottom=\TP@colbottom
+      \fi
+   \fi
 }
 
-\setbox\TP@blockbodybox=\hbox{
-\pgfinterruptpicture%
-\parbox{\TP@blockbodywidth-2\TP@blockbodyinnersep-\TP@blockbodyoffsetx}{%
-\vspace*{\TP@blockbodyverticalshift}\large\color{blockbodyfgcolor}\TP@blockbodyfont#3\par\normalsize}%
-\endpgfinterruptpicture%
-}%
-\setlength{\TP@blockbodyheight}{\ht\TP@blockbodybox + \dp\TP@blockbodybox +2\TP@blockbodyinnersep}
-
-\node[minimum width=\TP@blocktitlewidth, minimum height=\TP@blocktitleheight, anchor=center] (blocktitle)%
-at (\TP@blockcenter+\TP@blocktitleoffsetx, {\TP@blocktop-0.5\TP@blocktitleheight+\TP@blocktitleoffsety}){};
-\ifBlockHasTitle
-\node[minimum width=\TP@blockbodywidth, minimum height=\TP@blockbodyheight, anchor=center] (blockbody)%
-at (\TP@blockcenter+\TP@blockbodyoffsetx, {\TP@blocktop-\TP@blocktitleheight-0.5\TP@blockbodyheight+\TP@blockbodyoffsety}){};
-\else
-\node[minimum width=\TP@blockbodywidth, minimum height=\TP@blockbodyheight, anchor=center] (blockbody)%
-at (\TP@blockcenter+\TP@blockbodyoffsetx, {\TP@blocktop-\TP@blocktitleheight-0.5\TP@blockbodyheight}){};
-\fi
-
-\TP@blockstyle
-
-\ifBlockHasTitle
-\node[text width=\TP@blocktitlewidth-2\TP@blocktitleinnersep, inner sep=\TP@blocktitleinnersep, anchor=center]%
-at (blocktitle){\box\TP@blocktitlebox};
-\fi
-\node[text width=\TP@blockbodywidth-2\TP@blockbodyinnersep, inner sep=\TP@blockbodyinnersep, anchor=center]%
-at (blockbody){\box\TP@blockbodybox};
-
-\draw let \p1 = (blockbody.south) in node {
-\setlength{\TP@blocktop}{\y1-\TP@blockverticalspace}
-\global\TP@blocktop=\TP@blocktop
-};
-\ifTP@subcolumnEnvironment
-\setlength{\TP@subcolbottom}{\minof{\TP@subcolbottom}{\TP@blocktop}}
-\global\TP@subcolbottom=\TP@subcolbottom
-\else
-\ifTP@columnEnvironment
-\setlength{\TP@colbottom}{\minof{\TP@colbottom}{\TP@blocktop}}
-\global\TP@colbottom=\TP@colbottom
-\fi
-\fi
-}
-
- % --------------------------------------- %
- % Innerblock styles
+% --------------------------------------- %
+% Innerblock styles
 \gdef\defineinnerblockstyle#1#2#3{
-\expandafter\gdef\csname TP@innerblockstyle#1Defaultvalues\endcsname{\gpresetkeys{innerblock}{#2}{}}
-\expandafter\gdef\csname TP@innerblockstyle#1\endcsname{#3}
+   \expandafter\gdef\csname TP@innerblockstyle#1Defaultvalues\endcsname{\gpresetkeys{innerblock}{#2}{}}
+   \expandafter\gdef\csname TP@innerblockstyle#1\endcsname{#3}
 }
 
 \define@key{innerblock}{titlewidth}{\setlength{\TP@innerblocktitlewidth}{#1}}
@@ -494,80 +489,81 @@ at (blockbody){\box\TP@blockbodybox};
 \define@key{innerblock}{bodyfgcolor}{\definecolor{innerblockbodyfgcolor}{named}{#1}}
 
 \newcommand\useinnerblockstyle[2][]{
-\ifcsname TP@innerblockstyle#2\endcsname
-\csname TP@innerblockstyle#2Defaultvalues\endcsname\gpresetkeys{innerblock}{#1}{} % call macro
-\gdef\TP@innerblockstyle{\csname TP@innerblockstyle#2\endcsname} % save macro
-\else
-\PackageWarning{tikzposter}{Unknown innerblockstyle `#2'.}
-\fi
+   \ifcsname TP@innerblockstyle#2\endcsname
+      \csname TP@innerblockstyle#2Defaultvalues\endcsname\gpresetkeys{innerblock}{#1}{} % call macro
+      \gdef\TP@innerblockstyle{\csname TP@innerblockstyle#2\endcsname} % save macro
+   \else
+      \PackageWarning{tikzposter}{Unknown innerblockstyle `#2'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Innerblock
+% --------------------------------------- %
+% Innerblock
 \newcommand\innerblock[3][]{  % #1 keys   #2 title   #3 text
-\definecolor{innerblocktitlebgcolorTemp}{named}{innerblocktitlebgcolor}
-\definecolor{innerblocktitlefgcolorTemp}{named}{innerblocktitlefgcolor}
-\definecolor{innerblockbodybgcolorTemp}{named}{innerblockbodybgcolor}
-\definecolor{innerblockbodyfgcolorTemp}{named}{innerblockbodyfgcolor}
-\setlength{\TP@innerblocktitlewidth}{\linewidth}
-\setlength{\TP@innerblockbodywidth}{\linewidth}
-\setkeys{innerblock}{#1}
+   \definecolor{innerblocktitlebgcolorTemp}{named}{innerblocktitlebgcolor}
+   \definecolor{innerblocktitlefgcolorTemp}{named}{innerblocktitlefgcolor}
+   \definecolor{innerblockbodybgcolorTemp}{named}{innerblockbodybgcolor}
+   \definecolor{innerblockbodyfgcolorTemp}{named}{innerblockbodyfgcolor}
+   \setlength{\TP@innerblocktitlewidth}{\linewidth}
+   \setlength{\TP@innerblockbodywidth}{\linewidth}
+   \setkeys{innerblock}{#1}
+   
+   \begin{tikzpicture}
 
-\begin{tikzpicture}
-
-\pgfmathsetlength{\TP@innerblockcenter}{max(\TP@innerblocktitlewidth,\TP@innerblockbodywidth)/2}
-
-\ifstrempty{#2}{
-\InnerblockHasTitlefalse
-\setlength{\TP@innerblocktitleheight}{0pt}
-}{
-\InnerblockHasTitletrue
-\setbox\TP@innerblocktitlebox=\hbox{%
-\pgfinterruptpicture%
-\parbox{\TP@innerblocktitlewidth-2\TP@innerblocktitleinnersep}{%
-\bfseries\color{innerblocktitlefgcolor}\TP@innerblocktitleAlignment#2\par\normalsize}%
-\endpgfinterruptpicture%
-}
-\setlength{\TP@innerblocktitleheight}{\ht\TP@innerblocktitlebox + \dp\TP@innerblocktitlebox +2\TP@innerblocktitleinnersep}
-}
-
-\setbox\TP@innerblockbodybox=\hbox{
-\pgfinterruptpicture%
-\parbox{\TP@innerblockbodywidth-2\TP@innerblockbodyinnersep-\TP@innerblockbodyoffsetx}{%
-\vspace*{\TP@innerblockbodyverticalshift}%
-\color{innerblockbodyfgcolor}#3\par\normalsize}%
-\endpgfinterruptpicture%
-}%
-\setlength{\TP@innerblockbodyheight}{\ht\TP@innerblockbodybox + \dp\TP@innerblockbodybox +2\TP@innerblockbodyinnersep}
-
-\node[minimum width=\TP@innerblocktitlewidth, minimum height=\TP@innerblocktitleheight, anchor=center] (innerblocktitle)
-at (\TP@innerblockcenter+\TP@innerblocktitleoffsetx, {-0.5\TP@innerblocktitleheight+\TP@innerblocktitleoffsety}) {};%
-\ifInnerblockHasTitle
-\node[minimum width=\TP@innerblockbodywidth, minimum height=\TP@innerblockbodyheight, anchor=center] (innerblockbody)
-at (\TP@innerblockcenter+\TP@innerblockbodyoffsetx, {-\TP@innerblocktitleheight-0.5\TP@innerblockbodyheight+\TP@innerblockbodyoffsety}) {};%
-\else
+      \pgfmathsetlength{\TP@innerblockcenter}{max(\TP@innerblocktitlewidth,\TP@innerblockbodywidth)/2}
+      
+      \ifstrempty{#2}{
+         \InnerblockHasTitlefalse
+         \setlength{\TP@innerblocktitleheight}{0pt}
+      }{
+         \InnerblockHasTitletrue
+         \setbox\TP@innerblocktitlebox=\hbox{%
+            \pgfinterruptpicture%
+            \parbox{\TP@innerblocktitlewidth-2\TP@innerblocktitleinnersep}{%
+               \bfseries\color{innerblocktitlefgcolor}\TP@innerblocktitleAlignment#2\par\normalsize}%
+            \endpgfinterruptpicture%
+         }
+         \setlength{\TP@innerblocktitleheight}{\ht\TP@innerblocktitlebox + \dp\TP@innerblocktitlebox +2\TP@innerblocktitleinnersep}
+      }
+      
+      \setbox\TP@innerblockbodybox=\hbox{
+         \pgfinterruptpicture%
+         \parbox{\TP@innerblockbodywidth-2\TP@innerblockbodyinnersep-\TP@innerblockbodyoffsetx}{%
+            \vspace*{\TP@innerblockbodyverticalshift}%
+            \color{innerblockbodyfgcolor}#3\par\normalsize}%
+         \endpgfinterruptpicture%
+      }%
+      \setlength{\TP@innerblockbodyheight}{\ht\TP@innerblockbodybox + \dp\TP@innerblockbodybox +2\TP@innerblockbodyinnersep}
+      
+      \node[minimum width=\TP@innerblocktitlewidth, minimum height=\TP@innerblocktitleheight, anchor=center] (innerblocktitle)
+      at (\TP@innerblockcenter+\TP@innerblocktitleoffsetx, {-0.5\TP@innerblocktitleheight+\TP@innerblocktitleoffsety}) {};%
+      \ifInnerblockHasTitle
    \node[minimum width=\TP@innerblockbodywidth, minimum height=\TP@innerblockbodyheight, anchor=center] (innerblockbody)
-at (\TP@innerblockcenter+\TP@innerblockbodyoffsetx, {-\TP@innerblocktitleheight-0.5\TP@innerblockbodyheight}) {};%
-\fi
-
-\TP@innerblockstyle
-
-\ifInnerblockHasTitle
-\node[text width=\TP@innerblocktitlewidth-2\TP@innerblocktitleinnersep, inner sep=\TP@innerblocktitleinnersep, anchor= center]
-at (innerblocktitle) {\box\TP@innerblocktitlebox};%
-\fi
-\node[text width=\TP@innerblockbodywidth-2\TP@innerblockbodyinnersep, inner sep=\TP@innerblockbodyinnersep, anchor= center]
-at (innerblockbody) {\box\TP@innerblockbodybox};%
-\end{tikzpicture}
-
-\definecolor{innerblocktitlebgcolor}{named}{innerblocktitlebgcolorTemp}
-\definecolor{innerblocktitlefgcolor}{named}{innerblocktitlefgcolorTemp}
-\definecolor{innerblockbodybgcolor}{named}{innerblockbodybgcolorTemp}
-\definecolor{innerblockbodyfgcolor}{named}{innerblockbodyfgcolorTemp}
+         at (\TP@innerblockcenter+\TP@innerblockbodyoffsetx, {-\TP@innerblocktitleheight-0.5\TP@innerblockbodyheight+\TP@innerblockbodyoffsety}) {};%
+      \else
+         \node[minimum width=\TP@innerblockbodywidth, minimum height=\TP@innerblockbodyheight, anchor=center] (innerblockbody)
+         at (\TP@innerblockcenter+\TP@innerblockbodyoffsetx, {-\TP@innerblocktitleheight-0.5\TP@innerblockbodyheight}) {};%
+      \fi
+      
+      \TP@innerblockstyle
+      
+      \ifInnerblockHasTitle
+   \node[text width=\TP@innerblocktitlewidth-2\TP@innerblocktitleinnersep, inner sep=\TP@innerblocktitleinnersep, anchor= center]
+         at (innerblocktitle) {\box\TP@innerblocktitlebox};%
+      \fi
+      \node[text width=\TP@innerblockbodywidth-2\TP@innerblockbodyinnersep, inner sep=\TP@innerblockbodyinnersep, anchor= center]
+      at (innerblockbody) {\box\TP@innerblockbodybox};%
+   \end{tikzpicture}
+   
+   \definecolor{innerblocktitlebgcolor}{named}{innerblocktitlebgcolorTemp}
+   \definecolor{innerblocktitlefgcolor}{named}{innerblocktitlefgcolorTemp}
+   \definecolor{innerblockbodybgcolor}{named}{innerblockbodybgcolorTemp}
+   \definecolor{innerblockbodyfgcolor}{named}{innerblockbodyfgcolorTemp}
 }
 
- % --------------------------------------- %
- % Coloredbox
+% --------------------------------------- %
+% Coloredbox
 \define@key{coloredbox}{width}{\setlength{\TP@coloredboxwidth}{#1}}
 \define@key{coloredbox}{roundedcorners}{\gdef\TP@coloredboxroundedcorners{#1}}
 \define@key{coloredbox}{linewidth}{\TP@coloredboxlinewidth=#1}
@@ -577,40 +573,40 @@ at (innerblockbody) {\box\TP@innerblockbodybox};%
 \define@key{coloredbox}{framecolor}{\definecolor{coloredboxframecolorTemp}{named}{#1}}
 
 \newcommand\coloredbox[2][]{  % #1 keys   #2 text
-\setlength{\TP@coloredboxwidth}{\TP@blocktitlewidth-4\TP@blocktitleinnersep}
-\setkeys{coloredbox}{%
-width={\linewidth}, roundedcorners=15, linewidth=3.5pt, innersep=10pt,
-bgcolor=notebgcolor, fgcolor=notefgcolor, framecolor=notebgcolor, #1}
-
-\begin{tikzpicture}
-\setbox\TP@coloredbox=\hbox{
-\pgfinterruptpicture%
-\parbox{\TP@coloredboxwidth-2\TP@coloredboxinnersep}{%
-\color{coloredboxfgcolorTemp}#2\par\normalsize}%
-\endpgfinterruptpicture%
-}%
-\setlength{\TP@coloredboxheight}{\ht\TP@coloredbox + \dp\TP@coloredbox +2\TP@coloredboxinnersep}
-
-\node[minimum width=\TP@coloredboxwidth, minimum height=\TP@coloredboxheight, anchor=center] (coloredbox)
-at (0.5\TP@coloredboxwidth, -0.5\TP@coloredboxheight) {};%
-
-\begin{scope}[line width=\TP@coloredboxlinewidth, rounded corners=\TP@coloredboxroundedcorners]
-\draw[color=coloredboxframecolorTemp, fill=coloredboxbgcolorTemp] (coloredbox.south west) rectangle (coloredbox.north east);
-\end{scope}
-
-\node[text width=\TP@coloredboxwidth-2\TP@coloredboxinnersep, inner sep=\TP@coloredboxinnersep, anchor= center]
-at (coloredbox) {\box\TP@coloredbox};%
-\end{tikzpicture}
-
-\definecolor{coloredboxbgcolor}{named}{coloredboxbgcolorTemp}
-\definecolor{coloredboxfgcolor}{named}{coloredboxfgcolorTemp}
+   \setlength{\TP@coloredboxwidth}{\TP@blocktitlewidth-4\TP@blocktitleinnersep}
+   \setkeys{coloredbox}{%
+      width={\linewidth}, roundedcorners=15, linewidth=3.5pt, innersep=10pt,
+      bgcolor=notebgcolor, fgcolor=notefgcolor, framecolor=notebgcolor, #1}
+   
+   \begin{tikzpicture}
+      \setbox\TP@coloredbox=\hbox{
+         \pgfinterruptpicture%
+         \parbox{\TP@coloredboxwidth-2\TP@coloredboxinnersep}{%
+            \color{coloredboxfgcolorTemp}#2\par\normalsize}%
+         \endpgfinterruptpicture%
+      }%
+      \setlength{\TP@coloredboxheight}{\ht\TP@coloredbox + \dp\TP@coloredbox +2\TP@coloredboxinnersep}
+      
+      \node[minimum width=\TP@coloredboxwidth, minimum height=\TP@coloredboxheight, anchor=center] (coloredbox)
+      at (0.5\TP@coloredboxwidth, -0.5\TP@coloredboxheight) {};%
+      
+      \begin{scope}[line width=\TP@coloredboxlinewidth, rounded corners=\TP@coloredboxroundedcorners]
+         \draw[color=coloredboxframecolorTemp, fill=coloredboxbgcolorTemp] (coloredbox.south west) rectangle (coloredbox.north east);
+      \end{scope}
+      
+      \node[text width=\TP@coloredboxwidth-2\TP@coloredboxinnersep, inner sep=\TP@coloredboxinnersep, anchor= center]
+      at (coloredbox) {\box\TP@coloredbox};%
+   \end{tikzpicture}
+   
+   \definecolor{coloredboxbgcolor}{named}{coloredboxbgcolorTemp}
+   \definecolor{coloredboxfgcolor}{named}{coloredboxfgcolorTemp}
 }
 
- % --------------------------------------- %
- % Note styles
+% --------------------------------------- %
+% Note styles
 \gdef\definenotestyle#1#2#3{
-\expandafter\gdef\csname TP@notestyle#1Defaultvalues\endcsname{\gpresetkeys{note}{#2}{}}
-\expandafter\gdef\csname TP@notestyle#1\endcsname{#3}
+   \expandafter\gdef\csname TP@notestyle#1Defaultvalues\endcsname{\gpresetkeys{note}{#2}{}}
+   \expandafter\gdef\csname TP@notestyle#1\endcsname{#3}
 }
 
 \define@key{note}{targetoffsetx}{\TP@notetargetoffsetx=#1}
@@ -624,56 +620,58 @@ at (coloredbox) {\box\TP@coloredbox};%
 \define@key{note}{linewidth}{\notelinewidth=#1}
 \define@key{note}{innersep}{\TP@noteinnersep=#1 \noteinnersep=#1}
 \newcommand\usenotestyle[2][]{
-\ifcsname TP@notestyle#2\endcsname
-\csname TP@notestyle#2Defaultvalues\endcsname\gpresetkeys{note}{#1}{} % call macro
-\gdef\TP@notestyle{\csname TP@notestyle#2\endcsname} % save macro
-\else
-\PackageWarning{tikzposter}{Unknown notestyle `#2'.}
-\fi
+   \ifcsname TP@notestyle#2\endcsname
+      \csname TP@notestyle#2Defaultvalues\endcsname\gpresetkeys{note}{#1}{} % call macro
+      \gdef\TP@notestyle{\csname TP@notestyle#2\endcsname} % save macro
+   \else
+      \PackageWarning{tikzposter}{Unknown notestyle `#2'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Note
+% --------------------------------------- %
+% Note
 \newcommand\note[2][]{  % #1 keys   #2 text
-\normalsize
-\setkeys{note}{#1}
-
-\setbox\TP@notebox=\hbox{%
-\pgfinterruptpicture%
-\parbox{\TP@notewidth-2\TP@noteinnersep}{\color{notefgcolor}#2\par\normalsize}%
-\endpgfinterruptpicture%
-}%
-\setlength{\TP@noteheight}{\ht\TP@notebox + \dp\TP@notebox +2\TP@noteinnersep}
-\pgfmathsetlength{\TP@noteheight}{max(\TP@noteheight,80pt)}
-
-\node (notetarget) at ($(blockbody)+(\TP@notetargetoffsetx,\TP@notetargetoffsety)$){};
-\node[minimum width=\TP@notewidth, minimum height=\TP@noteheight, anchor=center,rotate=\noterotate] (notecenter)
-at ($(notetarget)+({\TP@noteradius*cos(\TP@noteangle)},{\TP@noteradius*sin(\TP@noteangle)})$){};%
-
-\begin{pgfonlayer}{notelayer}
-\TP@notestyle
-\node[text width=\TP@notewidth-2\TP@noteinnersep, inner sep=\TP@noteinnersep, anchor=center,rotate=\noterotate]%
-at (notecenter){\box\TP@notebox};
-\end{pgfonlayer}
+   \normalsize
+   \setkeys{note}{#1}
+   
+   \setbox\TP@notebox=\hbox{%
+      \pgfinterruptpicture%
+      \parbox{\TP@notewidth-2\TP@noteinnersep}{\color{notefgcolor}#2\par\normalsize}%
+      \endpgfinterruptpicture%
+   }%
+   \setlength{\TP@noteheight}{\ht\TP@notebox + \dp\TP@notebox +2\TP@noteinnersep}
+   \pgfmathsetlength{\TP@noteheight}{max(\TP@noteheight,80pt)}
+   
+   \node (notetarget) at ($(blockbody)+(\TP@notetargetoffsetx,\TP@notetargetoffsety)$){};
+   \node[minimum width=\TP@notewidth, minimum height=\TP@noteheight, anchor=center,rotate=\noterotate] (notecenter)
+   at ($(notetarget)+({\TP@noteradius*cos(\TP@noteangle)},{\TP@noteradius*sin(\TP@noteangle)})$){};%
+   
+   \begin{pgfonlayer}{notelayer}
+      \TP@notestyle
+      \node[text width=\TP@notewidth-2\TP@noteinnersep, inner sep=\TP@noteinnersep, anchor=center,rotate=\noterotate]%
+      at (notecenter){\box\TP@notebox};
+   \end{pgfonlayer}
 }
 
- % --------------------------------------- %
- % Color palette
+% --------------------------------------- %
+% Color palette
 \gdef\definecolorpalette#1#2{\expandafter\gdef\csname TP@colorpalette#1\endcsname{#2}}
 
 \gdef\usecolorpalette#1{
-\ifcsname TP@colorpalette#1\endcsname
- \csname TP@colorpalette#1\endcsname % call macro
-\else
-\PackageWarning{tikzposter}{Unknown color palette `#1'.}
-\fi
+   \ifcsname TP@colorpalette#1\endcsname
+      \csname TP@colorpalette#1\endcsname % call macro
+   \else
+      \PackageWarning{tikzposter}{Unknown color palette `#1'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Color style
+% --------------------------------------- %
+% Color style
 \gdef\definecolorstyle#1#2#3{
-\expandafter\gdef\csname TP@colorstyle#1Defaultvalues\endcsname{#2}
-\expandafter\gdef\csname TP@colorstyle#1\endcsname{#3}
+   \expandafter\gdef\csname TP@colorstyle#1Defaultvalues\endcsname{#2}
+   \expandafter\gdef\csname TP@colorstyle#1\endcsname{#3}
 }
 
 \define@key{colors}{colorOne}{\colorlet{colorOne}{#1}}
@@ -682,28 +680,30 @@ at (notecenter){\box\TP@notebox};
 \define@key{colors}{colorPalette}{\usecolorpalette{#1}}
 
 \newcommand\usecolorstyle[2][]{  % #1 keys   #2 macroname
-\ifcsname TP@colorstyle#2\endcsname
- \csname TP@colorstyle#2Defaultvalues\endcsname % call macro
- \setkeys{colors}{#1} % set keys
- \csname TP@colorstyle#2\endcsname % call macro
-\else
-\PackageWarning{tikzposter}{Unknown color style `#2'.}
-\fi
+   \ifcsname TP@colorstyle#2\endcsname
+      \csname TP@colorstyle#2Defaultvalues\endcsname % call macro
+      \setkeys{colors}{#1} % set keys
+      \csname TP@colorstyle#2\endcsname % call macro
+   \else
+      \PackageWarning{tikzposter}{Unknown color style `#2'.}
+      
+   \fi
 }
 
- % --------------------------------------- %
- % Layouttheme
+% --------------------------------------- %
+% Layouttheme
 \gdef\definelayouttheme#1#2{\expandafter\gdef\csname TP@layouttheme#1\endcsname{#2}}
 
 \gdef\usetheme#1{
-\ifcsname TP@layouttheme#1\endcsname
- \csname TP@layouttheme#1\endcsname % call macro
-\else
-\PackageWarning{tikzposter}{Unknown layouttheme `#1'.}
-\fi
+   \ifcsname TP@layouttheme#1\endcsname
+      \csname TP@layouttheme#1\endcsname % call macro
+   \else
+      \PackageWarning{tikzposter}{Unknown layouttheme `#1'.}
+      
+   \fi
 }
 
- % Input Style and Theme Files
+% Input Style and Theme Files
 \input{tikzposterColorpalettes}
 \input{tikzposterColorstyles}
 \input{tikzposterBackgroundstyles}
@@ -713,108 +713,108 @@ at (notecenter){\box\TP@notebox};
 \input{tikzposterNotestyles}
 \input{tikzposterLayoutthemes}
 
- % Set Default theme
+% Set Default theme
 \usetheme{Default}
 
- % --------------------------------------- %
- % Columns environment
+% --------------------------------------- %
+% Columns environment
 \newenvironment{columns}{
-\TP@columnEnvironmenttrue
-\setlength{\TP@colcenter}{-0.5\TP@visibletextwidth-\TP@colspace-0.5\blocklinewidth}
-\global\TP@colcenter=\TP@colcenter
-\global\TP@coltop=\TP@blocktop
-\global\TP@colbottom=\TP@blocktop
-\colwidth=0pt
+   \TP@columnEnvironmenttrue
+   \setlength{\TP@colcenter}{-0.5\TP@visibletextwidth-\TP@colspace-0.5\blocklinewidth}
+   \global\TP@colcenter=\TP@colcenter
+   \global\TP@coltop=\TP@blocktop
+   \global\TP@colbottom=\TP@blocktop
+   \colwidth=0pt
 }{
-\TP@columnEnvironmentfalse
-\global\TP@blocktop=\TP@colbottom
+   \TP@columnEnvironmentfalse
+   \global\TP@blocktop=\TP@colbottom
 }
 
- % Column
+% Column
 \gdef\column#1{  % #1: relative width
-\ifTP@columnEnvironment
-\normalsize
-\setlength{\TP@blocktop}{\TP@coltop}
-\setlength{\TP@colcenter}{\TP@colcenter+0.5\colwidth+\TP@colspace}
-\setlength{\colwidth}{#1\TP@visibletextwidth+#1\TP@colspace-\TP@colspace-\blocklinewidth}
-\setlength{\TP@colcenter}{\TP@colcenter+0.5\colwidth+\blocklinewidth}
-\fi
+   \ifTP@columnEnvironment
+      \normalsize
+      \setlength{\TP@blocktop}{\TP@coltop}
+      \setlength{\TP@colcenter}{\TP@colcenter+0.5\colwidth+\TP@colspace}
+      \setlength{\colwidth}{#1\TP@visibletextwidth+#1\TP@colspace-\TP@colspace-\blocklinewidth}
+      \setlength{\TP@colcenter}{\TP@colcenter+0.5\colwidth+\blocklinewidth}
+   \fi
 }
 
- % --------------------------------------- %
- % Subcolumns environment
+% --------------------------------------- %
+% Subcolumns environment
 \newenvironment{subcolumns}{
-\ifTP@columnEnvironment
-\TP@subcolumnEnvironmenttrue
-\setlength{\TP@subcolcenter}{\TP@colcenter-0.5\colwidth-\TP@blockbodyinnersep-\TP@subcolspace-\TP@blockbodyinnersep}
-\global\TP@subcolcenter=\TP@subcolcenter
-\global\TP@subcoltop=\TP@blocktop
-\global\TP@subcolbottom=\TP@blocktop
-\subcolwidth=0pt
-\fi
+   \ifTP@columnEnvironment
+      \TP@subcolumnEnvironmenttrue
+      \setlength{\TP@subcolcenter}{\TP@colcenter-0.5\colwidth-\TP@blockbodyinnersep-\TP@subcolspace-\TP@blockbodyinnersep}
+      \global\TP@subcolcenter=\TP@subcolcenter
+      \global\TP@subcoltop=\TP@blocktop
+      \global\TP@subcolbottom=\TP@blocktop
+      \subcolwidth=0pt
+   \fi
 }{
-\TP@subcolumnEnvironmentfalse
-\global\TP@blocktop=\TP@subcolbottom
+   \TP@subcolumnEnvironmentfalse
+   \global\TP@blocktop=\TP@subcolbottom
 }
 
- % Subcolumn
+% Subcolumn
 \gdef\subcolumn#1{  % #1: relative width
-\ifTP@subcolumnEnvironment
-\normalsize
-\setlength{\TP@blocktop}{\TP@subcoltop}
-\setlength{\TP@subcolcenter}{\TP@subcolcenter+0.5\subcolwidth+\TP@blockbodyinnersep+\TP@subcolspace+\TP@blockbodyinnersep}
-\setlength{\subcolwidth}{#1\colwidth+#1\TP@blockbodyinnersep+#1\TP@blockbodyinnersep
-+#1\TP@subcolspace-\TP@subcolspace-2\TP@blockbodyinnersep}
-\setlength{\TP@subcolcenter}{\TP@subcolcenter+0.5\subcolwidth}
-\fi
+   \ifTP@subcolumnEnvironment
+      \normalsize
+      \setlength{\TP@blocktop}{\TP@subcoltop}
+      \setlength{\TP@subcolcenter}{\TP@subcolcenter+0.5\subcolwidth+\TP@blockbodyinnersep+\TP@subcolspace+\TP@blockbodyinnersep}
+      \setlength{\subcolwidth}{#1\colwidth+#1\TP@blockbodyinnersep+#1\TP@blockbodyinnersep
+         +#1\TP@subcolspace-\TP@subcolspace-2\TP@blockbodyinnersep}
+      \setlength{\TP@subcolcenter}{\TP@subcolcenter+0.5\subcolwidth}
+   \fi
 }
 
- % --------------------------------------- %
- % Affection
+% --------------------------------------- %
+% Affection
 \gdef\tikzposterlatexaffectionproofon{\TP@showlatexaffectiontrue}
 \gdef\tikzposterlatexaffectionproofoff{\TP@showlatexaffectionfalse}
 \TP@showlatexaffectiontrue
 
- % --------------------------------------- %
- % Document environment
+% --------------------------------------- %
+% Document environment
 \AfterEndPreamble{%
-\settototalheight{\titlegraphicheight}{\hbox{\@titlegraphic}}
-\TP@titlegraphicToptrue
-\noindent%
-\begin{tikzpicture}
-\coordinate (topright) at (0.5\textwidth, 0.5\textheight);
-\coordinate (bottomleft) at (-0.5\textwidth, -0.5\textheight);
-\clip (bottomleft) rectangle (topright);
-
-\begin{pgfonlayer}{backgroundlayer}
-\clip (bottomleft) rectangle (topright);
-\TP@backgroundstyle
-\ifTP@showlatexaffection
-\node[inner sep=4pt, anchor=south east, fill=white, draw=none, rounded corners=5, fill opacity=0.3, text opacity=1]
-at (0.5\textwidth-7pt, -0.5\textheight+7pt){\footnotesize {\bfseries\textrm\LaTeX}~\textrm{Ti\emph{k}Z}\bfseries\textrm{poster}};
-\fi
-\end{pgfonlayer}
+   \settototalheight{\titlegraphicheight}{\hbox{\@titlegraphic}}
+   \TP@titlegraphicToptrue
+   \noindent%
+   \begin{tikzpicture}
+      \coordinate (topright) at (0.5\textwidth, 0.5\textheight);
+      \coordinate (bottomleft) at (-0.5\textwidth, -0.5\textheight);
+      \clip (bottomleft) rectangle (topright);
+      
+      \begin{pgfonlayer}{backgroundlayer}
+         \clip (bottomleft) rectangle (topright);
+         \TP@backgroundstyle
+         \ifTP@showlatexaffection
+   \node[inner sep=4pt, anchor=south east, fill=white, draw=none, rounded corners=5, fill opacity=0.3, text opacity=1]
+            at (0.5\textwidth-7pt, -0.5\textheight+7pt){\footnotesize {\bfseries\textrm\LaTeX}~\textrm{Ti\emph{k}Z}\bfseries\textrm{poster}};
+         \fi
+      \end{pgfonlayer}
+      }
+      
+      \AtEndDocument{%
+   \end{tikzpicture}
 }
 
-\AtEndDocument{%
-\end{tikzpicture}
-}
-
- % --------------------------------------- %
- % Caption
+% --------------------------------------- %
+% Caption
 \newenvironment{tikzfigure}[1][]{
-\def \rememberparameter{#1}
-\addvspace{\medskipamount}
-\begin{center}
-}{
-\ifx\rememberparameter\@empty
- % Nothing
-\else
-\\[10pt]
-\captionof{figure}{\rememberparameter}
-\fi
-\end{center}
-\addvspace{\medskipamount}
+   \def \rememberparameter{#1}
+   \addvspace{\medskipamount}
+   \begin{center}
+      }{
+      \ifx\rememberparameter\@empty
+         % Nothing
+      \else
+         \\[10pt]
+         \captionof{figure}{\rememberparameter}
+      \fi
+   \end{center}
+   \addvspace{\medskipamount}
 }
 %%
 
