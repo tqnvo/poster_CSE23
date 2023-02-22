@@ -4,7 +4,7 @@ portrait,
 % landscape,
 margin=5mm, 
 innermargin=5mm, 
-blockverticalspace=15mm, 
+blockverticalspace=7mm, 
 colspace=15mm, 
 subcolspace=0mm]{tikzposter}
 		
@@ -35,6 +35,8 @@ subcolspace=0mm]{tikzposter}
 
 \usepackage{accents}
 
+\usepackage{lipsum} 
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -63,11 +65,23 @@ subcolspace=0mm]{tikzposter}
 \newcommand{\mcW}{\mathcal{W}}
 
 % -- Title, Author, Institute --------------------------------------------------------%
-\title{\bfseries Next-generation all-solid-state battery
-\includegraphics[width=0.3\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
-\author{
-	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
-\normalsize vo@acom.rwth-aachen.de}
+\title{
+\begin{minipage}{0.55\textwidth}
+	{\bfseries Next-generation all-solid-state battery}
+	\author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
+	% {\normalsize \underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+	\begin{flushleft}
+		\includegraphics[width=0.99\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}
+	\end{flushleft}
+\end{minipage}
+}
+% \author{
+% 	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
+% \normalsize vo@acom.rwth-aachen.de}
+\author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 \institute{\large
 $\prescript{a}{}{}$Department of Mathematics, Applied and Computational Mathematics (ACoM), 
 RWTH Aachen University, Schinkelstraße 02, 52062 Aachen, Germany\\
@@ -89,8 +103,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % Simple(red), Envelope(Bluefancy), Wave(Bluefancy2), Board(Bluelight), Autumn(squarebox+bluebrown), Desert(squarebox+bluebrown2),
 \usetheme{Default}
 
-\useblockstyle[titleinnersep=5mm]{Default}    % change default parameter for title inner sep
-
+\useblockstyle[titleinnersep=0.7mm]{Default}    % change default parameter for title inner sep
 % Choose COLOR STYLE:  Default, Blue, BlueGray, BlueOrange, BlueViolet, DarkBlue, GrayBlue, GrayLightblue, GrayRed, Green, GreenOrange, YellowRed
 %\definecolor{main}{HTML}{0080FF}
 %\definecolor{sub}{HTML}{8CDBFF}
@@ -98,9 +111,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
      
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{document}
-
 % Title block
-\maketitle[width=770mm]
+\maketitle[width=800mm]
+% \block{}{
+% 	d
+% }
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{\bfseries Mathematical modelling for the next-generation All-solid-state batteries: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{
 	\begin{minipage}{0.55\textwidth}
@@ -273,6 +288,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.5}
 	\block{Comparison: Analytical vs. Numerical solution}{
+		\lipsum[1]
 		% \begin{center}
 		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
 		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
@@ -389,67 +405,67 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% }
 	\column{0.5}
 	% % ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{References}{
-	% 	\vspace*{-3em}
-	% 	\renewcommand{\refname}{~}
-	% 	\begin{thebibliography}{2}
-	
-	% 		\bibitem{viozat1997implicit}
-	% 		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
-	% 			cells based on a numerical chemo-mechanical coupled approach}. 
-	% 		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
-	
-	% 		\bibitem{braun2015SCL}
-	% 		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
-	% 			Space-Charge-Layer formation in a solid electrolyte}. 
-	% 		Journal of Physical Chem., 119, 22281-22288, 2015.
-	
-	% 		\bibitem{hueter2017}
-	% 		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
-	% 		Electrode-electrolyte interface stability in solid state electrolyte system: 
-	% 		influence of coating thickness under varying residual stresses. 
-	% 		AIMS materials Science, 4(4):867-877, 2017.
-	
-	% 		\bibitem{kim2022}
-	% 		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-	% 		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
-	% 		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
-	% 		solid electrolytes with tailored lithium-metal compatibility,” 
-	% 		Nature Communications, 13(1):1883, Apr 2022.
-	% 		% $(*)$ (Solid electrode | Solid-state electrolyte)
-	% 	\end{thebibliography}
-	% }
+	\block{References}{
+		\vspace*{-3em}
+		\renewcommand{\refname}{~}
+		\begin{thebibliography}{2}
+			
+			\bibitem{viozat1997implicit}
+			\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
+				cells based on a numerical chemo-mechanical coupled approach}. 
+			Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
+			
+			\bibitem{braun2015SCL}
+			\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
+				Space-Charge-Layer formation in a solid electrolyte}. 
+			Journal of Physical Chem., 119, 22281-22288, 2015.
+			
+			\bibitem{hueter2017}
+			\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
+			Electrode-electrolyte interface stability in solid state electrolyte system: 
+			influence of coating thickness under varying residual stresses. 
+			AIMS materials Science, 4(4):867-877, 2017.
+			
+			\bibitem{kim2022}
+			\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
+			H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
+			and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
+			solid electrolytes with tailored lithium-metal compatibility,” 
+			Nature Communications, 13(1):1883, Apr 2022.
+			% $(*)$ (Solid electrode | Solid-state electrolyte)
+		\end{thebibliography}
+	}
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %	
-\block{References}{
-	\vspace*{-3em}
-	\renewcommand{\refname}{~}
-	\begin{thebibliography}{2}
-		
-		\bibitem{viozat1997implicit}
-		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
-			cells based on a numerical chemo-mechanical coupled approach}. 
-		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
-		
-		\bibitem{braun2015SCL}
-		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
-			Space-Charge-Layer formation in a solid electrolyte}. 
-		Journal of Physical Chem., 119, 22281-22288, 2015.
-		
-		\bibitem{hueter2017}
-		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
-		Electrode-electrolyte interface stability in solid state electrolyte system: 
-		influence of coating thickness under varying residual stresses. 
-		AIMS materials Science, 4(4):867-877, 2017.
-		
-		\bibitem{kim2022}
-		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
-		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
-		solid electrolytes with tailored lithium-metal compatibility,” 
-		Nature Communications, 13(1):1883, Apr 2022.
-		% $(*)$ (Solid electrode | Solid-state electrolyte)
-	\end{thebibliography}
-}
+% \block{References}{
+% 	\vspace*{-3em}
+% 	\renewcommand{\refname}{~}
+% 	\begin{thebibliography}{2}
+
+% 		\bibitem{viozat1997implicit}
+% 		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
+% 			cells based on a numerical chemo-mechanical coupled approach}. 
+% 		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
+
+% 		\bibitem{braun2015SCL}
+% 		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
+% 			Space-Charge-Layer formation in a solid electrolyte}. 
+% 		Journal of Physical Chem., 119, 22281-22288, 2015.
+
+% 		\bibitem{hueter2017}
+% 		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
+% 		Electrode-electrolyte interface stability in solid state electrolyte system: 
+% 		influence of coating thickness under varying residual stresses. 
+% 		AIMS materials Science, 4(4):867-877, 2017.
+
+% 		\bibitem{kim2022}
+% 		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
+% 		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
+% 		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
+% 		solid electrolytes with tailored lithium-metal compatibility,” 
+% 		Nature Communications, 13(1):1883, Apr 2022.
+% 		% $(*)$ (Solid electrode | Solid-state electrolyte)
+% 	\end{thebibliography}
+% }
 \end{document}
 % ---------------------------------------------------------------------------------------------------------------- %
