@@ -80,11 +80,19 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % Title block
 \maketitle[width=770mm]
 % ---------------------------------------------------------------------------------------------------------------- %
+\block{Next-generation All-solid-state battery (ASSB)}{
+	\begin{align}
+		a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+	\end{align}
+	where
+	
+}
+% ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 	% FIRST column
 	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Next-generation All-solid-state battery (ASSB)}{
+	\block{Why: Next-generation All-solid-state battery (ASSB)}{
 		\textbf{Rechargeable Lithium-ion battery} (LIB)
 		stays at the heart of electric vehicles, portable electric devices,
 		and energy storage systems [1]. 
@@ -174,9 +182,6 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% 	\end{align*}
 	% }
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{abc}{
-	}
-	% ---------------------------------------------------------------------------------------------------------------- %
 	% \block{Continuum physics kinematic}{
 	% 	Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement 
 	% 	$\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
@@ -212,31 +217,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% 	% 	\end{minipage}
 	% 	% \end{minipage}
 	% }
-	% ---------------------------------------------------------------------------------------------------------------- %	
-	\block{Contact}{
-		{
-				\raggedleft
-				\begin{tikzpicture}
-					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
-					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
-					\node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
-					\node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
-					\node[left= 0mm of qrcode.north west, yshift=-70mm] {vo@acom.rwth-aachen.de};
-				\end{tikzpicture}
-			}
-		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
-		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
-	}
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% ---------------------------------------------------------------------------------------------------------------- %
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.5}
 	\block{Mathematical model: Nucleation interface}{
@@ -323,6 +305,29 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% 		    %   \end{center}
 	% 	\end{itemize}
 	% }
+\end{columns}
+% ---------------------------------------------------------------------------------------------------------------- %
+\block{abc}{
+}
+
+\begin{columns}
+	\column{0.5}
+	% ---------------------------------------------------------------------------------------------------------------- %	
+	\block{Contact}{
+		{
+				\raggedleft
+				\begin{tikzpicture}
+					\node (qrcode) {\inputfig{floats/QRcode_ACoM}{QRcode_ACoM}};
+					\node[left= 0mm of qrcode.north west, yshift=-15mm] {Tuan Vo};
+					\node[left= 0mm of qrcode.north west, yshift=-40mm] {Applied and Computational Mathematics (ACoM)};
+					\node[left= 0mm of qrcode.north west, yshift=-55mm] {RWTH Aachen University};
+					\node[left= 0mm of qrcode.north west, yshift=-70mm] {vo@acom.rwth-aachen.de};
+				\end{tikzpicture}
+			}
+		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
+		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
+	}
+	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	\block{References}{
 		\vspace*{-3em}
