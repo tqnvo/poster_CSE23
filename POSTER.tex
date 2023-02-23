@@ -178,7 +178,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\rho\nabla V_{e}
 				= \textbf{0},                                                                                                                                                                                                                                                               \\
 				%--------------------------------
-				\text{s.t.}\,
+				\text{s.t.}\quad
 				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
 			where,
@@ -240,8 +240,20 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
-	% FIRST column
-	\column{0.45}
+	\column{0.25}{
+		\block{Interface}{
+			\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
+			taking place at space charge layer (SCL) \cite{braun2015}
+			found in ASSBs 
+			critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
+			This evidence points directly to the fact that 
+			the soft metallic li anode 
+			is erroneously prone to triggering dendrites, 
+			under cycles of electric charge \& discharge \cite{kim2022}.
+		}
+	}
+	% ---------------------------------------------------------------------------------------------------------------- %
+	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery
 		% (ng-ASSB)
@@ -326,20 +338,12 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.55}
-	\block{abc}{
-		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
-		taking place at space charge layer (SCL) \cite{braun2015}
-		found in ASSBs 
-		critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
-		This evidence points directly to the fact that 
-		the soft metallic li anode 
-		is erroneously prone to triggering dendrites, 
-		under cycles of electric charge \& discharge \cite{kim2022}.
+	\column{0.25}
+	\block{Structural tensor}{
 		% \begin{center}
 		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		% \end{center}
-		Besides, polycrystalline garnet-typed SSE 
+		Polycrystalline garnet-typed SSE 
 		such as LLZO 
 		exhibit grain boundaries and various sizes 
 		and shapes of grains under microscopic observation.
