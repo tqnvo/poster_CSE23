@@ -170,22 +170,25 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			% these dendrites, 
 			% when possible.	
 			with a consideration of nucleation criterion defined by
+			% \begin{align*}
+			% 	 & \rho\,
+			% 	\partial^2_{t^2}
+			% 	\bm{u}^{(s)}
+			% 	+
+			% 	\nabla \cdot
+			% 	\Big(
+			% 	\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			% 	:\nabla\Bu^{(s)}
+			% 	\Big)
+			% 	+
+			% 	\rho\nabla V_{e}
+			% 	= \textbf{0},                                                                                                                                                                                                                                                               \\
+			% 	%--------------------------------
+			% 	\text{s.t.}\quad
+			% 	 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			% \end{align*}
 			\begin{align*}
-				 & \rho\,
-				\partial^2_{t^2}
-				\bm{u}^{(s)}
-				+
-				\nabla \cdot
-				\Big(
-				\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-				:\nabla\Bu^{(s)}
-				\Big)
-				+
-				\rho\nabla V_{e}
-				= \textbf{0},                                                                                                                                                                                                                                                               \\
-				%--------------------------------
-				\text{s.t.}\quad
-				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
 			where,
 			can help to improve ASSB performance.
@@ -246,7 +249,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 }
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
-	\column{0.25}{
+	\column{0.34}{
 		\block{Interface}{
 			\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
 			taking place at space charge layer (SCL) \cite{braun2015}
@@ -256,17 +259,24 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			the soft metallic li anode 
 			is erroneously prone to triggering dendrites, 
 			under cycles of electric charge \& discharge \cite{kim2022}.
+			\begin{center}
+				\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
+			\end{center}
+			Distribution:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$.
 		}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.5}
+	\column{0.34}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery
 		% (ng-ASSB)
 	}{
+		Nucleation taking place at critical dendritic (SE|SSE)-interface
 		\begin{center}
 			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		\end{center}
+		Nucleation taking place at critical dendritic (SE|SSE)-interface\\
+		Nucleation taking place at critical dendritic (SE|SSE)-interface
 		% This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
 		% the multi-scale coupled problem subjected to conditions of Griffith criterion.
 		%
@@ -344,8 +354,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.25}
-	\block{Structural tensor}{
+	\column{0.32}
+	\block{Embedded structural-tensor SSE}{
 		% \begin{center}
 		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		% \end{center}
@@ -355,6 +365,9 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		and shapes of grains under microscopic observation.
 		Therefore, this type of microstructure distinctively leads to 
 		nuance destruction of ceramic-like materials.
+		\begin{center}
+			\inputfig{floats/dendrite_2parts_nospl_split}{dendrite_2parts_nosample_split}
+		\end{center}
 		Consequentially, dendrites contribute to 
 		degradation of ionic conductivity
 		and trace along grain boundaries in SSE.
@@ -446,7 +459,99 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{Nucleation interface: Taking place at the critical dendritic interface}{
 	\begin{minipage}{0.45\textwidth}
-		Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
+		% Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		\begin{align*}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\quad
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		\end{align*}
+		Therefore
+		\begin{align*}
+			\therefore\quad
+			\boxed{
+			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			}
+		\end{align*}
 		\begin{center}
 			% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 			% \inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
@@ -454,18 +559,20 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.55\textwidth}
-		Distribution of the analytical maximal shear stress component $\WAsigma^{\Pi}_{x_1x_2}$, 
-		around the crack tip $a_{c}$.
+		% Distribution of the analytical maximal shear stress component $\WAsigma^{\Pi}_{x_1x_2}$, 
+		% around the crack tip $a_{c}$.
+		Boundary settings
 		\begin{center}
-			\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
+			\inputfig{floats/structuraltwofields}{structuraltwofields}
+			% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 		\end{center}
 		The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
 		\begin{center}
 			\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
 		\end{center}
-		Comparison
+		Comparison: Analytical vs. Numerical solutions
 		\begin{center}
-			\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
+			\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
 		\end{center}
 		% \begin{minipage}{0.45\textwidth}
 		% 	\begin{center}
