@@ -138,12 +138,12 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				This bottleneck is mainly due to liquid-based electrolyte in c-LIBs.
 			\end{mdframed}
 		\end{minipage}
-		\hfill
-		\begin{minipage}{0.5\textwidth}
+		% \hfill
+		\begin{minipage}{0.49\textwidth}
 			\begin{mdframed}
 				\textbf{All-solid-state battery} (ASSB) is 
 				one of promising candidates to overcome bottlenecks of c-LIBs. 
-				Thanks to \underline{solid-state electrolyte} (SSE),
+				Thanks to solid-state electrolyte (SSE),
 				% e.g. SSE made of the highly ionic-conductive polycrystalline LLZO, 
 				ASSB is highly stable towards temperature and pressure. 
 				Nevertheless, metallic Li-dendrite 
@@ -153,6 +153,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				and the probability of short-circuit.
 			\end{mdframed}
 		\end{minipage}
+		%
 		\begin{mdframed}
 			\textbf{Next-generation All-solid-state battery} (ng-ASSB)
 			% should, consequentially, be able to cope with 
@@ -162,7 +163,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			% of 
 			% these dendrites, 
 			% when possible.	
-			with a consideration of nucleation criterion defined by 
+			with a consideration of nucleation criterion defined by
 			\begin{align*}
 				 & \rho\,
 				\partial^2_{t^2}
@@ -180,7 +181,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\text{s.t.}\,
 				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
-			where, \\
+			where,
 			can help to improve ASSB performance.
 		\end{mdframed}
 	\end{minipage}%
@@ -245,26 +246,9 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\block{Next-generation All-solid-state battery
 		% (ng-ASSB)
 	}{
-		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
-		taking place at space charge layer (SCL) \cite{braun2015}
-		found in ASSBs 
-		critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
-		This evidence points directly to the fact that 
-		the soft metallic li anode 
-		is erroneously prone to triggering dendrites, 
-		under cycles of electric charge \& discharge \cite{kim2022}.
 		\begin{center}
 			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		\end{center}
-		Besides, polycrystalline garnet-typed SSE 
-		such as LLZO 
-		exhibit grain boundaries and various sizes 
-		and shapes of grains under microscopic observation.
-		Therefore, this type of microstructure distinctively leads to 
-		nuance destruction of ceramic-like materials.
-		Consequentially, dendrites contribute to 
-		degradation of ionic conductivity
-		and trace along grain boundaries in SSE.
 		% This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
 		% the multi-scale coupled problem subjected to conditions of Griffith criterion.
 		%
@@ -344,7 +328,30 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.55}
 	\block{abc}{
-		\inputfig{floats/efield}{efield}
+		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
+		taking place at space charge layer (SCL) \cite{braun2015}
+		found in ASSBs 
+		critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
+		This evidence points directly to the fact that 
+		the soft metallic li anode 
+		is erroneously prone to triggering dendrites, 
+		under cycles of electric charge \& discharge \cite{kim2022}.
+		% \begin{center}
+		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% \end{center}
+		Besides, polycrystalline garnet-typed SSE 
+		such as LLZO 
+		exhibit grain boundaries and various sizes 
+		and shapes of grains under microscopic observation.
+		Therefore, this type of microstructure distinctively leads to 
+		nuance destruction of ceramic-like materials.
+		Consequentially, dendrites contribute to 
+		degradation of ionic conductivity
+		and trace along grain boundaries in SSE.
+		% \begin{center}
+		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% \end{center}
+		% \inputfig{floats/efield}{efield}
 		% \inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 		% \begin{center}
 		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
@@ -465,7 +472,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% \begin{center}
 	% 	\inputfig{floats/routine_woTV}{routine_woTV}
 	% \end{center}
-	Nucleation interface: Taking place at the critical dendritic interface (Solid electrode | Solid-state electrolyte)
+	% Nucleation interface: Taking place at the critical dendritic interface (Solid electrode | Solid-state electrolyte)
 }
 \begin{columns}
 	\column{0.15}
