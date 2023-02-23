@@ -70,13 +70,13 @@ subcolspace=0mm]{tikzposter}
 
 % -- Title, Author, Institute --------------------------------------------------------%
 \title{
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{0.5\textwidth}
 		{\bfseries Next-generation all-solid-state battery}
 	% \author{\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 	% {\normalsize \underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$}
 \end{minipage}
 \hfill
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{0.35\textwidth}
 	% \begin{flushleft}
 		\includegraphics[width=1.0\textwidth]{./floats/logos/rwth_acom_en_cmyk_fzj_gap.eps}
 	% \end{flushleft}
@@ -131,7 +131,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		and help to solve global environment issues thanks to EVs' zero emission.
 		However, conventional LIB (c-LIB) is sensible to temperature and pressure, 
 		hence, flammable and explosive. 
-		This is mainly due to \underline{liquid-based electrolyte} found in cLIBs.
+		This bottleneck is mainly due to \underline{liquid-based electrolyte} in c-LIBs.
 		
 		\textbf{All-solid-state battery} (ASSB) is 
 		one of promising candidates to overcome bottlenecks of c-LIBs. 
@@ -154,27 +154,36 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% when possible.	
 		with a consideration of nucleation criterion defined by 
 		\begin{align*}
-			a_{\text{Griffith}}:= a^{*}
-			= \arg\min_{a\in\mathbb{R}}
-			{
-				\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
-				f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
-				-
-				\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
-				f(a;\gamma) \, d\Gamma
-			}\Bigg|_{\bm{u}^{(s)}}
+			 & \rho\,
+			\partial^2_{t^2}
+			\bm{u}^{(s)}
+			+
+			\nabla \cdot
+			\Big(
+			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+			:\nabla\Bu^{(s)}
+			\Big)
+			+
+			\rho\nabla V_{e}
+			= \textbf{0},                                                                                                                                                                                                                                                               \\
+			%--------------------------------
+			\text{s.t.}\,
+			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		\end{align*}
-		where fdassa, \\
+		where, \\
 		can help to improve ASSB performance.
 	\end{minipage}%
 	\hfill
-	\begin{minipage}{0.35\textwidth}
+	\begin{minipage}{0.4\textwidth}
 		% \begin{tabular}{|p{\textwidth}}
 		% 	This is second part                                                                              \\
 		% 	$f(x) = 2x + 3y$ This line may go all along the end and wrap afterwards to the next as seen here \\
 		% 	This is a forced next line by ending the previous line 
 		% \end{tabular}
-		\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		\begin{center}
+			\inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
+		\end{center}
 	\end{minipage}%
 	% \begin{columns}
 	% 	\column{0.5}
@@ -220,7 +229,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 	% FIRST column
-	\column{0.4}
+	\column{0.5}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery
 		% (ng-ASSB)
@@ -232,29 +241,14 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		This evidence points directly to the fact that the soft metallic lithium negative electrode 
 		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
 		under cycles of electric charge \& discharge \cite{kim2022}.
+		\begin{center}
+			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		\end{center}
 		Besides, polycrystalline garnet-typed solid-state electrolyte such as LLZO 
 		exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
 		Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials.
 		Consequentially, dendritic by-products contribute to degradation of ionic conductivity
 		and trace along grain boundaries in SSE.
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\,
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		where
 		% This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
 		% the multi-scale coupled problem subjected to conditions of Griffith criterion.
 		%
@@ -332,8 +326,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.6}
-	\block{Showcase}{
+	\column{0.5}
+	\block{abc}{
 		\inputfig{floats/efield}{efield}
 		% \inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 		% \begin{center}
@@ -421,7 +415,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\begin{minipage}{0.45\textwidth}
 		Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
 		\begin{center}
-			\inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
+			% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+			% \inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
 		\end{center}
 	\end{minipage}
 	\hfill
