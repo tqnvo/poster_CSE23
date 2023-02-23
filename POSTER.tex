@@ -41,6 +41,8 @@ subcolspace=0mm]{tikzposter}
 \usepackage{hyperref}
 \usepackage{cleveref}
 
+\usepackage{mdframed}
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -124,57 +126,66 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{\bfseries Mathematical modelling for the next-generation All-solid-state batteries: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{
 	\begin{minipage}{0.55\textwidth}
-		\textbf{Rechargeable Lithium-ion battery} (LIB)
-		is at the heart of every electric vehicle (EV), portable electronic device,
-		and energy storage system \cite{vo2018}. 
-		Nowadays, LIBs enable human life more efficient 
-		and help to solve global environment issues thanks to EVs' zero emission.
-		However, conventional LIB (c-LIB) is sensible to temperature and pressure, 
-		hence, flammable and explosive. 
-		This bottleneck is mainly due to \underline{liquid-based electrolyte} in c-LIBs.
-		
-		\textbf{All-solid-state battery} (ASSB) is 
-		one of promising candidates to overcome bottlenecks of c-LIBs. 
-		Thanks to \underline{solid-state electrolyte} (SSE),
-		% e.g. SSE made of the highly ionic-conductive polycrystalline LLZO, 
-		ASSB is highly stable towards temperature and pressure. 
-		Nevertheless, metallic Li-dendrite 
-		triggered at (SE|SSE)-interface is the main drawback 
-		as these dendritic threads extrapolate into grain boundary network of SSE, 
-		causing crevice, degradation of ionic conductivity,
-		and the probability of short-circuit.
-		
-		\textbf{Next-generation All-solid-state battery} (ng-ASSB)
-		% should, consequentially, be able to cope with 
-		% micro-dendritic threads at the (SE|SSE)-interface, 
-		% and hence, 
-		% to foresee nucleation points caused by propagations 
-		% of 
-		% these dendrites, 
-		% when possible.	
-		with a consideration of nucleation criterion defined by 
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\,
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		where, \\
-		can help to improve ASSB performance.
+		\begin{minipage}{0.5\textwidth}
+			\begin{mdframed}
+				\textbf{Rechargeable Lithium-ion battery} (LIB)
+				is at the heart of every electric vehicle (EV), portable electronic device,
+				and energy storage system \cite{vo2018}. 
+				Nowadays, LIBs enable human life more efficient 
+				and help to solve global environment issues thanks to EVs' zero emission.
+				However, conventional LIB (c-LIB) is sensible to temperature and pressure, 
+				hence, flammable and explosive. 
+				This bottleneck is mainly due to liquid-based electrolyte in c-LIBs.
+			\end{mdframed}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.5\textwidth}
+			\begin{mdframed}
+				\textbf{All-solid-state battery} (ASSB) is 
+				one of promising candidates to overcome bottlenecks of c-LIBs. 
+				Thanks to \underline{solid-state electrolyte} (SSE),
+				% e.g. SSE made of the highly ionic-conductive polycrystalline LLZO, 
+				ASSB is highly stable towards temperature and pressure. 
+				Nevertheless, metallic Li-dendrite 
+				triggered at (SE|SSE)-interface is the main drawback 
+				as these dendritic threads extrapolate into grain boundary network of SSE, 
+				causing crevice, degradation of ionic conductivity,
+				and the probability of short-circuit.
+			\end{mdframed}
+		\end{minipage}
+		\begin{mdframed}
+			\textbf{Next-generation All-solid-state battery} (ng-ASSB)
+			% should, consequentially, be able to cope with 
+			% micro-dendritic threads at the (SE|SSE)-interface, 
+			% and hence, 
+			% to foresee nucleation points caused by propagations 
+			% of 
+			% these dendrites, 
+			% when possible.	
+			with a consideration of nucleation criterion defined by 
+			\begin{align*}
+				 & \rho\,
+				\partial^2_{t^2}
+				\bm{u}^{(s)}
+				+
+				\nabla \cdot
+				\Big(
+				\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+				:\nabla\Bu^{(s)}
+				\Big)
+				+
+				\rho\nabla V_{e}
+				= \textbf{0},                                                                                                                                                                                                                                                               \\
+				%--------------------------------
+				\text{s.t.}\,
+				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			\end{align*}
+			where, \\
+			can help to improve ASSB performance.
+		\end{mdframed}
 	\end{minipage}%
 	\hfill
-	\begin{minipage}{0.4\textwidth}
+	\begin{minipage}{0.45\textwidth}
 		% \begin{tabular}{|p{\textwidth}}
 		% 	This is second part                                                                              \\
 		% 	$f(x) = 2x + 3y$ This line may go all along the end and wrap afterwards to the next as seen here \\
@@ -229,25 +240,30 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 	% FIRST column
-	\column{0.5}
+	\column{0.45}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\block{Next-generation All-solid-state battery
 		% (ng-ASSB)
 	}{
 		\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
 		taking place at space charge layer (SCL) \cite{braun2015}
-		found in all-solid-state lithium-ion batteries (ASSLiBs) 
+		found in ASSBs 
 		critically exhibits mechanical and electrochemical instability \cite{hueter2017}. 
-		This evidence points directly to the fact that the soft metallic lithium negative electrode 
-		is erroneously prone to triggering dendritic by-products of silvery lithium metal, 
+		This evidence points directly to the fact that 
+		the soft metallic li anode 
+		is erroneously prone to triggering dendrites, 
 		under cycles of electric charge \& discharge \cite{kim2022}.
 		\begin{center}
 			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		\end{center}
-		Besides, polycrystalline garnet-typed solid-state electrolyte such as LLZO 
-		exhibit grain boundaries and various sizes and shapes of grains under microscopic observation.
-		Therefore, this type of microstructure distinctively leads to nuance destruction of ceramic-like materials.
-		Consequentially, dendritic by-products contribute to degradation of ionic conductivity
+		Besides, polycrystalline garnet-typed SSE 
+		such as LLZO 
+		exhibit grain boundaries and various sizes 
+		and shapes of grains under microscopic observation.
+		Therefore, this type of microstructure distinctively leads to 
+		nuance destruction of ceramic-like materials.
+		Consequentially, dendrites contribute to 
+		degradation of ionic conductivity
 		and trace along grain boundaries in SSE.
 		% This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
 		% the multi-scale coupled problem subjected to conditions of Griffith criterion.
@@ -326,7 +342,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% ---------------------------------------------------------------------------------------------------------------- %
 	% SECOND column
 	% ---------------------------------------------------------------------------------------------------------------- %
-	\column{0.5}
+	\column{0.55}
 	\block{abc}{
 		\inputfig{floats/efield}{efield}
 		% \inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
