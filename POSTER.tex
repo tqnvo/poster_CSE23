@@ -13,6 +13,10 @@ subcolspace=0mm]{tikzposter}
 \usepackage{defcmlfont}
 \usepackage{tikz,lipsum}
 
+\usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+% \usepackage[english]{babel}
+
 \usetikzlibrary{positioning}
 \usepackage{float}                           % for minipages at Polarization part
 \usepackage{caption}                         % no "Figure" in caption
@@ -91,7 +95,7 @@ subcolspace=0mm]{tikzposter}
 % 	% \end{flushleft}
 % \end{minipage}
 % }
-\title{\textsc{\textbf{Next-generation all-solid-state battery}}}
+\title{\scshape Next-generation all-solid-state battery}
 \author{
 	\underline{Tuan Vo}$^{\text{a,b}\,\dagger}$, Claas Hüter$^{\text{b}}$, Stefanie Braun$^{\text{a}}$, Manuel Torrilhon$^{\text{a}}$\\
 \normalsize vo@acom.rwth-aachen.de}
@@ -106,7 +110,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % \titlegraphic{\includegraphics[height=6cm]{./figs/FZJ_only.pdf} \hfill \includegraphics[height=6cm]{./figs/rwth_mathcces_bild_rgb_only.pdf} }
 % \titlegraphic{\includegraphics[width=0.3\textwidth]{./floats/logos/rwth_acom_en_cmyk_siamcse23_fzj_gap.eps}}
 
-\renewcommand{\familydefault}{\sfdefault}
+% \renewcommand{\familydefault}{\sfdefault} % Change font family
 
 \bibliographystyle{plain}
 
@@ -594,7 +598,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	% Nucleation interface: Taking place at the critical dendritic interface (Solid electrode | Solid-state electrolyte)
 }
 \begin{columns}
-	\column{0.15}
+	\column{0.14}
 	% ---------------------------------------------------------------------------------------------------------------- %	
 	\block{Contact}{
 		% {
@@ -613,22 +617,25 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
 		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
 	}
-	\column{0.85}
+	\column{0.86}
 	%---------------------------------------------------------------------------------------------------------------- %	
 	\block{References}{
 		\vspace*{-3em}
 		\renewcommand{\refname}{~}
 		\begin{thebibliography}{2}
 			\bibitem{vo2018}
-			\textbf{T.Vo}, \emph{Modeling the swelling phenomena of li-ion batt.
-				cells based on a numerical chemo-mech. coupled approach}.
+			\textbf{T.Vo},
+			\!\!
+			 \emph{Modeling\! the\! swelling\! phenomena\! of\! li-ion\! batt.\!
+				cells\! based\! on\! a\! numerical\! chemo-mech.\! coupled\! approach}.
 			MA, Robert Bosch Battery Systems GmbH, 2018.
 			
 			\bibitem{braun2015}
-			\textbf{S.Braun},\! C.Yada and A.Latz,\!\!
-			\emph{Thermodynamically consistent model for
-				Space-Charge-Layer formation in a solid electrolyte}.
-			Jr. Phys. Chem.,\! 119,\! 22281-22288, 2015.
+			\textbf{S.Braun},\! C.Yada\! and A.Latz,
+			\!\!\!\!
+			\emph{Thermodynamically\! consistent\! model\! for\!
+				Space-Charge-Layer\! formation\! in\! a\! solid\! electrolyte}.
+			Jr.\! Phys.\! Chem.,\! 119,\! 22281-22288,\! 2015.
 			
 			\bibitem{hueter2017}
 			\textbf{C.Hüter}, S.Fu, M.Finsterbusch, E.Figgemeier, L.Wells, and R.Spatschek,
