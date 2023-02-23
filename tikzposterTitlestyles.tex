@@ -42,15 +42,31 @@
 %   titlebgcolor  -  color
 
 \definetitlestyle{Default}{
-	width=600mm, roundedcorners=30, linewidth=0.4cm, innersep=1cm,
-	titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
-	titlegraphictotitledistance=10pt, titletextscale=1
+	width=600mm, 
+	roundedcorners=30, 
+	linewidth=0.4cm, 
+	innersep=0.5cm,
+	titletotopverticalspace=10mm, 
+	titletoblockverticalspace=10mm,
+	titlegraphictotitledistance=10pt, 
+	titletextscale=1
 }{
 	\begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
 		\draw[color=framecolor, fill=titlebgcolor]%
 		(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
 	\end{scope}
 }
+
+% \definetitlestyle{Default}{
+% 	width=600mm, roundedcorners=30, linewidth=0.4cm, innersep=01cm,
+% 	titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
+% 	titlegraphictotitledistance=10pt, titletextscale=1
+% }{
+% 	\begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
+% 		\draw[color=framecolor, fill=titlebgcolor]%
+% 		(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+% 	\end{scope}
+% }
 
 \definetitlestyle{Basic}{
 	width=770mm, roundedcorners=0, linewidth=0pt, innersep=10pt,
