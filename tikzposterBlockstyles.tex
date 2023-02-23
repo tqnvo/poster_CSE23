@@ -48,10 +48,18 @@
 %   framecolor  -  color
 
 \defineblockstyle{Default}{
-	titlewidthscale=1, bodywidthscale=1, titlecenter,
-	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
-	bodyverticalshift=0pt, roundedcorners=30, linewidth=0.4cm,
-	titleinnersep=1cm, bodyinnersep=1cm
+	titlewidthscale=1, 
+	bodywidthscale=1, 
+	titlecenter,
+	titleoffsetx=0pt, 
+	titleoffsety=0pt, 
+	bodyoffsetx=0pt, 
+	bodyoffsety=0pt,
+	bodyverticalshift=0pt, 
+	roundedcorners=15, 
+	linewidth=0.2cm,
+	titleinnersep=1cm, 
+	bodyinnersep=0.8cm
 }{
 	\begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
 		\ifBlockHasTitle %
@@ -62,6 +70,22 @@
 		\fi
 	\end{scope}
 }
+
+% \defineblockstyle{Default}{
+% 	titlewidthscale=1, bodywidthscale=1, titlecenter,
+% 	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+% 	bodyverticalshift=0pt, roundedcorners=30, linewidth=0.4cm,
+% 	titleinnersep=1cm, bodyinnersep=1cm
+% }{
+% 	\begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
+% 		\ifBlockHasTitle %
+% 			\draw[color=blocktitlebgcolor, fill=blocktitlebgcolor] (blockbody.south west) rectangle (blocktitle.north east);
+% 			\draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+% 		\else
+% 			\draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+% 		\fi
+% 	\end{scope}
+% }
 
 \defineblockstyle{Basic}{
 	titlewidthscale=0.8, bodywidthscale=1, titlecenter,
