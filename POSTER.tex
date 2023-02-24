@@ -227,11 +227,16 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			% 	 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			% \end{align*}
 			\begin{align*}
-				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u},\theta;\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
-			where,
-			can help to improve ASSB performance.\\
-			can help to improve ASSB performance.\\
+			where 
+			$\Bu$ displacement field , 
+			$\theta$ temperature field, 
+			$a$ crevice length,
+			$\lambda, \mu$ Lame' constants,
+			$\Bd\otimes\Bd$ embedded misorientation structural tensor,
+			and 
+			$\gamma$ cracking-surface energy density,
 			can help to improve ASSB performance.
 		\end{mdframed}
 	\end{minipage}%
@@ -303,26 +308,27 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{center}
 				\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 			\end{center}
-			\underline{Distribution}:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$,
-			where $\WAsigma^{\Pi}_{x_1x_2}$ is based on Airy-Westergaard function defined by
-			\begin{align*}
-				\WA:
-				% \begin{cases}
-				\mbC\to\mbC,
-				\displaystyle
-				z \mapsto \WAz:=
-				\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
-				+ x_2\,
-				\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
-				% \end{cases}
-			\end{align*}
-			$
-				\mcK^{(\star)}:= \Kipc:
-				\mbC \to \mbC,
-				z \mapsto \Kipcz:=
-				- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
-				\forall \ \{p_{h},a\}\in\mbR_{+}
-			$
+			\underline{Distribution}:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$.
+			% where $\WAsigma^{\Pi}_{x_1x_2}$ is based on Airy-Westergaard function defined by
+			% \begin{align*}
+			% 	\WA:
+			% 	% \begin{cases}
+			% 	\mbC\to\mbC,
+			% 	% \displaystyle
+			% 	z \mapsto \WAz:=
+			% 	\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
+			% 	+ x_2\,
+			% 	\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
+			% 	% \end{cases}
+			% \end{align*}
+			% $
+			% 	% \mcK^{(\star)}:= 
+			% 	\Kipc:
+			% 	\mbC \to \mbC,
+			% 	z \mapsto \Kipcz:=
+			% 	- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
+			% 	\forall \ \{p_{h},a\}\in\mbR_{+}
+			% $
 		}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
@@ -570,6 +576,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{align*}
 				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
+			abc
 		\end{mdframed}
 		\begin{minipage}{0.5\textwidth}
 			\begin{mdframed}
@@ -615,6 +622,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\text{s.t.}\quad
 				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
+			abc
 		\end{mdframed}
 		% \begin{center}
 		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
@@ -647,7 +655,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\hfill 
 		\begin{minipage}{0.3\textwidth}
 			\begin{mdframed}
-				PDE
+				FEM: Strain energy density
+				\vspace{0.1cm}
+				\inputfig{floats/griffith_flowchart_circle_formula}{griffith_flowchart_circle_formula}
+				abc\\
+				abc
 			\end{mdframed}
 		\end{minipage}
 		% \begin{minipage}{0.45\textwidth}
@@ -662,9 +674,39 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% 	\end{center}
 		% \end{minipage}
 		\begin{mdframed}
-			FEM implementation:
-			Element stiffness matrix $\BK^{e}$: \underline{known}; 
-			approximated by \underline{Gauss quadrature rule}; index notation implies \underline{$4+2$ \textit{for}-loop}:
+			Airy-Westergaard function used for max. shear stress analysis
+			\begin{align*}
+				\WA:
+				% \begin{cases}
+				\mbC\to\mbC,
+				% \displaystyle
+				z \mapsto \WAz:=
+				\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
+				+ x_2\,
+				\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
+				% \end{cases}
+				% \Kipc:
+				% \mbC \to \mbC,
+				% z \mapsto 
+				\Kipcz:=
+				- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
+				% \forall \ \{p_{h},a\}\in\mbR_{+}
+			\end{align*}
+			where $\{p_{h},a\}\in\mbR_{+}$ is the.
+			% $
+			% \mcK^{(\star)}:= 
+			% \Kipc:
+			% \mbC \to \mbC,
+			% z \mapsto \Kipcz:=
+			% - p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
+			% \forall \ \{p_{h},a\}\in\mbR_{+}
+			% $
+		\end{mdframed}
+		\begin{mdframed}
+			\underline{FEM implementation}:
+			element matrix $\BK^{e}$
+			approx. by \textit{Gauss quadrature}; 
+			indices imply \textit{$4+2=6$ \textit{for}-loop}:
 			\begin{align*}
 				K^{\stackrel{\alpha\beta}{e\ \ }}_{ik} = 
 				\int_{\Omega^{\xi}}
