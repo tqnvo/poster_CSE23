@@ -50,6 +50,9 @@ subcolspace=0mm]{tikzposter}
 
 \usepackage{xcolor}
 
+% double int with circle \oiint
+\usepackage{esint}
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -58,6 +61,11 @@ subcolspace=0mm]{tikzposter}
 % \newcommand{\steam}{g}
 % \newcommand{\out}{\text{out}}
 % \newcommand{\tr}{{\mathsf T}}
+\newcommand{\WA}{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}
+\newcommand{\WAz}{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}(z)}
+\newcommand{\WApz}{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}'(z)}
+\newcommand{\WAxx}{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}(x_1,x_2)}
+
 \newcommand{\WAsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\sigma}}
 \newcommand{\WABsigma}{\prescript{\prescript{\mathcal{W}}{}{\!\!\!\mathcal{A}}}{}{\!\boldsymbol{\sigma}}}
 
@@ -76,6 +84,16 @@ subcolspace=0mm]{tikzposter}
 \newcommand{\mcT}{\mathcal{T}}
 \newcommand{\mcV}{\mathcal{V}}
 \newcommand{\mcW}{\mathcal{W}}
+
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+\newcommand{\bigoiintsss}{\mathlarger{\mathlarger{\varoiint}}}
+\newcommand{\bigoiintssss}{\mathlarger{\varoiint}}
+
+\newcommand{\Kipc}{\mathcal{K}^{c}}
+\newcommand{\Kipcz}{\mathcal{K}^{c}(z)}
 
 % -- Title, Author, Institute --------------------------------------------------------%
 % \title{
@@ -273,7 +291,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
 	\column{0.34}{
-		\block{Interface}{
+		\block{Interface Analysis}{
 			\textbf{Interface} between solid electrode and solid-state electrolyte (SE|SSE) 
 			taking place at space charge layer (SCL) \cite{braun2015}
 			found in ASSBs 
@@ -285,7 +303,26 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{center}
 				\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 			\end{center}
-			\underline{Distribution}:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$.
+			\underline{Distribution}:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$,
+			where $\WAsigma^{\Pi}_{x_1x_2}$ is based on Airy-Westergaard function defined by
+			\begin{align*}
+				\WA:
+				% \begin{cases}
+				\mbC\to\mbC,
+				\displaystyle
+				z \mapsto \WAz:=
+				\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
+				+ x_2\,
+				\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
+				% \end{cases}
+			\end{align*}
+			$
+				\mcK^{(\star)}:= \Kipc:
+				\mbC \to \mbC,
+				z \mapsto \Kipcz:=
+				- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
+				\forall \ \{p_{h},a\}\in\mbR_{+}
+			$
 		}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
@@ -610,12 +647,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\hfill 
 		\begin{minipage}{0.3\textwidth}
 			\begin{mdframed}
-				\underline{Closure problem}:
-				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
-				taking place at space charge
-				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
-				taking place at space charge
-				Interface between solid electrode and solid-state electrolyte
+				PDE
 			\end{mdframed}
 		\end{minipage}
 		% \begin{minipage}{0.45\textwidth}
@@ -629,6 +661,23 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		% 		\inputfig{floats/routine_woTV_numa}{routine_woTV_numa}
 		% 	\end{center}
 		% \end{minipage}
+		\begin{mdframed}
+			FEM implementation:
+			Element stiffness matrix $\BK^{e}$: \underline{known}; 
+			approximated by \underline{Gauss quadrature rule}; index notation implies \underline{$4+2$ \textit{for}-loop}:
+			\begin{align*}
+				K^{\stackrel{\alpha\beta}{e\ \ }}_{ik} = 
+				\int_{\Omega^{\xi}}
+				\left(
+				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k1}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{1} +
+				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k2}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{2} +
+				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k1}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{1} +
+				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k2}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{2}
+				\right)
+				\det(\BJ) \ d\Omega^{\xi}
+			\end{align*}
+			where $\mathcal{L}^{\alpha}_{j}$ and $\mathcal{R}^{\beta}_{l}$ are gradients of basis functions at node $\alpha^{th}$ and $\beta^{th}$, respectively.
+		\end{mdframed}
 	\end{minipage}
 	% \begin{center}
 	% 	\inputfig{floats/routine_woTV}{routine_woTV}
