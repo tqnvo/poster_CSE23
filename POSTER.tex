@@ -486,6 +486,36 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 \block{Nucleation interface: Taking place at the critical dendritic interface}{
 	\begin{minipage}{0.45\textwidth}
 		% Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
+		\underline{Coupled fields}: Displacement vector field and temperature scalar field
+		\begin{align*}
+			\Bu:
+			\begin{cases}
+				\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}^3, \\
+				(\Bx,t) \mapsto \Bu(\Bx,t),
+			\end{cases}
+			\qquad
+			\text{and}
+			\qquad
+			\theta:
+			\begin{cases}
+				\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
+				(\Bx,t) \mapsto \theta(\Bx,t),
+			\end{cases}
+		\end{align*}
+		Governing conservation equations
+		\begin{align*}
+			\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{action}}\ d\Omega 
+			+ \int_{\partial\Omega}(\cdot)^{\text{action}}\ d\partial\Omega  
+			+ \int_{\Omega}(\cdot)^{\text{production/source/sink}}\ d\Omega
+		\end{align*}
+		$\rho(\Bx,t)$ is mass density per unit volume (puv); 
+		$\Bb(\Bx,t)$ body force puv; 
+		$\Bv(\Bx,t)$ velocity; 
+		$e(\Bx,t)$ internal energy puv; 
+		$\Bq(\Bx,t)$ heat flux; 
+		$r(\Bx,t)$ heat source puv; 
+		$\Bsigma$ Cauchy stress and 
+		$\Bvarepsilon$ infinitesimal strain.
 		\begin{align*}
 			 & \rho\,
 			\partial^2_{t^2}
@@ -503,6 +533,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\text{s.t.}\quad
 			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		\end{align*}
+		\underline{Thermodynamic consistency}: satisfied.
+		\underline{Closure problem}: fulfilled.
 		\begin{align*}
 			 & \rho\,
 			\partial^2_{t^2}
@@ -520,57 +552,14 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\text{s.t.}\quad
 			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		\end{align*}
+		Helmholtz energy functional 
 		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		\end{align*}
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
+		Governing PDE
+		% \begin{align*}
+		% 	a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+		% \end{align*}
 		Therefore
 		\begin{align*}
 			\therefore\quad
