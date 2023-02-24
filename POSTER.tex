@@ -484,111 +484,121 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
 \block{Nucleation interface: Taking place at the critical dendritic interface}{
-	\begin{minipage}{0.45\textwidth}
+	\begin{minipage}{0.43\textwidth}
 		% Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
-		\underline{Coupled fields}: Displacement vector field and temperature scalar field
-		\begin{align*}
-			\Bu:
-			\begin{cases}
-				\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}^3, \\
-				(\Bx,t) \mapsto \Bu(\Bx,t),
-			\end{cases}
-			\qquad
-			\text{and}
-			\qquad
-			\theta:
-			\begin{cases}
-				\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
-				(\Bx,t) \mapsto \theta(\Bx,t),
-			\end{cases}
-		\end{align*}
-		Governing conservation equations
-		\begin{align*}
-			\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{action}}\ d\Omega 
-			+ \int_{\partial\Omega}(\cdot)^{\text{action}}\ d\partial\Omega  
-			+ \int_{\Omega}(\cdot)^{\text{production/source/sink}}\ d\Omega
-		\end{align*}
-		$\rho(\Bx,t)$ is mass density per unit volume (puv); 
-		$\Bb(\Bx,t)$ body force puv; 
-		$\Bv(\Bx,t)$ velocity; 
-		$e(\Bx,t)$ internal energy puv; 
-		$\Bq(\Bx,t)$ heat flux; 
-		$r(\Bx,t)$ heat source puv; 
-		$\Bsigma$ Cauchy stress and 
-		$\Bvarepsilon$ infinitesimal strain.
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		% \underline{Thermodynamic consistency}: satisfied.
-		% \underline{Closure problem}: fulfilled.
-		Helmholtz energy functional 
-		\begin{align*}
-			 & \rho\,
-			\partial^2_{t^2}
-			\bm{u}^{(s)}
-			+
-			\nabla \cdot
-			\Big(
-			\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			:\nabla\Bu^{(s)}
-			\Big)
-			+
-			\rho\nabla V_{e}
-			= \textbf{0},                                                                                                                                                                                                                                                               \\
-			%--------------------------------
-			\text{s.t.}\quad
-			 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
-		Governing PDE
-		\begin{align*}
-			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		\end{align*}
+		\begin{mdframed}
+			\underline{Coupled fields}: Displacement vector field and temperature scalar field
+			\begin{align*}
+				\Bu:
+				\begin{cases}
+					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}^3, \\
+					(\Bx,t) \mapsto \Bu(\Bx,t),
+				\end{cases}
+				\qquad
+				\text{and}
+				\qquad
+				\theta:
+				\begin{cases}
+					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
+					(\Bx,t) \mapsto \theta(\Bx,t),
+				\end{cases}
+			\end{align*}
+			Governing conservation equations
+			\begin{align*}
+				\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{action}}\ d\Omega 
+				+ \int_{\partial\Omega}(\cdot)^{\text{action}}\ d\partial\Omega  
+				+ \int_{\Omega}(\cdot)^{\text{production/source/sink}}\ d\Omega
+			\end{align*}
+			$\rho(\Bx,t)$ is mass density per unit volume (puv); 
+			$\Bb(\Bx,t)$ body force puv; 
+			$\Bv(\Bx,t)$ velocity; 
+			$e(\Bx,t)$ internal energy puv; 
+			$\Bq(\Bx,t)$ heat flux; 
+			$r(\Bx,t)$ heat source puv; 
+			$\Bsigma$ Cauchy stress and 
+			$\Bvarepsilon$ infinitesimal strain.
+			% \underline{Thermodynamic consistency}: satisfied.
+			% \underline{Closure problem}: fulfilled.
+			Helmholtz energy functional 
+			\begin{align*}
+				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			\end{align*}
+			Governing PDE
+			\begin{align*}
+				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			\end{align*}
+		\end{mdframed}
+		\begin{minipage}{0.5\textwidth}
+			\begin{mdframed}
+				\textbf{Strain energy}: 
+				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
+				taking place at space charge
+				\begin{align*}
+					\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
+					f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega 
+				\end{align*}
+			\end{mdframed}
+		\end{minipage}
+		\hfill 
+		\begin{minipage}{0.49\textwidth}
+			\begin{mdframed}
+				\textbf{Surface energy}: 
+				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
+				taking place 
+				\begin{align*} 
+					\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma
+				\end{align*}
+			\end{mdframed}
+		\end{minipage}
 		% \begin{align*}
 		% 	a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 		% \end{align*}
-		Therefore
-		\begin{align*}
-			\therefore\quad
-			\boxed{
-			a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-			}
-		\end{align*}
-		\begin{center}
-			% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-			% \inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
-		\end{center}
+		\begin{mdframed}
+			Therefore
+			\begin{align*}
+				 & \rho\,
+				\partial^2_{t^2}
+				\bm{u}^{(s)}
+				+
+				\nabla \cdot
+				\Big(
+				\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+				:\nabla\Bu^{(s)}
+				\Big)
+				+
+				\rho\nabla V_{e}
+				= \textbf{0},                                                                                                                                                                                                                                                               \\
+				%--------------------------------
+				\text{s.t.}\quad
+				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+			\end{align*}
+		\end{mdframed}
+		% \begin{center}
+		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
+		% 	% \inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
+		% \end{center}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.55\textwidth}
+	\begin{minipage}{0.54\textwidth}
 		% Distribution of the analytical maximal shear stress component $\WAsigma^{\Pi}_{x_1x_2}$, 
 		% around the crack tip $a_{c}$.
-		\underline{Boundary condition settings}
-		\begin{center}
-			\inputfig{floats/structuraltwofields}{structuraltwofields}
-			% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
-		\end{center}
-		The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
-		\begin{center}
-			\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
-		\end{center}
-		\underline{Comparison}: Analytical vs. Numerical solutions
-		\begin{center}
-			\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
-		\end{center}
+		\begin{mdframed}
+			\underline{Boundary condition settings}
+			\begin{center}
+				\inputfig{floats/structuraltwofields}{structuraltwofields}
+				% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
+			\end{center}
+		\end{mdframed}
+		\begin{mdframed}
+			The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
+			\begin{center}
+				\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
+			\end{center}
+			\underline{Comparison}: Analytical vs. Numerical solutions
+			\begin{center}
+				\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
+			\end{center}
+		\end{mdframed}
 		% \begin{minipage}{0.45\textwidth}
 		% 	\begin{center}
 		% 		\inputfig{floats/routine_woTV_numa}{routine_woTV_numa}
