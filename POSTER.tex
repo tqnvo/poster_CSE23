@@ -494,9 +494,15 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}^3, \\
 					(\Bx,t) \mapsto \Bu(\Bx,t),
 				\end{cases}
-				\qquad
-				\text{and}
-				\qquad
+				% \text{and}
+				% \
+				\theta:
+				\begin{cases}
+					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
+					(\Bx,t) \mapsto \theta(\Bx,t),
+				\end{cases}
+				% \text{and}
+				% \
 				\theta:
 				\begin{cases}
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
@@ -582,23 +588,36 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\begin{minipage}{0.54\textwidth}
 		% Distribution of the analytical maximal shear stress component $\WAsigma^{\Pi}_{x_1x_2}$, 
 		% around the crack tip $a_{c}$.
-		\begin{mdframed}
-			\underline{Boundary condition settings}
-			\begin{center}
-				\inputfig{floats/structuraltwofields}{structuraltwofields}
-				% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
-			\end{center}
-		\end{mdframed}
-		\begin{mdframed}
-			The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
-			\begin{center}
-				\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
-			\end{center}
-			\underline{Comparison}: Analytical vs. Numerical solutions
-			\begin{center}
-				\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
-			\end{center}
-		\end{mdframed}
+		\begin{minipage}{0.7\textwidth}
+			\begin{mdframed}
+				\underline{Boundary condition settings}
+				\begin{center}
+					\inputfig{floats/structuraltwofields}{structuraltwofields}
+					% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
+				\end{center}
+			\end{mdframed}
+			\begin{mdframed}
+				% The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
+				\begin{center}
+					\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
+				\end{center}
+				\underline{Comparison}: Analytical vs. Numerical solutions
+				\begin{center}
+					\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
+				\end{center}
+			\end{mdframed}
+		\end{minipage}
+		\hfill 
+		\begin{minipage}{0.3\textwidth}
+			\begin{mdframed}
+				\underline{Closure problem}:
+				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
+				taking place at space charge
+				Interface between solid electrode and solid-state electrolyte (SE|SSE) 
+				taking place at space charge
+				Interface between solid electrode and solid-state electrolyte
+			\end{mdframed}
+		\end{minipage}
 		% \begin{minipage}{0.45\textwidth}
 		% 	\begin{center}
 		% 		\inputfig{floats/routine_woTV_numa}{routine_woTV_numa}
