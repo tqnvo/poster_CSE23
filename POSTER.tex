@@ -395,25 +395,27 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\end{minipage}
 		%
 		\begin{mdframed}
-			Airy-Westergaard function used for max. shear stress analysis
+			Airy-Westergaard function used for stress analysis:
+			(i) max. shear stress and (ii) principal stresses
 			\begin{align*}
 				\WA:
-				% \begin{cases}
-				\mbC\to\mbC,
-				% \displaystyle
-				z \mapsto \WAz:=
-				\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
-				+ x_2\,
-				\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
-				% \end{cases}
-				% \Kipc:
-				% \mbC \to \mbC,
-				% z \mapsto 
-				\Kipcz:=
-				- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
-				% \forall \ \{p_{h},a\}\in\mbR_{+}
+				\begin{cases}
+					\mbC\to\mbC, \\
+					% \displaystyle
+					z \mapsto \WAz:=
+					\Re(\bigoiintssss_{\Gamma} \mcK^{(\star)}\,dz )
+					+ x_2\,
+					\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
+				\end{cases}
+				\mcK^{(\star)}:
+				\begin{cases}
+					\mbC \to \mbC, \\
+					z \mapsto 
+					\mcK^{(\star)}:=
+					- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
+				\end{cases}
 			\end{align*}
-			where $\{p_{h},a\}\in\mbR_{+}$ is the.
+			where $a$ the crevice length, $p_{h}$ pressure at the opening crevice on dendritic interface, and $\forall \, \{p_{h},a\}\in\mbR_{+}$.
 		\end{mdframed}
 		%
 		\begin{mdframed}
