@@ -933,8 +933,8 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.70710682"
-     inkscape:cx="386.78739"
-     inkscape:cy="528.20874"
+     inkscape:cx="204.35385"
+     inkscape:cy="529.62295"
      inkscape:window-x="2954"
      inkscape:window-y="27"
      inkscape:window-maximized="0"
@@ -1049,7 +1049,7 @@
 
 <g
    id="g3813"
-   transform="matrix(0.75000002,0,0,-0.75000002,374.827,378.55322)"><rect
+   transform="matrix(0.91057318,0,0,-0.91057318,354.91593,398.46429)"><rect
      style="fill:#ffffff;fill-opacity:1"
      x="0"
      y="0"
@@ -1063,14 +1063,14 @@
    xml:space="preserve"
    style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
    x="445.86166"
-   y="-161.86476"
+   y="-143.86476"
    id="text4448"
    transform="scale(1,-1)"><tspan
      sodipodi:role="line"
      id="tspan4446"
      style="stroke-width:0.75"
      x="445.86166"
-     y="-161.86476">sm</tspan></text><image
+     y="-143.86476">sm</tspan></text><image
    width="232.94984"
    height="75.899643"
    preserveAspectRatio="none"
