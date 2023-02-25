@@ -2,13 +2,18 @@
 % \psfrag{eq}[c][c] {$\mathbf{\nabla}\cdot\left( \textcolor[rgb]{0,0,1}{\mathbb{C}^{f^{GL}}(y) }\mathbf{\nabla}_{s} \Bu \right) + \rho \Bb = 0$}
 \psfrag{eq}[c][c] {\small $\mathbf{\nabla}\cdot\left( \textcolor[rgb]{0,0,1}{\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}} \, \mathbf{\nabla}^{(s)} \Bu \right) + \rho\, \Bb = \textbf{0}$}
 
-\psfrag{sgm}[c][c] {\small $\textcolor[rgb]{1,0.41,0.13}{\sigma_{ij}} = \textcolor[rgb]{0,0,1}{\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}}\
+\psfrag{sgm}[c][c] {\small $\textcolor[rgb]{1,0.41,0.13}{\sigma_{ij}} 
+= \sum_{k,l} 
+\textcolor[rgb]{0,0,1}{\accentset{\scriptstyle 4}{\mathbb{C}}_{ijkl}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}}\
 	\textcolor[rgb]{0,0.4,0}{\varepsilon_{kl}}$}
 \psfrag{u}[c][c] {\small $\textcolor[rgb]{1,0,0}{u_{i}} \leftarrow \Bu = \BK^{-1}\Bf$}
-\psfrag{eps}[c][c] {\small $\textcolor[rgb]{0,0.4,0}{\varepsilon_{ij}} = \frac{1}{2}\left(\textcolor[rgb]{1,0,0}{u_{i,j}} +
-		\textcolor[rgb]{1,0,0}{u_{j,i}}\right)$}
+\psfrag{eps}[c][c] {\small $\textcolor[rgb]{0,0.4,0}{\varepsilon_{ij}} =
+		\frac{1}{2}\left(
+		\textcolor[rgb]{1,0,0}{\partial_{x_j} u_{i}} +
+		\textcolor[rgb]{1,0,0}{\partial_{x_i} u_{j}}
+		\right)$}
 \psfrag{estr}[c][c] {\small $\textcolor[rgb]{0.5,0,0.5}{\mathcal{E}_{\text{strain}} }:=
-	\frac{1}{2}\, \textcolor[rgb]{1,0.41,0.13}{\sigma_{ij}} \, \textcolor[rgb]{0,0.4,0}{\varepsilon_{ij}}$}
+	\frac{1}{2} \sum_{i,j} \textcolor[rgb]{1,0.41,0.13}{\sigma_{ij}} \, \textcolor[rgb]{0,0.4,0}{\varepsilon_{ij}}$}
 
 \psfrag{ds}[l][l] {\small $\text{Displacement vector field solution}$}
 \psfrag{stra}[l][l] {\small $\text{Strain tensor}$}
