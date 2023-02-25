@@ -147,28 +147,13 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 %\definecolor{main}{HTML}{0080FF}
 %\definecolor{sub}{HTML}{8CDBFF}
 %\usecolorstyle[colorOne=sub, colorTwo=main]{Default}
-%     
-% To-do-list
-% 1. Rotate 3 Matlab figures
-% 2. Explain for symbols
-% 3. Comparison results Numa vs. Ana
-% 4. Structure tensor math?
-% 5. Next-generation ASSB typing master balance?
-% 6. ASSB nucleation figure settings nicely again
-% 7. Numerical figures nice again 4x about evolution?
-% 8. Boundary settings nicely again
-% Done 9. Scan me a bit to the right
-% Done 10. Space for symbol
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{document}
 % Title block
 \maketitle[width=800mm]
-% \block{}{
-% 	d
-% }
 % ---------------------------------------------------------------------------------------------------------------- %
-\block{\bfseries Mathematical modelling for the next-generation All-solid-state batteries: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}{
-	% \vspace{-0.1cm}
+\block{\bfseries Mathematical modelling for the next-generation All-solid-state batteries: Nucleation $\text{(SE|SSE)}^{\!(*)}$-interface}
+{
 	\begin{minipage}{0.56\textwidth}
 		\begin{minipage}{0.5\textwidth}
 			\begin{mdframed}
@@ -183,13 +168,12 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				mainly due to \colorbox{pink}{liquid-based electrolyte} found in c-LIBs.
 			\end{mdframed}
 		\end{minipage}
-		% \hfill
+		%
 		\begin{minipage}{0.49\textwidth}
 			\begin{mdframed}
 				\textbf{All-solid-state battery} (ASSB) is 
 				one of promising candidates to overcome bottlenecks of c-LIBs. 
 				Thanks to \colorbox{pink}{solid-state electrolyte} (SSE),
-				% e.g. SSE made of the highly ionic-conductive polycrystalline LLZO, 
 				ASSB is highly stable towards temperature and pressure. 
 				Nevertheless, Li-metal dendrite 
 				triggered at (SE|SSE)-interface is the main drawback of ASSB
@@ -202,31 +186,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		%
 		\begin{mdframed}
 			\textbf{Next-generation All-solid-state battery} (ng-ASSB)
-			% should, consequentially, be able to cope with 
-			% micro-dendritic threads at the (SE|SSE)-interface, 
-			% and hence, 
-			% to foresee nucleation points caused by propagations 
-			% of 
-			% these dendrites, 
-			% when possible.	
 			with a consideration of \colorbox{pink}{nucleation criterion} defined by
-			% \begin{align*}
-			% 	 & \rho\,
-			% 	\partial^2_{t^2}
-			% 	\bm{u}^{(s)}
-			% 	+
-			% 	\nabla \cdot
-			% 	\Big(
-			% 	\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-			% 	:\nabla\Bu^{(s)}
-			% 	\Big)
-			% 	+
-			% 	\rho\nabla V_{e}
-			% 	= \textbf{0},                                                                                                                                                                                                                                                               \\
-			% 	%--------------------------------
-			% 	\text{s.t.}\quad
-			% 	 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-			% \end{align*}
 			\begin{align*}
 				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u},\theta;\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
@@ -243,57 +203,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	\end{minipage}%
 	\hfill
 	\begin{minipage}{0.44\textwidth}
-		% \begin{tabular}{|p{\textwidth}}
-		% 	This is second part                                                                              \\
-		% 	$f(x) = 2x + 3y$ This line may go all along the end and wrap afterwards to the next as seen here \\
-		% 	This is a forced next line by ending the previous line 
-		% \end{tabular}
-		% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		\begin{center}
 			\inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
 		\end{center}
-	\end{minipage}%
-	% \begin{columns}
-	% 	\column{0.5}
-	% 	Goal:
-	% 	\begin{align}
-	% 		a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-	% 	\end{align}
-	% 	where
-	% 	\column{0.5}
-	% 	abc
-	% 	% \begin{center}
-	% 	% 	% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-	% 	% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-	% 	% \end{center}
-	% 	\textbf{This poster} is aimed to model the nucleation
-	% 	by taking into consideration
-	% 	\underline{polarization}, \underline{structural tensor}, 
-	% 	\underline{locally non-uniform electric field}, and 
-	% 	\underline{Griffith analysis}. 
-	% 	\begin{align}
-	% 		 & \rho\,
-	% 		\partial^2_{t^2}
-	% 		\bm{u}^{(s)}
-	% 		+
-	% 		\nabla \cdot
-	% 		\Big(
-	% 		\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
-	% 		:\nabla\Bu^{(s)}
-	% 		\Big)
-	% 		+
-	% 		\rho\nabla V_{e}
-	% 		= \textbf{0},                                                                                                                                                                                                                                                               \\
-	% 		%--------------------------------
-	% 		\text{s.t.}\quad 
-	% 		 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-	% 	\end{align}
-	% 	where
-	% \end{columns}
-	% \begin{center}
-	% 	\inputfig{floats/dendrite_pdirection_battonly_maths}{dendrite_pdirection_battonly_maths}
-	% \end{center}
-	\vspace{-0.5cm}
+	\end{minipage}
+	\vspace{-0.3cm}
 }
 % ---------------------------------------------------------------------------------------------------------------- %
 \begin{columns}
@@ -310,227 +224,52 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{center}
 				\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 			\end{center}
-			\underline{Distribution}:\! ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$.
-			% where $\WAsigma^{\Pi}_{x_1x_2}$ is based on Airy-Westergaard function defined by
-			% \begin{align*}
-			% 	\WA:
-			% 	% \begin{cases}
-			% 	\mbC\to\mbC,
-			% 	% \displaystyle
-			% 	z \mapsto \WAz:=
-			% 	\Re(\bigoiintsss_{\Gamma} \mcK^{(\star)}\,dz )
-			% 	+ x_2\,
-			% 	\Im(\bigointsss_{\Gamma} \mcK^{(\star)}\,dz ),
-			% 	% \end{cases}
-			% \end{align*}
-			% $
-			% 	% \mcK^{(\star)}:= 
-			% 	\Kipc:
-			% 	\mbC \to \mbC,
-			% 	z \mapsto \Kipcz:=
-			% 	- p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
-			% 	\forall \ \{p_{h},a\}\in\mbR_{+}
-			% $
+			\underline{Distribution}:\! 
+			ana. max. shear stress $\WAsigma^{\Pi}_{x_1x_2}$ around crack tip $a_{c}$.
 		}
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.34}
-	% ---------------------------------------------------------------------------------------------------------------- %
-	\block{Next-generation All-solid-state battery
-		% (ng-ASSB)
-	}{
+	\block{Next-generation All-solid-state battery}
+	{
 		\textbf{Nucleation} criterion governs the instable (SE|SSE)-interface \cite{hueter2017}
 		\begin{center}
 			\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
 		\end{center}
 		$\checkmark$ \textbf{Thermodynamic consistency} is satisfied, followed by \cite{braun2015}.\\
-		$\checkmark$ \textbf{Closure} problem is fulfilled by 15 moments, followed by \cite{torrilhon2016}.
-		% This phenomenon, notwithstanding, is predicted, quantified, and controlled based on analysing 
-		% the multi-scale coupled problem subjected to conditions of Griffith criterion.
-		%
-		% \begin{center}
-		% \fbox{\includegraphics[height=18cm]{./figs/dendrite/dendritetext}}
-		% \fbox{\includegraphics[height=18cm]{./floats/creviceAiryWestergaard_compare/creviceAiryWestergaard_compare.eps}}
-		% 	\newcaption{0.8\colwidth}{A sample of a typical all-solid-state battery and its non-scale hierarchical insight into structural layers.}
-		% \end{center}
-		
-		% A typical LIB includes three main components: cathode, anode and electrolyte. 
-		% Different types of LIB have a variation of constitutive material composed of battery. 
-		% An ASSB means that the three main components are \textbf{all made of solid material}.
+		$\checkmark$ \textbf{Closure} $\bar{\Omega}$ is fulfilled by 15 moments, followed by \cite{torrilhon2016}.
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
-	% \block{Modelling goal: Interface analysis + Numerics}{
-	% 	Two main goals to model the solid electrolyte part of the all-solid-state battery is as follows:
-	% 	%
-	% 	\begin{enumerate}
-	% 		\item To capture the \textbf{preferred direction} behaviour of the solid electrolyte due to electric potential.
-	% 		\item To satisfy \textbf{thermodynamic consistency}%\cite{braun2015SCL}
-	% 		      :
-	% 		      \begin{itemize}
-	% 			      \item Conservation of mass, linear $\&$ angular momentum and energy for the solid electrolyte.
-	% 			      \item Entropy inequality is guaranteed with sharper conditions, which lead to constitutive equation.
-	% 		      \end{itemize}
-	% 	\end{enumerate}
-	% 	\begin{align*}
-	% 		a_{\text{Griffith}}:= a^{*}
-	% 		= \arg\min_{a\in\mathbb{R}}
-	% 		{
-	% 			\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
-	% 			f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
-	% 			-
-	% 			\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma}
-	% 			f(a;\gamma) \, d\Gamma
-	% 		}\Bigg|_{\bm{u}^{(s)}}
-	% 	\end{align*}
-	% }
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% \block{Continuum physics kinematic}{
-	% 	Green-Lagrange strain tensor $\BE$ with respect to \textbf{small} displacement 
-	% 	$\partial\Bu/\partial\Bxi = \mathcal{O}(\epsilon), \ \epsilon \ll 1$:
-	% 	\begin{align*}
-	% 		\BE = \frac{1}{2}(\BF^{\top}\BF -\BI) =\frac{1}{2}\left(
-	% 		\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}
-	% 		+\underbrace{\left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\left( \frac{\partial\Bu}{\partial\Bxi} \right)}_{\text{Neglected}}
-	% 		\right) \ \rightarrow \
-	% 		\Bvarepsilon := \frac{1}{2}\left(
-	% 		\frac{\partial\Bu}{\partial\Bxi} + \left( \frac{\partial\Bu}{\partial\Bxi} \right)^{\top}\right)
-	% 	\end{align*}
-	% }
-	% ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{Polarization phenomenon}{
-	% 	Due to a source of electric potential pointing from cathode $(+)$ to anode $(-)$ pole, 
-	% 	a uniform electric field created has suppressed on 
-	% 	the SE occupied between these two poles. Consequently, SE yields to a \textbf{preferred direction}
-	% 	under external deformations such as mechanical loading forces.
-	% 	% \begin{minipage}{\linewidth}
-	% 	% 	\centering
-	% 	% 	\begin{minipage}{0.20\linewidth}
-	% 	% 		\begin{figure}[H]
-	% 	% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSEnon}
-	% 	% 			%\caption{Non-polarized SE.}
-	% 	% 		\end{figure}
-	% 	% 	\end{minipage}
-	% 	% 	\hspace{0.2\linewidth}
-	% 	% 	\begin{minipage}{0.25\linewidth}
-	% 	% 		\begin{figure}[H]
-	% 	% 			\includegraphics[width=\linewidth]{./figs/polarization/polarizedSE}
-	% 	% 			%\caption{Polarized SE.}
-	% 	% 		\end{figure}
-	% 	% 	\end{minipage}
-	% 	% \end{minipage}
-	% }
-	% ---------------------------------------------------------------------------------------------------------------- %
-	% SECOND column
-	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.32}
-	\block{Embedded structural-tensor SSE}{
-		% \begin{center}
-		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		% \end{center}
+	\block{Embedded structural-tensor SSE}
+	{
 		\textbf{Polycrystalline} garnet-typed SSE 
 		such as LLZO 
-		exhibit a network of grain boundaries, 
-		and grains with various sizes 
-		and shapes under microscopic observation.
-		Therefore, this type of microstructure is
-		% distinctively leads to
+		exhibit grain boundary network, 
+		and grains of various sizes \& shapes under microscopic observation.
+		Hence, this type of microstructure is
 		potentially prone to
-		nuance destruction of ceramic-like materials.
+		nuance destruction of 
+		% ceramic-like materials.
+		\begin{align*}
+			\BM := \Bd^{R}_{G_1} \otimes \Bd^{R}_{G_2}
+			\quad 
+			\text{where}
+			\quad
+			\mathbb{G} := \left\{ \BQ_{||_{\Ba}}, \BQ_{\bot_{\Ba}}  \right\} \subset \mathcal{O}(3)
+		\end{align*}
 		\begin{center}
 			\inputfig{floats/dendrite_2parts_nospl_split}{dendrite_2parts_nosample_split}
 		\end{center}
 		Consequentially, dendrites contribute to 
 		degradation of ionic conductivity
 		and cracks via tracing along grain boundaries.
-		% \begin{center}
-		% 	\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		% \end{center}
-		% \inputfig{floats/efield}{efield}
-		% \inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
-		% \begin{center}
-		% 	\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}
-		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		% \end{center}
-		% \begin{itemize}
-		% 	\item Local balance laws governing the infinitesimal elasticity embedded structural tensor:
-		% 	      \begin{align*}
-		% 		       & \text{Balance of mass}             &  & \dot{\rho} + \rho{\ \rm div}\Bv = 0                             \\
-		% 		       & \text{Balance of linear momentum}  &  & \rho\dot{\Bv} = {\rm div}\Bpi + \rho\Bb                         \\
-		% 		       & \text{Balance of angular momentum} &  & \Bpi^{\top} = \Bpi                                              \\
-		% 		       & \text{Balance of energy}           &  & \rho\dot{e} = \Bpi : \dot{\Bvarepsilon} + \rho r - {\rm div}\Bq
-		% 	      \end{align*}
-		
-		% 	\item Entropy inequality
-		% 	      \begin{align*}
-		% 		      \rho\calD := \Bpi :\dot{\Bvarepsilon}  -\rho\eta\dot{\theta}- \rho\dot{\Psi} -\frac{1}{\theta}\Bq\cdot\nabla\theta \geq 0 
-		% 	      \end{align*}
-		
-		% 	\item Mathematical model:
-		% 	      \begin{align*}
-		% 		       & \text{PDE}                   &  & \pi_{ij,j} + \rho b_{i} = 0                                                                                      \\
-		% 		       & \text{Kinematic relation}    &  & \varepsilon_{kl} = \frac{1}{2}\left(\frac{\partial u_k}{\partial x_l} + \frac{\partial u_l}{\partial x_k}\right) \\
-		% 		       & \text{Constitutive relation} &  & \pi_{ij} = \mathbb{C}_{ijkl}\ \varepsilon_{kl}                                                                   \\
-		% 		       & \text{Dirichlet BC}          &  & u_i = \bar{u}_i \text{ on } \partial\Omega_{u_i}                                                                 \\
-		% 		       & \text{Neumann BC}            &  & \pi_{ij}n_j = t_i \text{ on } \partial\Omega_{t_i}
-		% 	      \end{align*}
-		% 	      %
-		% 	      \begin{align*}
-		% 		      \begin{aligned}
-		% 			      \text{where } \qquad 
-		% 			      \mathbb{C}_{ijkl} & = \lambda \delta_{ij}\delta_{kl} + 2\mu_T\mathbb{I}_{ijkl}     \\
-		% 			                        & + \alpha(\delta_{ij}M_{kl} + M_{ij}\delta_{kl})
-		
-		% 			      + 2(\mu_L-\mu_T)\left[\mathbb{I}_{\Bd}\right]_{ijkl} + \beta M_{ij}M_{kl}          \\
-		% 			      \left[\mathbb{I}_{\Bd}\right]_{ijkl}
-		% 			                        & = \frac{1}{2}(d_{i}\delta_{jl}d_{k} + d_{i}\delta_{jk}d_{l}
-		
-		% 			      +d_{j}\delta_{ik}d_{l} + d_{j}\delta_{il}d_{k})                                    \\
-		% 			      \mathbb{I}_{ijkl} & = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})
-		% 		      \end{aligned}
-		% 	      \end{align*}
-		% \end{itemize}
 	}
-	% \column{0.3}
-	% \block{Numerical solution}{
-	% 	abc
-	% }
-	% % ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{abc}{
-	% 	\begin{center}
-	% 		% \fbox{\inputfig{floats/creviceAiryWestergaard_compare}{creviceAiryWestergaard_compare}}
-	% 		\inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-	% 	\end{center}
-	% }
-	% % ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{Structural tensor}{
-	% 	SE microstructure with structural tensor $\BM = \Bd \otimes \Bd$ is defined by a symmetry group $\mathbb{G}$:
-	% 	\begin{align*}
-	% 		\mathbb{G} := \left\{ \BQ_{||_{\Bd}}, \BQ_{\bot_{\Bd}}  \right\} \subset \mathcal{O}(3),
-	% 	\end{align*}
-	% 	which leads to invariant free energy function $\hat{\Psi}$ under rotations followed by group $\mathbb{G}$:
-	% 	\begin{align*}
-	% 		\hat{\Psi}(\Bvarepsilon,\BM) = \hat{\Psi}(\BQ\Bvarepsilon\BQ^{\top},\BQ\BM\BQ^{\top}) = \hat{\Psi}(\Bvarepsilon,\BM)  \quad \forall \ \BQ \in \mathbb{G}.
-	% 	\end{align*}
-	% }
-	% % ---------------------------------------------------------------------------------------------------------------- %	
-	% \block{Next steps and future direction}{
-	% 	\begin{itemize}
-	% 		\item Time-dependent implementation, numerical analysis, verification and validation.
-	% 		\item Explicit description of coordinate-based polarization variation.
-	% 		\item Bridging scale into quantum physics: Update information from quantum for continuum.
-	% 		\item Capture a phenomenon so-called \textbf{dendrite formation}:
-	% 		    %   \begin{center}
-	% 			%       %\vspace*{1em}
-	% 			%       \fbox{\includegraphics[width=28cm]{./figs/transport/transporttext}}\vspace*{1em}
-	% 			%       \newcaption{0.8\colwidth}{Dendrite formation: After a several number of charging cycles, dendrite branches are slowly formed and developed from Solid electrolyte interface (SEI) through grain boundaries.}
-	% 		    %   \end{center}
-	% 	\end{itemize}
-	% }
 \end{columns}
 % ---------------------------------------------------------------------------------------------------------------- %
-\block{Nucleation interface: Taking place at the critical dendritic interface}{
+\block{Nucleation interface: Taking place at the critical dendritic interface}
+{
 	\begin{minipage}{0.43\textwidth}
-		% Nucleation interface: Taking place at the critical dendritic interface (SE|SSE)
 		\begin{mdframed}
 			\underline{Coupled fields}: Displacement vector field and temperature scalar field
 			\begin{align*}
@@ -539,15 +278,13 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}^3, \\
 					(\Bx,t) \mapsto \Bu(\Bx,t),
 				\end{cases}
-				% \text{and}
-				% \
+				%
 				\theta:
 				\begin{cases}
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
 					(\Bx,t) \mapsto \theta(\Bx,t),
 				\end{cases}
-				% \text{and}
-				% \
+				%
 				\theta:
 				\begin{cases}
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
@@ -568,8 +305,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			$r(\Bx,t)$ heat source puv; 
 			$\Bsigma$ Cauchy stress and 
 			$\Bvarepsilon$ infinitesimal strain.
-			% \underline{Thermodynamic consistency}: satisfied.
-			% \underline{Closure problem}: fulfilled.
+			%
 			Helmholtz energy functional 
 			\begin{align*}
 				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
@@ -602,9 +338,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\end{align*}
 			\end{mdframed}
 		\end{minipage}
-		% \begin{align*}
-		% 	a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-		% \end{align*}
+		%
 		\begin{mdframed}
 			Therefore
 			\begin{align*}
@@ -626,21 +360,14 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\end{align*}
 			abc
 		\end{mdframed}
-		% \begin{center}
-		% 	% \inputfig{floats/dendrite_pdirection_battonly}{dendrite_pdirection_battonly}
-		% 	% \inputfig{floats/routine_woTV_spectral}{routine_woTV_spectral}
-		% \end{center}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.54\textwidth}
-		% Distribution of the analytical maximal shear stress component $\WAsigma^{\Pi}_{x_1x_2}$, 
-		% around the crack tip $a_{c}$.
 		\begin{minipage}{0.7\textwidth}
 			\begin{mdframed}
 				\underline{Boundary condition settings}
 				\begin{center}
 					\inputfig{floats/structuraltwofields}{structuraltwofields}
-					% 	\inputfig{floats/maxshear_9figs_456}{maxshear_9figs_456}
 				\end{center}
 			\end{mdframed}
 			\begin{mdframed}
@@ -664,17 +391,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				abc
 			\end{mdframed}
 		\end{minipage}
-		% \begin{minipage}{0.45\textwidth}
-		% 	\begin{center}
-		% 		\inputfig{floats/routine_woTV_numa}{routine_woTV_numa}
-		% 	\end{center}
-		% \end{minipage}
-		% \hfill
-		% \begin{minipage}{0.45\textwidth}
-		% 	\begin{center}
-		% 		\inputfig{floats/routine_woTV_numa}{routine_woTV_numa}
-		% 	\end{center}
-		% \end{minipage}
+		%
 		\begin{mdframed}
 			Airy-Westergaard function used for max. shear stress analysis
 			\begin{align*}
@@ -695,14 +412,6 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				% \forall \ \{p_{h},a\}\in\mbR_{+}
 			\end{align*}
 			where $\{p_{h},a\}\in\mbR_{+}$ is the.
-			% $
-			% \mcK^{(\star)}:= 
-			% \Kipc:
-			% \mbC \to \mbC,
-			% z \mapsto \Kipcz:=
-			% - p_{h} + p_{h}/\sqrt{1 - a^2/z^2},\
-			% \forall \ \{p_{h},a\}\in\mbR_{+}
-			% $
 		\end{mdframed}
 		\begin{mdframed}
 			\underline{FEM implementation}:
@@ -723,11 +432,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			where $\mathcal{L}^{\alpha}_{j}$ and $\mathcal{R}^{\beta}_{l}$ are gradients of basis functions at node $\alpha^{th}$ and $\beta^{th}$, respectively.
 		\end{mdframed}
 	\end{minipage}
-	% \begin{center}
-	% 	\inputfig{floats/routine_woTV}{routine_woTV}
-	% \end{center}
-	% Nucleation interface: Taking place at the critical dendritic interface (Solid electrode | Solid-state electrolyte)
 }
+% ----------------------------------------------------------------------------------------------------------------
 \begin{columns}
 	\column{0.14}
 	% ---------------------------------------------------------------------------------------------------------------- %	
@@ -745,8 +451,6 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\begin{center}
 			\inputfig{floats/QRcode_ACoM_Email}{QRcode_ACoM_Email}
 		\end{center}
-		% \inputfig{floats/QRcode_ACoM}{QRcode_ACoM}
-		% Tuan Vo $\cdot$ RWTH Aachen University $\cdot$ Email: vo@acom.rwth-aachen.de
 	}
 	\column{0.86}
 	%---------------------------------------------------------------------------------------------------------------- %	
@@ -792,7 +496,9 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\vspace{-0.8cm}
 	}
 \end{columns}
-\block{}{
+% ----------------------------------------------------------------------------------------------------------------
+\block{}
+{
 	\vspace{-0.6em}
 	\begin{minipage}{0.2\textwidth}
 		\begin{center}
@@ -818,38 +524,6 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\end{center}
 	\end{minipage}
 	\vspace{-0.6em}
-	% \includegraphics[width=0.3\textwidth]{./floats/logos/siam_siamcse23_acomrwth_fzj.eps}
 }
-% ---------------------------------------------------------------------------------------------------------------- %	
-% \block{References}{
-% 	\vspace*{-3em}
-% 	\renewcommand{\refname}{~}
-% 	\begin{thebibliography}{2}
-
-% 		\bibitem{viozat1997implicit}
-% 		\textbf{T. Vo} \emph{Modeling the swelling phenomena of li-ion battery
-% 			cells based on a numerical chemo-mechanical coupled approach}. 
-% 		Master thesis, Robert Bosch Batteries Systems GmbH, 2018.
-
-% 		\bibitem{braun2015SCL}
-% 		\textbf{S. Braun}, C. Yada and A. Latz. \emph{Thermodynamically consistent model for
-% 			Space-Charge-Layer formation in a solid electrolyte}. 
-% 		Journal of Physical Chem., 119, 22281-22288, 2015.
-
-% 		\bibitem{hueter2017}
-% 		\textbf{C. Hüter}, S. Fu, M. Finsterbusch, E. Figgemeier, L. Wells, and R. Spatschek. 
-% 		Electrode-electrolyte interface stability in solid state electrolyte system: 
-% 		influence of coating thickness under varying residual stresses. 
-% 		AIMS materials Science, 4(4):867-877, 2017.
-
-% 		\bibitem{kim2022}
-% 		\textbf{S. Kim}, J. S. Kim, L. Miara, Y. Wang, S. K. Jung, S. Y. Park, Z. Song, 
-% 		H. King, M. Badding, J. M. Chang, V. Roev, G. Yoon, R. Kim, J. H. Kim, K. Yoon, D. Im, 
-% 		and K. Kang. “High-energy and durable lithium metal batteries using garnet-type 
-% 		solid electrolytes with tailored lithium-metal compatibility,” 
-% 		Nature Communications, 13(1):1883, Apr 2022.
-% 		% $(*)$ (Solid electrode | Solid-state electrolyte)
-% 	\end{thebibliography}
-% }
 \end{document}
-% ---------------------------------------------------------------------------------------------------------------- %
+% ----------------------------------------------------------------------------------------------------------------
