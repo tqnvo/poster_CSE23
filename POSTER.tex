@@ -344,18 +344,17 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\begin{mdframed}
 			Therefore, the governing problem of dendritic nucleation at (SE|SSE) takes the form
 			\begin{align*}
-				 & \rho\,
-				\partial^2_{t^2}
+				 & 
+				\partial_{t}
 				\bm{u}^{(s)}
 				+
 				\nabla \cdot
 				\Big(
-				\accentset{\scriptstyle 4}{\mathbb{C}}^{f^{\mathbb{D}(\Omega)}_{(\lambda,\mu)}}
+				\accentset{\scriptstyle 4}{\mathbb{C}}^{f_{\text{alocation}}(\lambda,\mu,\Bd^{R}_{G_i, i=1,\dots,N},\Bd^{E};\Bx)}
 				:\nabla\Bu^{(s)}
 				\Big)
-				+
-				\rho\nabla V_{e}
-				= \textbf{0},                                                                                                                                                                                                                                                               \\
+				+ \rho\Bb
+				= -\rho\nabla V_{e},                                                                                                                                                                                                                                                        \\
 				%--------------------------------
 				\text{s.t.}\quad
 				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
