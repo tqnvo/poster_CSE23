@@ -163,9 +163,9 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				Nowadays, LIBs enable human life more efficient 
 				and help to solve global environment issues thanks to EVs' zero emission.
 				However, conventional LIB (c-LIB) is sensible to temperature and pressure, 
-				hence, flammable and explosive, which is undesirable. 
+				hence, flammable and explosive, which is \colorbox{pink}{undesirable}. 
 				This bottleneck is
-				mainly due to \colorbox{pink}{liquid-based electrolyte} found in c-LIBs.
+				mainly due to \colorbox{cyan}{liquid-based electrolyte} found in c-LIBs.
 			\end{mdframed}
 		\end{minipage}
 		%
@@ -173,7 +173,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{mdframed}
 				\textbf{All-solid-state battery} (ASSB) is 
 				one of promising candidates to overcome bottlenecks of c-LIBs. 
-				Thanks to \colorbox{pink}{solid-state electrolyte} (SSE),
+				Thanks to \colorbox{cyan}{solid-state electrolyte} (SSE),
 				ASSB is highly stable towards temperature and pressure. 
 				Nevertheless, Li-metal dendrite 
 				triggered at (SE|SSE)-interface \cite{kim2022}
@@ -181,25 +181,25 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				since these dendritic threads
 				extrapolate into SSE grain boundary network, 
 				causing crevice, degradation of ionic conductivity,
-				and the probability of short-circuit, which is unfavorable.
+				and the probability of short-circuit, which is \colorbox{pink}{unfavorable}.
 			\end{mdframed}
 		\end{minipage}
 		%
 		\begin{mdframed}
 			\textbf{Next-generation All-solid-state battery} (ng-ASSB)
-			with a consideration of \colorbox{pink}{nucleation criterion} defined by
+			with a consideration of \colorbox{cyan}{nucleation criterion} defined by
 			\begin{align*}
-				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u},\theta;\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u},\theta;\lambda,\mu,\bm{d}^{R}\otimes\bm{d}^{R}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
 			where 
 			$\Bu$ displacement field, 
 			$\theta$ temperature field, 
 			$a$ crevice length,
 			$\lambda, \mu$ Lam\'{e} constants,
-			$\Bd\otimes\Bd$ embedded misorientation structural tensor,
+			$\Bd^{R}\otimes\Bd^{R}$ embedded misorientation structural tensor,
 			and 
 			$\gamma$ cracking-surface energy density,
-			can help to improve ASSB performance.
+			\colorbox{pink}{can help} to improve ASSB performance.
 		\end{mdframed}
 	\end{minipage}%
 	\hfill
@@ -242,7 +242,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 	}
 	% ---------------------------------------------------------------------------------------------------------------- %
 	\column{0.322}
-	\block{Embedded structural-tensor SSE}
+	\block{Embedded structural-tensor in SSE}
 	{
 		\textbf{Polycrystalline} garnet-type SSE \cite{kim2022}
 		such as LLZO 
@@ -273,7 +273,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 {
 	\begin{minipage}{0.43\textwidth}
 		\begin{mdframed}
-			\underline{Coupled fields}: Displacement vector field and temperature scalar field
+			\underline{Coupled fields}: Displacement field and temperature field; structural tensor
 			\begin{align*}
 				\Bu:
 				\begin{cases}
@@ -287,7 +287,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					(\Bx,t) \mapsto \theta(\Bx,t),
 				\end{cases}
 				%
-				\theta:
+				\BM:
 				\begin{cases}
 					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
 					(\Bx,t) \mapsto \theta(\Bx,t),
@@ -342,7 +342,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\end{minipage}
 		%
 		\begin{mdframed}
-			Therefore
+			Therefore, the governing problem of dendritic nucleation at (SE|SSE) takes the form
 			\begin{align*}
 				 & \rho\,
 				\partial^2_{t^2}
@@ -360,7 +360,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\text{s.t.}\quad
 				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
-			abc
+			where
 		\end{mdframed}
 	\end{minipage}
 	\hfill
@@ -395,7 +395,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\end{minipage}
 		%
 		\begin{mdframed}
-			Airy-Westergaard function used for stress analysis:
+			\underline{Analysis}: Airy-Westergaard function used for stress analysis:
 			(i) max. shear stress and (ii) principal stresses
 			\begin{align*}
 				\WA:
@@ -419,7 +419,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\end{mdframed}
 		%
 		\begin{mdframed}
-			\underline{FEM implementation}:
+			\underline{Numerics $\rightarrow$ FEM}:
 			element matrix $\BK^{e}$
 			approx. by \textit{Gauss quadrature}; 
 			indices imply \textit{$4+2=6$ \textit{for}-loop}:
@@ -427,10 +427,10 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				K^{\stackrel{\alpha\beta}{e\ \ }}_{ik} = 
 				\int_{\Omega^{\xi}}
 				\left(
-				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k1}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{1} +
-				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k2}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{2} +
-				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k1}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{1} +
-				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k2}^{f^{GL}}(y) \ \mathcal{R}^{\beta}_{2}
+				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k1}^{f^{GL}}(\Bx) \ \mathcal{R}^{\beta}_{1} +
+				\mathcal{L}^{\alpha}_{1} \ \mathbb{C}_{i1k2}^{f^{GL}}(\Bx) \ \mathcal{R}^{\beta}_{2} +
+				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k1}^{f^{GL}}(\Bx) \ \mathcal{R}^{\beta}_{1} +
+				\mathcal{L}^{\alpha}_{2} \ \mathbb{C}_{i2k2}^{f^{GL}}(\Bx) \ \mathcal{R}^{\beta}_{2}
 				\right)
 				\det(\BJ) \ d\Omega^{\xi}
 			\end{align*}
