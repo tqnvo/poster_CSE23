@@ -305,6 +305,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				+ \int_{\partial\Omega}(\cdot)^{\text{\tiny action}}\ d\partial\Omega  
 				+ \int_{\Omega}(\cdot)^{\text{\tiny production (+/-)}}\ d\Omega
 			\end{align*}
+			used to describe balance of mass, 
+			conservation of linear momentum, 
+			conservation of angular momentum,
+			and conservation of energy
+			with
 			$\rho(\Bx,t)$ is mass density per unit volume (puv); 
 			$\Bb(\Bx,t)$ body force puv; 
 			$\Bv(\Bx,t)$ velocity; 
@@ -313,12 +318,8 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			$r(\Bx,t)$ heat source puv; 
 			$\Bsigma$ Cauchy stress and 
 			$\Bvarepsilon$ infinitesimal strain.
-			%
-			Helmholtz energy functional 
-			\begin{align*}
-				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
-			\end{align*}
-			Governing partial differential equation (PDE) of deformation takes the form
+			Then, the governing partial differential equation (PDE) of deformation 
+			takes the form
 			\begin{align*}
 				\partial_{t}\bm{u}
 				+
@@ -330,12 +331,17 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				+ \rho\Bb
 				= -\rho\nabla V_{e},
 			\end{align*}
-			where $V_{e}: \mathbb{R}^{3}\to\mathbb{R}$ is the uniform electric potential applied globally on ASSB.
+			where $V_{e}: \mathbb{R}^{3}\to\mathbb{R}$
+			is the electric potential applied globally on ASSB.
+			Due to nature setting of ASSB taking the form 
+			(SE|SSE|SE)
+			the electric potential is uniform.\\
+			\vspace{-0.6cm}
 		\end{mdframed}
 		\begin{minipage}{0.5\textwidth}
 			\begin{mdframed}
-				\textbf{Strain energy}: 
-				Deformation of solid-state electrolyte 
+				\textbf{Strain energy} is based on the 
+				deformation of SSE
 				due to dendrite formation 
 				at (SE|SSE)-interface 
 				\begin{align*}
@@ -347,11 +353,11 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		\hfill 
 		\begin{minipage}{0.49\textwidth}
 			\begin{mdframed}
-				\textbf{Surface energy}: 
-				Opening crevice 
-				at (SE|SSE)-interface
-				influenced by prescribed pressure
-				caused by dendrite
+				\textbf{Surface energy}
+				is analysized based on
+				the open crevice 
+				cracking at (SE|SSE)-interface
+				affected by prescribed pressure
 				\begin{align*} 
 					\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma
 				\end{align*}
