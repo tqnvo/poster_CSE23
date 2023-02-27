@@ -273,7 +273,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 {
 	\begin{minipage}{0.43\textwidth}
 		\begin{mdframed}
-			\underline{Coupled fields}: Displacement field and temperature field; structural tensor
+			\underline{Coupled fields}: Displacement field $\Bu$ and temperature field $\theta$; structural tensor $\BM$
 			\begin{align*}
 				\Bu:
 				\begin{cases}
@@ -287,17 +287,17 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					(\Bx,t) \mapsto \theta(\Bx,t),
 				\end{cases}
 				%
-				\BM:
+				\BM^{\{R,E\} }:
 				\begin{cases}
-					\Omega \times \mathbb{R}_{+} \rightarrow \mathbb{R}, \\
-					(\Bx,t) \mapsto \theta(\Bx,t),
+					\left( \Bd^{R}_{\text{\tiny Grain i}} \otimes \Bd^{R}_{\text{\tiny Grain i}} \right)\!\!\big|_{\tiny{i=1,\dots,N}} \\
+					\Bd^{R}_{\text{\tiny Grain i}} \otimes \Bd^{E}
 				\end{cases}
 			\end{align*}
 			Governing conservation equations
 			\begin{align*}
-				\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{action}}\ d\Omega 
-				+ \int_{\partial\Omega}(\cdot)^{\text{action}}\ d\partial\Omega  
-				+ \int_{\Omega}(\cdot)^{\text{production/source/sink}}\ d\Omega
+				\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{\tiny action}}\ d\Omega 
+				+ \int_{\partial\Omega}(\cdot)^{\text{\tiny action}}\ d\partial\Omega  
+				+ \int_{\Omega}(\cdot)^{\text{\tiny production +/-}}\ d\Omega
 			\end{align*}
 			$\rho(\Bx,t)$ is mass density per unit volume (puv); 
 			$\Bb(\Bx,t)$ body force puv; 
