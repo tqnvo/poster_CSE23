@@ -318,11 +318,19 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{align*}
 				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
 			\end{align*}
-			Governing PDE
+			Governing partial differential equation (PDE) of deformation takes the form
 			\begin{align*}
-				a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+				\partial_{t}\bm{u}
+				+
+				\nabla \cdot
+				\Big(
+				\accentset{\scriptstyle 4}{\mathbb{C}}^{f_{\text{alocation}}(\lambda,\mu,\Bd^{R}_{G_i, i=1,\dots,N},\Bd^{E};\Bx)}
+				:\nabla\Bu^{(s)}
+				\Big)
+				+ \rho\Bb
+				= -\rho\nabla V_{e},
 			\end{align*}
-			abc
+			where $V_{e}: \mathbb{R}^{3}\to\mathbb{R}$ is the uniform electric potential applied globally on ASSB.
 		\end{mdframed}
 		\begin{minipage}{0.5\textwidth}
 			\begin{mdframed}
@@ -349,7 +357,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 		%
 		\begin{mdframed}
 			Therefore, the governing problem of dendritic nucleation at (SE|SSE) takes the form
-			\begin{align*}
+			\begin{align}
 				 & 
 				\cancel{\partial_{t}\bm{u}}
 				+
@@ -372,8 +380,9 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma
 				}
 				\Big|_{\bar{\bm{u}}}
-			\end{align*}
-			where
+			\end{align}
+			where deformation $\bar{\Bu}$ is (i) based on (1), 
+			and then (ii) for \emph{Griffith}-analysis in (2).
 		\end{mdframed}
 	\end{minipage}
 	\hfill
@@ -404,6 +413,25 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				FEM: Strain energy density
 				\vspace{0.1cm}
 				\inputfig{floats/griffith_flowchart_circle_formula}{griffith_flowchart_circle_formula}
+				{\small Strain solution takes the following form}\\
+				% $\tiny \sigma_{ij} = \mathbb{C}_{ijkl}^{f^{GL}}(y)\ \textcolor[rgb]{1,0,0}{\varepsilon_{kl}}$\\
+				\small{
+				$  \textcolor[rgb]{0,0.4,0}
+					{
+					\frac{1}{2}
+					\!
+					\sum_{\alpha=1}^{\mathcal{N}_{\text{node}}^{\Omega^{e}}} 
+					\!
+					( 
+					\sum_{L=1}^{\mathcal{N}_{\text{dof}}^{\Omega^{\text{node}}}} 
+					\!\!\!\!\!\!\! N^{\alpha}_{,\xi_{L}}\! \xi_{L,x_{k}} \textcolor[rgb]{0,0,1}{u}_{k}^{\alpha}
+					\!\!+\!\! 
+					\sum_{K=1}^{\mathcal{N}_{\text{dof}}^{\Omega^{\text{node}}}} 
+					\!\!\!\!\!\!\! N^{\alpha}_{,\xi_{K}}\! \xi_{K,x_{l}} \textcolor[rgb]{0,0,1}{u}_{l}^{\alpha}
+					)
+					}
+				$
+				}
 			\end{mdframed}
 		\end{minipage}
 		%
