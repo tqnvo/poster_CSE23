@@ -53,6 +53,8 @@ subcolspace=0mm]{tikzposter}
 % double int with circle \oiint
 \usepackage{esint}
 
+\usepackage{cancel}
+
 % -- Commands --------------------------------------------------------%
 % \newcommand{\wall}{\text{w}}
 % \newcommand{\interf}{\text{i}}
@@ -287,9 +289,13 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 					(\Bx,t) \mapsto \theta(\Bx,t),
 				\end{cases}
 				%
-				\BM^{\{R,E\} }:
+				\BM^{\{RR,RE\}}_{i=1,\dots,N}:
 				\begin{cases}
-					\left( \Bd^{R}_{\text{\tiny Grain i}} \otimes \Bd^{R}_{\text{\tiny Grain i}} \right)\!\!\big|_{\tiny{i=1,\dots,N}} \\
+					% \left( 
+					\Bd^{R}_{\text{\tiny Grain i}} \otimes \Bd^{R}_{\text{\tiny Grain i}} 
+					% \right)
+					% \!\!\big|_{\tiny{i=1,\dots,N}}
+					\\
 					\Bd^{R}_{\text{\tiny Grain i}} \otimes \Bd^{E}
 				\end{cases}
 			\end{align*}
@@ -345,8 +351,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			Therefore, the governing problem of dendritic nucleation at (SE|SSE) takes the form
 			\begin{align*}
 				 & 
-				\partial_{t}
-				\bm{u}^{(s)}
+				\cancel{\partial_{t}\bm{u}}
 				+
 				\nabla \cdot
 				\Big(
@@ -354,10 +359,19 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				:\nabla\Bu^{(s)}
 				\Big)
 				+ \rho\Bb
-				= -\rho\nabla V_{e},                                                                                                                                                                                                                                                        \\
+				= -\rho\nabla V_{e}, \\
 				%--------------------------------
-				\text{s.t.}\quad
-				 & a_{\text{Griffith}} := a^{*} = \arg\min_{a\in\mathbb{R}}{\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega} f(a,\bm{u};\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega - \bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma}\Bigg|_{\bm{u}^{(s)}}
+				\text{s.t.}\ \
+				 & 
+				a_{\text{Griffith}} := a^{*}
+				= \arg\min_{a\in\mathbb{R}}
+				{
+					\bigintsss\!\!\!\!\!\!\bigintsss\!\!\!\!\!\!\bigintsss_{\Omega}
+					f(a,\bm{u},\theta;\lambda,\mu,\bm{d}\otimes\bm{d}) \, d\Omega
+					- 
+					\bigintsss\!\!\!\!\!\!\bigintsss_{\Gamma} f(a;\gamma) \, d\Gamma
+				}
+				\Big|_{\bar{\bm{u}}}
 			\end{align*}
 			where
 		\end{mdframed}
