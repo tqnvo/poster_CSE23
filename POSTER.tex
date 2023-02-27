@@ -303,7 +303,7 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 			\begin{align*}
 				\frac{d}{dt} \int_{\Omega}(\cdot)\ d\Omega = \int_{\Omega}(\cdot)^{\text{\tiny action}}\ d\Omega 
 				+ \int_{\partial\Omega}(\cdot)^{\text{\tiny action}}\ d\partial\Omega  
-				+ \int_{\Omega}(\cdot)^{\text{\tiny production +/-}}\ d\Omega
+				+ \int_{\Omega}(\cdot)^{\text{\tiny production (+/-)}}\ d\Omega
 			\end{align*}
 			$\rho(\Bx,t)$ is mass density per unit volume (puv); 
 			$\Bb(\Bx,t)$ body force puv; 
@@ -386,14 +386,16 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				\end{center}
 			\end{mdframed}
 			\begin{mdframed}
+				Numerical spectral of \emph{Griffith} criterion in $x$-direction at (SE|SSE) yields
 				% The set of boundary conditions is likewise the path of the pressure-centric dendritic crack.\\
 				\begin{center}
 					\inputfig{floats/routine_woTV_numa_one}{routine_woTV_numa_one}
 				\end{center}
-				\underline{Comparison}: Analytical vs. Numerical solutions
-				\begin{center}
-					\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
-				\end{center}
+				% \underline{Comparison}: Analytical vs. Numerical solutions
+				% \begin{center}
+				% 	\inputfig{floats/comparison_ana_numa}{comparison_ana_numa}
+				% \end{center}
+				where a sample of $5$ cases with various prescribed crevice length is studied.
 			\end{mdframed}
 		\end{minipage}
 		\hfill 
@@ -402,8 +404,6 @@ Forschungszentrum Jülich, Wilhelm-Johnen-Straße, 52428 Jülich, Germany
 				FEM: Strain energy density
 				\vspace{0.1cm}
 				\inputfig{floats/griffith_flowchart_circle_formula}{griffith_flowchart_circle_formula}
-				abc\\
-				abc
 			\end{mdframed}
 		\end{minipage}
 		%
