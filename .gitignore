@@ -280,5 +280,6 @@ TSWLatexianTemp*
 *.tcp
 defcml.sty 
 defcmlfont.sty 
+/floats/*
 POSTER_Vo_2023Feb23.pdf 
 POSTER_Vo_2023Feb24.pdf 
